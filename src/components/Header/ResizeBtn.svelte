@@ -37,11 +37,12 @@
 		width: 100%;
 		height: 100%;
 		padding: 3px;
-		transform: rotate(180deg);
+		transform: rotate(-180deg);
 	 	transition: transform var(--transition-speed);
 	}
 
 	.activeNavbar .resize-navbar-icon {
 		transform: rotate(0);
 	} 
+
 </style>

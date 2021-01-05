@@ -1,14 +1,18 @@
 <script>
-	import Ipod from '../icons/ipod.svg';
-	import Quill from '../icons/quill.svg';
-	import Headphones from '../icons/headphones.svg';
-	import Speaker from '../icons/speaker.svg';
+	import Ipod from '../../icons/ipod.svg';
+	import Quill from '../../icons/quill.svg';
+	import Headphones from '../../icons/headphones.svg';
+	import Speaker from '../../icons/speaker.svg';
+
+	import ResizeNavbarBtn from './ResizeBtn.svelte';
 
 	const iconsSize = "100%";
 	const iconsColor = "var(--text-color)";
+
+	let activeNavbar = false;
 </script>
 
-<header class="header">
+<header class="header" class:activeNavbar>
 	<h1 class="logo">
 		<a class="title" href="/" title="Home">
 			Orea One
@@ -16,8 +20,9 @@
 	</h1>
 	<nav class="navbar">
 		<ul class="navbar-nav">
-			<li class="nav-item" ><a class=" nav-link active" href="/Inicio" title="Inicio">
+			<li class="nav-item active" ><a class="nav-link" href="/Inicio" title="Inicio">
 				<Speaker 
+				  class="nav-menu-icon"
 					aria-hidden="true"
           focusable="false"
           data-prefix="fad"
@@ -28,6 +33,7 @@
 			</a></li>
 			<li class="nav-item" ><a class=" nav-link" href="/Biografía" title="Biografía">
 				<Quill 
+				  class="nav-menu-icon"
 					aria-hidden="true"
           focusable="false"
           data-prefix="fad"
@@ -38,6 +44,7 @@
 			</a></li>
 			<li class="nav-item" ><a class=" nav-link" href="/Música" title="Música">
 				<Headphones 
+				  class="nav-menu-icon"
 					aria-hidden="true"
           focusable="false"
           data-prefix="fad"
@@ -48,6 +55,7 @@
 			</a></li>
 				<li class="nav-item" ><a class=" nav-link" href="/Videos" title="Videos">
 				<Quill 
+				  class="nav-menu-icon"
 					aria-hidden="true"
           focusable="false"
           data-prefix="fad"
@@ -58,6 +66,7 @@
 			</a></li>
 				<li class="nav-item" ><a class=" nav-link" href="/Contacto" title="Contacto">
 				<Quill 
+				  class="nav-menu-icon"
 					aria-hidden="true"
           focusable="false"
           data-prefix="fad"
@@ -71,21 +80,13 @@
 			Sigue a Orea One en sus redes!
 		</section>
 	</nav>
-	<button class="resize-navbar-btn">
-		close
-	</button>
+	<ResizeNavbarBtn bind:activeNavbar />
 </header><!-- /header -->
 
 
 <style>
 
-	.resize-navbar-btn {
-		position: absolute;
-		top: 0;
-		right: 0;
-		transform: translateX(100%);
-	}
-	header {
+	.header {
 		position: relative;
 		padding-top: 2rem;
 		text-align: center;
@@ -126,6 +127,17 @@
 		width: 100%;
 	}
 
+	.nav-item::before {
+		position: absolute;
+		content: "";
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 5.05rem;
+		opacity: 0;
+		background-image: linear-gradient(to top right, transparent 50%, var(--primary-color) 0);
+	}
+
 	.navbar-nav {
 		display: flex;
 		flex-direction: column;
@@ -154,27 +166,45 @@
 		opacity: 0;
 	}
 
-	.nav-item:hover {
-		background: #464646;
-	} 
-
-	.header:hover {
+	.activeNavbar {
 		width: 16rem;
 	}
 
-	.header:hover .link-text {
+	.activeNavbar .link-text {
 		visibility: visible;
 		transform: translateX(5px);
 		opacity: 1;
 	}
 
-	.header:hover .title {
+	.activeNavbar .title {
 		visibility: visible;
 		opacity: 1;
 		transition: 
 			opacity var(--transition-speed),
 			visibility var(--transition-speed);
 		transition-delay: var(--transition-speed);
+	}
+
+	.activeNavbar .nav-item.active::before {
+		opacity: 1;
+		transition: opacity var(--transition-speed);
+		transition-delay: var(--transition-speed);
+	}
+
+	.nav-item.active .link-text {
+		color: var(--primary-color);
+	}
+
+	.nav-item.active {
+		background: #464646;
+	}
+
+	.nav-item:hover {
+		background: #464646;
+	}
+
+	.nav-item:hover .link-text {
+		color: var(--primary-color);
 	}
 
 	.redes {

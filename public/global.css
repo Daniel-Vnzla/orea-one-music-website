@@ -12,7 +12,7 @@
 	font-size: 16px;
 	--bg-color: #2d2d2d;
 	--text-color: #fff;
-	--primary-color: #e0cf37;
+	--primary-color: #f6f95a;
 	--transition-speed: 200ms;
 }
 
@@ -33,14 +33,31 @@ body {
 	margin: 0 1.3rem;
 }
 
+.nav-item.active svg {
+	fill: var(--primary-color);
+}
+
+.resize-navbar-icon:hover svg {
+	fill: var(--primary-color);
+	
+}
+
+li:hover .nav-menu-icon {
+	fill: var(--primary-color);
+	transition: fill var(--transition-speed);
+}
+
 a {
 	text-decoration: none;
 }
 
 li {
+	cursor: pointer;
 	list-style: none;
 }
 
 button {
+	cursor: pointer;
 	border: none;
+	outline: none;
 }
