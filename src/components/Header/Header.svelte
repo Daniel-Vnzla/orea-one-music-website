@@ -20,7 +20,7 @@
 	</h1>
 	<nav class="navbar">
 		<ul class="navbar-nav">
-			<li class="nav-item active" ><a class="nav-link" href="/Inicio" title="Inicio">
+			<li class="nav-item active" data-tooltip="Inicio" ><a class="nav-link" href="/Inicio" title="Inicio">
 				<Speaker 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -31,7 +31,7 @@
           fill={iconsColor} />
 				<span class="link-text">Inicio</span>
 			</a></li>
-			<li class="nav-item" ><a class=" nav-link" href="/Biografía" title="Biografía">
+			<li class="nav-item" data-tooltip="Biografía" ><a class=" nav-link" href="/Biografía" title="Biografía">
 				<Quill 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -42,7 +42,7 @@
           fill={iconsColor} />
 				<span class="link-text">Biografía</span>
 			</a></li>
-			<li class="nav-item" ><a class=" nav-link" href="/Música" title="Música">
+			<li class="nav-item" data-tooltip="Música" ><a class=" nav-link" href="/Música" title="Música">
 				<Headphones 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -53,7 +53,7 @@
           fill={iconsColor} />
 				<span class="link-text">Música</span>
 			</a></li>
-				<li class="nav-item" ><a class=" nav-link" href="/Videos" title="Videos">
+				<li class="nav-item" data-tooltip="Videos" ><a class=" nav-link" href="/Videos" title="Videos">
 				<Quill 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -64,7 +64,7 @@
           fill={iconsColor} />
 				<span class="link-text">Videos</span>
 			</a></li>
-				<li class="nav-item" ><a class=" nav-link" href="/Contacto" title="Contacto">
+				<li class="nav-item" data-tooltip="Contacto" ><a class=" nav-link" href="/Contacto" title="Contacto">
 				<Quill 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -88,11 +88,11 @@
 
 	.header {
 		position: relative;
+		display: block;
 		padding-top: 2rem;
 		text-align: center;
 		color: var(--text-color);
-		position: fixed;
-		width: 5rem;
+		width: 200px;
 		height: 100vh;
 		background-color: var(--bg-color);
 		transition: width var(--transition-speed) ease;
@@ -167,7 +167,7 @@
 	}
 
 	.activeNavbar {
-		width: 16rem;
+		width: 800px;
 	}
 
 	.activeNavbar .link-text {
@@ -185,6 +185,21 @@
 		transition-delay: var(--transition-speed);
 	}
 
+	.header:not(.activeNavbar) .nav-item::after {
+		position: absolute;
+		content: attr(data-tooltip);
+		top: 50%;
+		right: 0;
+		background: var(--bg-color);
+		padding: 5px 12px;
+		border-radius: 3px;
+		font-weight: bold;
+		opacity: 0;
+		visibility: hidden;
+		transform: translate(calc(100% + 5px), -50%);
+		transition: opacity var(--transition-speed);
+	}
+
 	.activeNavbar .nav-item.active::before {
 		opacity: 1;
 		transition: opacity var(--transition-speed);
@@ -196,15 +211,21 @@
 	}
 
 	.nav-item.active {
-		background: #464646;
+		background: #000;
 	}
 
 	.nav-item:hover {
-		background: #464646;
+		background: #000;
 	}
 
 	.nav-item:hover .link-text {
 		color: var(--primary-color);
+	}
+
+
+	.header:not(.activeNavbar) .nav-item:hover::after {
+		visibility: visible;
+		opacity: 1;
 	}
 
 	.redes {

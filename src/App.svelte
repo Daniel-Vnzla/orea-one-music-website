@@ -2,7 +2,7 @@
 	import Header from './components/Header/Header.svelte';
 </script>
 
-<main>
+<main class="main">
 	<Header />
 	<section>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -15,5 +15,7 @@
 </main>
 
 <style>
-
+	.main {
+		display: flex;
+	}
 </style>
