@@ -8,9 +8,7 @@
 <main class="main">
 	<Header bind:activeNavbar />
 	<div class="right-section" class:activeNavbar >
-		<div class="right-section-wrapper">
-			<Biografy />
-		</div>
+		<Biografy />
 	</div>
 </main>
 
@@ -26,11 +24,6 @@
 
 	.activeNavbar {
 		margin-left: 16rem;
-	}
-
-	.right-section-wrapper {
-		margin: 0 auto;
-		max-width: 90%;
 	}
 
 	@media (max-width: 800px) {
