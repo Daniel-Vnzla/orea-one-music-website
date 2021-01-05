@@ -42,6 +42,13 @@ body {
 	
 }
 
+	@media (max-width: 800px) {
+		.nav-link svg {
+			width: 2.1rem;
+			margin: 0 1.3rem;
+		}
+	}
+
 li:hover .nav-menu-icon {
 	fill: var(--primary-color);
 	transition: fill var(--transition-speed);

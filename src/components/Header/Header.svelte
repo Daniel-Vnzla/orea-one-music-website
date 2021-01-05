@@ -9,10 +9,12 @@
 	const iconsSize = "100%";
 	const iconsColor = "var(--text-color)";
 
-	let activeNavbar = false;
+	export let activeNavbar = false;
+
 </script>
 
-<header class="header" class:activeNavbar>
+
+<header class="header" class:activeNavbar innerWidth={innerWidth} >
 	<h1 class="logo">
 		<a class="title" href="/" title="Home">
 			Orea One
@@ -87,15 +89,17 @@
 <style>
 
 	.header {
-		position: relative;
-		display: block;
+		position: fixed;
+		display: flex;
+		flex-direction: column;
 		padding-top: 2rem;
 		text-align: center;
 		color: var(--text-color);
-		width: 200px;
+		width: 5rem;
 		height: 100vh;
 		background-color: var(--bg-color);
 		transition: width var(--transition-speed) ease;
+		z-index: 1000;
 	}
 
 	.logo {
@@ -119,6 +123,11 @@
 		opacity: 0;
 		color: var(--text-color);
 		transition: none;
+	}
+
+	.navbar {
+		width: 100%;
+		height: 100%;
 	}
 
 	.nav-item {
@@ -167,8 +176,9 @@
 	}
 
 	.activeNavbar {
-		width: 800px;
+		width: 16rem;
 	}
+
 
 	.activeNavbar .link-text {
 		visibility: visible;
@@ -230,6 +240,41 @@
 
 	.redes {
 		margin-top: 100%;
+	}
+
+	@media (max-width: 800px) {
+		.header {
+			padding-top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 5rem;
+		}
+
+		.header .logo {
+			display: none
+		} 
+
+		.navbar-nav {
+			flex-direction: row;
+			justify-content: center
+		}
+
+		.header .nav-item::after {
+			display: none
+		}
+
+		.header .nav-item::before {
+			display: none
+		}
+
+		.nav-item {
+			width: 5rem;
+		}
+
+		.link-text {
+			display: none;
+		}
+		
 	}
 	
 

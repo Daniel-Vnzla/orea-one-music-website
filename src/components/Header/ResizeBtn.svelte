@@ -45,4 +45,11 @@
 		transform: rotate(0);
 	} 
 
+
+	@media (max-width: 800px) {
+		.resize-navbar-btn {
+			display: none
+		}
+	}
+
 </style>
