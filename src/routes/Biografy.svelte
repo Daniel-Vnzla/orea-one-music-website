@@ -1,0 +1,80 @@
+<script>
+	
+</script>
+
+<section class="biografy">
+	<h2 class="title">Biografía</h2>
+	<article class="description">
+		<div class="bio-section-one">
+			<h3 class="bio-name">Antonio Eltit</h3>
+			<p class="bio-titles">Músico, Compositor, Escritor</p>
+			<p>Orea One nació el 4 de mayo de 1996 en Chile, como Antonio Javier Eltit Chellew. Es ilustrador, cantante y compositor de trap y reggaetón.
+		</p>
+		</div>
+		<div class="bio-section-two">
+			<p>Desde niño su obsesión ha sido dibujar y cantar, sin embargo, en 2009 fue cuando comenzó a escribir rap y a pintar graffiti, cuando solo tenía 13 años.
+			<br/>
+			<br/>
+
+			En 2010 grabó su primera canción de rap, luego estuvo participando de 2010 a 2013, en tres álbumes de rap con su grupo de amigos, luego participó en tres álbumes más de 2014 a 2017, todos grabados en casa.
+			<br/>
+			<br/>
+
+			Remontándose al año 2014, comenzó a estudiar, pasando por diversas carreras, como la animación digital y el diseño gráfico, las cuales no terminó, sin embargo el año 2019 se tituló como ilustrador.
+			<br/>
+			<br/>
+
+			Tras trabajar un par de años como ilustrador freelance, decidió empezar a invertir en su carrera musical, dándole un nuevo comienzo en 2020, ya profesionalmente como artista urbano, invirtiendo en su imagen y en sus producciones, tomando así la decisión de dedicarse de lleno a lo que es su carrera artística.</p>
+			<img src="/images/oreaone.png" alt="Orea One">
+		</div>
+	</article>
+</section>
+
+
+<style>
+
+	.biografy {
+		padding-top: 3rem;
+	}
+
+	.title {
+		color: var(--text-color);
+		text-align: center;
+		font-family: "Road rage";
+	}
+
+	.bio-section-one {
+		margin-top: 2rem;
+		background: #292929;
+		margin-bottom: 6rem;
+		padding: 1.4rem;
+		border-radius: 5px;
+	}
+
+	p {
+		font-size: 1.2rem;
+	}
+
+	.bio-name {
+		color: var(--primary-color);
+	}
+
+	.bio-titles {
+		font-weight: bold;
+		color: #ddd;
+		margin-bottom: 3rem;
+	}
+
+	.bio-section-two {
+		display: flex;
+		margin-bottom: 6rem;
+
+	}
+
+	.bio-section-two p {
+		padding: 1.4rem;
+		background: #292929;
+		height: fit-content;
+	}
+
+</style>
