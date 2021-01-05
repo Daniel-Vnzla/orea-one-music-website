@@ -3,13 +3,15 @@
 	import Quill from '../../icons/quill.svg';
 	import Headphones from '../../icons/headphones.svg';
 	import Speaker from '../../icons/speaker.svg';
+	import AdressBook from '../../icons/address-book.svg';
+	import Youtube from '../../icons/youtube.svg';
 
 	import ResizeNavbarBtn from './ResizeBtn.svelte';
 
 	const iconsSize = "100%";
 	const iconsColor = "var(--text-color)";
 
-	export let activeNavbar = false;
+	export let activeNavbar = true;
 
 </script>
 
@@ -22,7 +24,7 @@
 	</h1>
 	<nav class="navbar">
 		<ul class="navbar-nav">
-			<li class="nav-item active" data-tooltip="Inicio" ><a class="nav-link" href="/Inicio" title="Inicio">
+			<li class="nav-item" data-tooltip="Inicio" ><a class="nav-link" href="/Inicio" title="Inicio">
 				<Speaker 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -33,7 +35,7 @@
           fill={iconsColor} />
 				<span class="link-text">Inicio</span>
 			</a></li>
-			<li class="nav-item" data-tooltip="Biografía" ><a class=" nav-link" href="/Biografía" title="Biografía">
+			<li class="nav-item active" data-tooltip="Biografía" ><a class=" nav-link" href="/Biografía" title="Biografía">
 				<Quill 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -56,7 +58,7 @@
 				<span class="link-text">Música</span>
 			</a></li>
 				<li class="nav-item" data-tooltip="Videos" ><a class=" nav-link" href="/Videos" title="Videos">
-				<Quill 
+				<Youtube 
 				  class="nav-menu-icon"
 					aria-hidden="true"
           focusable="false"
@@ -67,7 +69,7 @@
 				<span class="link-text">Videos</span>
 			</a></li>
 				<li class="nav-item" data-tooltip="Contacto" ><a class=" nav-link" href="/Contacto" title="Contacto">
-				<Quill 
+				<AdressBook 
 				  class="nav-menu-icon"
 					aria-hidden="true"
           focusable="false"

@@ -2,7 +2,7 @@
 	import Header from './components/Header/Header.svelte';
 	import Biografy from './routes/Biografy.svelte';
 
-	let activeNavbar = false;
+	let activeNavbar = true;
 </script>
 
 <main class="main">
