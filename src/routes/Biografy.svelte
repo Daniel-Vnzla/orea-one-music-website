@@ -1,8 +1,11 @@
 <script>
 	import Redes from '../commun/Redes.svelte';
+	import OreaOneTag from '../commun/OreaOneTag.svelte';
+	
 </script>
 
 <section class="biografy">
+	<OreaOneTag />
 	<div class="biografy-wrapper">
 		<h2 class="title">Biografía</h2>
 		<article class="description">
@@ -36,10 +39,16 @@
 
 <style>
 
+
+
 	.biografy {
+		position: relative;
 		padding-top: 3rem;
+		overflow: hidden;
 	}
+
 	.biografy-wrapper {
+		position: relative;
 		max-width: 90%;
 		margin: 0 auto;
 	}
@@ -48,10 +57,10 @@
 		color: var(--text-color);
 		text-align: center;
 		font-family: "Road rage";
+		margin-bottom: 4rem;
 	}
 
 	.bio-section-one {
-		margin-top: 2rem;
 		background: #292929;
 		margin-bottom: 6rem;
 		padding: 1.4rem;
@@ -74,8 +83,7 @@
 
 	.bio-section-two {
 		display: flex;
-		margin-bottom: 6rem;
-
+		align-items: flex-end;
 	}
 
 	.bio-section-two p {
@@ -84,8 +92,13 @@
 		height: fit-content;
 	}
 
-	.img {
-		width: 70%;
+
+
+	@media (max-width: 700px) {
+		.bio-section-two {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
 </style>

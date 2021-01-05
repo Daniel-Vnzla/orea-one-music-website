@@ -242,7 +242,7 @@
 		margin-top: 100%;
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 1060px) {
 		.header {
 			padding-top: 0;
 			bottom: 0;
