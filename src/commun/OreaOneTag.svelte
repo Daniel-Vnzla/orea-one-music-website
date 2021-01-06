@@ -21,7 +21,7 @@
 	.oreaone h2 {
 		font-size: 3rem;
 		width: 100%;
-		padding: 20px 0;
+		padding: 15px 0;
 		color: rgba(144, 110, 10, .2);
 		background: var(--primary-color);
 		word-wrap: none;
