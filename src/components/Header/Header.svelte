@@ -7,6 +7,7 @@
 	import Youtube from '../../icons/youtube.svg';
 
 	import ResizeNavbarBtn from './ResizeBtn.svelte';
+	import NavBarRedes from './NavbarRedes.svelte';
 
 	const iconsSize = "100%";
 	const iconsColor = "var(--text-color)";
@@ -80,10 +81,8 @@
 				<span class="link-text">Contacto</span>
 			</a></li>
 		</ul>
-		<section class="redes">
-			Sigue a Orea One en sus redes!
-		</section>
 	</nav>
+	<NavBarRedes bind:activeNavbar />
 	<ResizeNavbarBtn bind:activeNavbar />
 </header><!-- /header -->
 
@@ -129,7 +128,6 @@
 
 	.navbar {
 		width: 100%;
-		height: 100%;
 	}
 
 	.nav-item {
@@ -238,10 +236,6 @@
 	.header:not(.activeNavbar) .nav-item:hover::after {
 		visibility: visible;
 		opacity: 1;
-	}
-
-	.redes {
-		margin-top: 100%;
 	}
 
 	@media (max-width: 1060px) {

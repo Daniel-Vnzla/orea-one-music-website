@@ -91,6 +91,7 @@
 		padding: 1.4rem;
 		background: #292929;
 		height: fit-content;
+		margin-bottom: 100px;
 	}
 
 
