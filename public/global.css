@@ -32,6 +32,21 @@ body {
 	font-family: "Segoe UI", BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+body::-webkit-scrollbar {
+	width: .9rem;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: var(--primary-color);
+	border-radius: 50px;
+	border: solid 4px #1d1d1d;
+}
+
+body::-webkit-scrollbar-track {
+	background: #1d1d1d;
+}
+
+
 .nav-link svg {
 	width: 2.4rem;
 	margin: 0 1.3rem;
