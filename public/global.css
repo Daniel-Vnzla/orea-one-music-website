@@ -67,6 +67,11 @@ li {
 	list-style: none;
 }
 
+img {
+	width: 100%;
+	object-fit: cover;
+}
+
 button {
 	cursor: pointer;
 	border: none;
