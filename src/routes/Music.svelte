@@ -11,6 +11,7 @@
 		<p class="music-legend">Escucha lo ultimo de Orea One</p>
 		<div class="songs">
 			<h3 class="songs-title">Toda la música</h3>
+			<div class="decorator-line"></div>
 			<SongCard />
 			<SongCard />
 			<SongCard />
@@ -54,7 +55,14 @@
 	}
 
 	.songs-title {
-		margin-bottom: 1rem;
+		margin-bottom: .5rem;
+	}
+
+	.decorator-line {
+		width: 100%;
+		height: 1px;
+		background: #ccc;
+		margin-bottom: .5rem;
 	}
 
 </style>	

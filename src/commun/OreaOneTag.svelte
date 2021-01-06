@@ -1,37 +1,37 @@
 
 <div class="oreaone">
 	<div class="oreaone-wrapper">
-		<h2 class="text">
+		<h3 class="text">
 			orea one - orea one - orea one - orea one - orea one - orea one - orea one - orea one
-		</h2>
+		</h3>
 	</div>
 </div>
 
 <style>
 	.oreaone {
 		position: absolute;
-		top: -20px;
-		right: -150px;
+		top: 0;
+		right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		text-align: center;
 		font-family: "Road rage";
-		width: 600px;
+		width: 300px;
 		height: 300px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transform: rotate(45deg);
 	}
 
 	.oreaone-wrapper {
 		position: relative;
-		font-size: 3rem;
-		width: 100%;
+		width: 600px;
 		padding: 15px 0;
 		color: rgba(144, 110, 10, .1);
 		background: var(--primary-color);
+		transform: rotate(45deg);
 	}
 
 	.text {
+		font-size: 3rem;
 		white-space: nowrap;
 		width: 100%;
 		animation: scrollText 33s infinite linear;
@@ -48,6 +48,12 @@
 			transform: translateX(-100%);
 		}
 
+	}
+
+	@media (max-width: 700px) {
+		.oreaone {
+
+		}
 	}
 
 </style>
