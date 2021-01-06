@@ -9,11 +9,31 @@
 <section class="redes">
 	<h3 class="title">Sigue a Orea One en sus redes para conocer más de el!</h3>
 	<div class="redes-icons-list">
-		<a href="/" title="Youtube"><Youtube width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a href="/" title="Facebook"><Facebook width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a href="/" title="Instagram"><Instagram width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a href="/" title="Spotify"><Spotify width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a href="/" title="Twitter"><Twitter width="100%" height="100%" fill="var(--secondary-color)" /></a>
+		<a  
+			href="/" 
+			title="Youtube"
+			target="_blanjk" 
+			><Youtube width="100%" height="100%" fill="var(--secondary-color)" /></a>
+		<a  
+			href="/" 
+			title="Facebook"
+			target="_blanjk" 
+			><Facebook width="100%" height="100%" fill="var(--secondary-color)" /></a>
+		<a  
+			href="/" 
+			title="Instagram"
+			target="_blanjk" 
+			><Instagram width="100%" height="100%" fill="var(--secondary-color)" /></a>
+		<a  
+			href="/" 
+			title="Spotify"
+			target="_blanjk" 
+			><Spotify width="100%" height="100%" fill="var(--secondary-color)" /></a>
+		<a  
+			href="/" 
+			title="Twitter"
+			target="_blanjk" 
+			><Twitter width="100%" height="100%" fill="var(--secondary-color)" /></a>
 	</div>
 </section>
 

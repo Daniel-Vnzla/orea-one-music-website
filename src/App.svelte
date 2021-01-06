@@ -6,23 +6,48 @@
 	import Biografy from './routes/Biografy.svelte';
 	import Music from './routes/Music.svelte';
 	import Contact from './routes/Contact.svelte';
+	import Videos from './routes/Videos.svelte';
+	import Error404 from './routes/Error404.svelte';
 
 	let activeNavbar = true;
 	let page = null;
+	let currentPath = "Home";
 
-	router('/', () => page = Home)
-	router('/Biografy', () => page = Biografy)
-	router('/Music', () => page = Music)
-	router('/Contact', () => page = Contact)
+	router('/', () => {
+		currentPath = "Home"
+		page = Home;
+	});
+
+	router('/Biografy', () =>{
+		currentPath = "Biografy"
+	 page = Biografy;
+	}) ;
+
+	router('/Music', () => {
+		currentPath = "Music"
+		page = Music;
+	});
+
+	router('/Contact', () => {
+		currentPath = "Contact"
+		page = Contact;
+	});
+
+	router('/Videos', () => {
+		currentPath = "Videos"
+		page = Videos;
+	});
+
+	router('*', () => {
+		page = Error404;
+	});
 
 	router.start()
-
-	$: console.log(router.base())
 </script>
 
 <main class="main">
 
-	<Header bind:activeNavbar />
+	<Header bind:activeNavbar bind:currentPath />
 	<div class="right-section" class:activeNavbar >
 		<svelte:component this={page} />
 	</div>
@@ -35,6 +60,8 @@
 	}
 
 	.right-section {
+		width: 100%;
+		height: 100%;
 		margin-left: 5rem;
 		transition: margin var(--transition-speed);
 	}

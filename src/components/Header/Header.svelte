@@ -13,6 +13,7 @@
 	const iconsColor = "var(--text-color)";
 
 	export let activeNavbar = true;
+	export let currentPath = "Home";
 
 </script>
 
@@ -25,7 +26,7 @@
 	</h1>
 	<nav class="navbar">
 		<ul class="navbar-nav">
-			<li class="nav-item" data-tooltip="Inicio" ><a class="nav-link" href="/" title="Inicio">
+			<li class:active={currentPath === "Home"} class="nav-item" data-tooltip="Inicio" ><a class="nav-link" href="/" title="Inicio">
 				<Speaker 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -36,7 +37,7 @@
           fill={iconsColor} />
 				<span class="link-text">Inicio</span>
 			</a></li>
-			<li class="nav-item active" data-tooltip="Biografía" ><a class=" nav-link" href="/Biografy" title="Biografía">
+			<li class:active={currentPath === "Biografy"} class="nav-item" data-tooltip="Biografía" ><a class=" nav-link" href="/Biografy" title="Biografía">
 				<Quill 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -47,7 +48,7 @@
           fill={iconsColor} />
 				<span class="link-text">Biografía</span>
 			</a></li>
-			<li class="nav-item" data-tooltip="Música" ><a class=" nav-link" href="/Music" title="Música">
+			<li class:active={currentPath === "Music"} class="nav-item" data-tooltip="Música" ><a class=" nav-link" href="/Music" title="Música">
 				<Headphones 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -58,7 +59,7 @@
           fill={iconsColor} />
 				<span class="link-text">Música</span>
 			</a></li>
-				<li class="nav-item" data-tooltip="Videos" ><a class=" nav-link" href="/Videos" title="Videos">
+				<li class:active={currentPath === "Videos"} class="nav-item" data-tooltip="Videos" ><a class=" nav-link" href="/Videos" title="Videos">
 				<Youtube 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -69,7 +70,7 @@
           fill={iconsColor} />
 				<span class="link-text">Videos</span>
 			</a></li>
-				<li class="nav-item" data-tooltip="Contacto" ><a class=" nav-link" href="/Contact" title="Contacto">
+				<li class:active={currentPath === "Contact"} class="nav-item" data-tooltip="Contacto" ><a class=" nav-link" href="/Contact" title="Contacto">
 				<AdressBook 
 				  class="nav-menu-icon"
 					aria-hidden="true"

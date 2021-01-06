@@ -15,19 +15,29 @@
 	<div class="redes-icons-list" class:iconShrink={!activeNavbar}>
 		<a 
 			href="/" 
-			title="Youtube"><Youtube width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			title="Youtube"
+			target="_blank"
+			><Youtube width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a 
 			href="/" 
-			title="Facebook"><Facebook width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			title="Facebook"
+			target="_blank"
+			><Facebook width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a 
 			href="/" 
-			title="Instagram"><Instagram width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			title="Instagram"
+			target="_blank"
+			><Instagram width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a 
 			href="/" 
-			title="Spotify"><Spotify width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			title="Spotify"
+			target="_blank"
+			><Spotify width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a 
 			href="/" 
-			title="Twitter"><Twitter width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			title="Twitter"
+			target="_blank"
+			><Twitter width="100%" height="100%" fill="var(--secondary-color)" /></a>
 	</div>
 </section>
 
