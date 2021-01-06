@@ -66,5 +66,11 @@
 	.iconShrink a {
 		width: 2.3rem;
 	}
+
+	@media (max-width: 1060px) {
+		.redes {
+			display: none
+		}
+	}
 	
 </style>
