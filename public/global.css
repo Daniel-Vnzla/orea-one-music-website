@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/road-rage');
 
 * {
 	margin: 0;
@@ -13,7 +14,7 @@
 	font-size: 16px;
 	--bg-color: #2d2d2d;
 	--text-color: #fff;
-	--primary-color: #e6d93a;
+	--primary-color: #ffeb3b;
 	--secondary-color: #7d6620;
 	--transition-speed: 200ms;
 }
