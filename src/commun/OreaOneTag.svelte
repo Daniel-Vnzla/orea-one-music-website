@@ -52,7 +52,12 @@
 
 	@media (max-width: 700px) {
 		.oreaone {
+			width: 180px;
+			height: 180px;
+		}
 
+		.text {
+			font-size: 1.4rem;
 		}
 	}
 
