@@ -36,7 +36,9 @@
 			</div>
 		</article>
 	</div>
-	<Redes />
+	<div style="position: relative">
+		<Redes />
+	</div>
 </section>
 
 

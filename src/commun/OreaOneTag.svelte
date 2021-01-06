@@ -1,10 +1,14 @@
 
 <div class="oreaone">
-	<h2>orea one</h2>
+	<div class="oreaone-wrapper">
+		<h2 class="text">
+			orea one - orea one - orea one - orea one - orea one - orea one - orea one - orea one
+		</h2>
+	</div>
 </div>
 
 <style>
-		.oreaone {
+	.oreaone {
 		position: absolute;
 		top: -20px;
 		right: -150px;
@@ -18,12 +22,32 @@
 		transform: rotate(45deg);
 	}
 
-	.oreaone h2 {
+	.oreaone-wrapper {
+		position: relative;
 		font-size: 3rem;
 		width: 100%;
 		padding: 15px 0;
 		color: rgba(144, 110, 10, .1);
 		background: var(--primary-color);
-		word-wrap: none;
 	}
+
+	.text {
+		white-space: nowrap;
+		width: 100%;
+		animation: scrollText 33s infinite linear;
+		animation-delay: 3s;
+		transform: translateX(150px);
+	}
+
+	@keyframes scrollText {
+		0% {
+			transform: translateX(150px);
+		}
+
+		100% {
+			transform: translateX(-100%);
+		}
+
+	}
+
 </style>
