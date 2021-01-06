@@ -22,7 +22,7 @@
 		font-size: 3rem;
 		width: 100%;
 		padding: 15px 0;
-		color: rgba(144, 110, 10, .2);
+		color: rgba(144, 110, 10, .1);
 		background: var(--primary-color);
 		word-wrap: none;
 	}

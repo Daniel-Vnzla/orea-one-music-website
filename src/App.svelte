@@ -6,6 +6,7 @@
 </script>
 
 <main class="main">
+	
 	<Header bind:activeNavbar />
 	<div class="right-section" class:activeNavbar >
 		<Biografy />
@@ -14,6 +15,7 @@
 
 <style>
 	.main {
+		position: relative;
 		display: flex;
 	}
 
@@ -26,7 +28,7 @@
 		margin-left: 16rem;
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 1024px) {
 		.right-section {
 			margin-left: 0;
 		}

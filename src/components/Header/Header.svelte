@@ -16,7 +16,7 @@
 </script>
 
 
-<header class="header" class:activeNavbar innerWidth={innerWidth} >
+<header class="header" class:activeNavbar >
 	<h1 class="logo">
 		<a class="title" href="/" title="Home">
 			Orea One
