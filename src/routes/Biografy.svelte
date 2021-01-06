@@ -93,15 +93,19 @@
 		padding: 1.4rem;
 		background: #292929;
 		height: fit-content;
-		margin-bottom: 100px;
+		margin-bottom: 6rem;
 	}
 
 
 
-	@media (max-width: 700px) {
+	@media (max-width: 800px) {
 		.bio-section-two {
 			display: flex;
 			flex-direction: column;
+		}
+
+		bio-section-two p {
+			margin-bottom: 0;
 		}
 	}
 

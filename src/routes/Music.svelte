@@ -1,11 +1,13 @@
 <script>
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import SongCard from '../components/Music/SongCard.svelte';
+	import BoobleBackground from '../commun/BoobleBackground.svelte';
 
 </script>
 
 <section class="music">
 	<OreaOneTag />
+	<BoobleBackground />
 	<div class="music-wrapper">
 		<h2 class="music-title">Música</h2>
 		<p class="music-legend">Escucha lo ultimo de Orea One</p>

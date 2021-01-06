@@ -24,22 +24,22 @@
 	}
 
 	.large {
-		top: 50px;
-		left: 100px;
+		top: 120px;
+		left: 300px;
 		width: var(--size);
 		height: var(--size);
 	}
 
 	.medium {
-		bottom: 400px;
+		bottom: 450px;
 		right: 100px;
 		width: calc( var(--size) / 2 );
 		height: calc( var(--size) / 2 );
 	}
 
 	.small {
-		top: 450px;
-		right: 200px;
+		left: 150px;
+		bottom: 250px;
 		width: calc( var(--size) / 3.5 );
 		height: calc( var(--size) / 3.5 );
 	}
