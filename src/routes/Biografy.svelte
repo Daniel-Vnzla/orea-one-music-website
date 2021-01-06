@@ -11,7 +11,7 @@
 		<article class="description">
 			<div class="bio-section-one">
 				<h3 class="bio-name">Antonio Eltit</h3>
-				<p class="bio-titles">Músico, Compositor, Escritor</p>
+				<p class="bio-titles">Músico, Cantante, Compositor</p>
 				<p>Orea One nació el 4 de mayo de 1996 en Chile, como Antonio Javier Eltit Chellew. Es ilustrador, cantante y compositor de trap y reggaetón.
 			</p>
 			</div>
