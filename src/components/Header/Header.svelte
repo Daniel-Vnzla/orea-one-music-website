@@ -25,7 +25,7 @@
 	</h1>
 	<nav class="navbar">
 		<ul class="navbar-nav">
-			<li class="nav-item" data-tooltip="Inicio" ><a class="nav-link" href="/Inicio" title="Inicio">
+			<li class="nav-item" data-tooltip="Inicio" ><a class="nav-link" href="/" title="Inicio">
 				<Speaker 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -36,7 +36,7 @@
           fill={iconsColor} />
 				<span class="link-text">Inicio</span>
 			</a></li>
-			<li class="nav-item active" data-tooltip="Biografía" ><a class=" nav-link" href="/Biografía" title="Biografía">
+			<li class="nav-item active" data-tooltip="Biografía" ><a class=" nav-link" href="/Biografy" title="Biografía">
 				<Quill 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -47,7 +47,7 @@
           fill={iconsColor} />
 				<span class="link-text">Biografía</span>
 			</a></li>
-			<li class="nav-item" data-tooltip="Música" ><a class=" nav-link" href="/Música" title="Música">
+			<li class="nav-item" data-tooltip="Música" ><a class=" nav-link" href="/Music" title="Música">
 				<Headphones 
 				  class="nav-menu-icon"
 					aria-hidden="true"
@@ -69,7 +69,7 @@
           fill={iconsColor} />
 				<span class="link-text">Videos</span>
 			</a></li>
-				<li class="nav-item" data-tooltip="Contacto" ><a class=" nav-link" href="/Contacto" title="Contacto">
+				<li class="nav-item" data-tooltip="Contacto" ><a class=" nav-link" href="/Contact" title="Contacto">
 				<AdressBook 
 				  class="nav-menu-icon"
 					aria-hidden="true"
