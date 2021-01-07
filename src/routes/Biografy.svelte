@@ -104,7 +104,7 @@
 			flex-direction: column;
 		}
 
-		bio-section-two p {
+		.bio-section-two p {
 			margin-bottom: 0;
 		}
 	}

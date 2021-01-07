@@ -9,7 +9,7 @@
 		<img src="/images/explicit.jpg" alt="explica">
 	</div>
 	<div class="song-info">
-		<h4 class="song-info-title">Sangre Roja</h4>
+		<h4 class="song-info-title">Explicale</h4>
 		<p class="song-info-author">Orea One ft. Sharly la voz</p>
 	</div>
 	<div class="song-links">
