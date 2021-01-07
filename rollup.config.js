@@ -5,6 +5,10 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import svelteSVG from 'rollup-plugin-svelte-svg';
 
+import dotenv from 'dotenv';
+dotenv.config();
+import replace from '@rollup/plugin-replace';
+
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -37,6 +41,13 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		replace({  
+	    __process: JSON.stringify({
+	      env: {
+	       YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY,
+	      } 
+	   	}),
+	  }),
 		svelteSVG(),
 		svelte({
 			// enable run-time checks when not in production

@@ -1,18 +1,16 @@
 <script>
-		import { onMount } from 'svelte';
-	let name = 'world';
-	const YOUTUBE_API_KEY = "AIzaSyBw35cPpUzPTb6Y9-ZmvAfzlBFXi7xnRT4";
+	import axios from 'axios';
+	import { onMount } from 'svelte';
+
+	import OreaOneTag from '../commun/OreaOneTag.svelte';
+
 	const YOUTUBE_API_URL = "https://www.googleapis.com/youtube/v3/playlistItems";
+	const PLAYLIST_ID = "PLIkb_BrIXCi8GUVpG59wrMs6Q9k1aYIEP";
 
-	const fetchYoutubeVideos = async () =>{ 
-		const res = await fetch(`${YOUTUBE_API_URL}?part=snippet&playlistId=PLIkb_BrIXCi8GUVpG59wrMs6Q9k1aYIEP&maxResults=20&key=${YOUTUBE_API_KEY}`); 
-		const data = await res.json()
-		console.log(data)
-		return data.items.map((item) => {
-			const { resourceId } = item.snippet;
-			return resourceId.videoId
-		}); 
-
+	const fetchYoutubeVideos = async () =>{
+		const { data } = await axios.get(`${YOUTUBE_API_URL}?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=20&key=${__process.env.YOUTUBE_API_KEY}`);
+		const videosArrId = data.items.map((item) => item.snippet.resourceId.videoId );
+		return videosArrId; 
 	}
 
 </script>
@@ -21,6 +19,7 @@
 	<p>loading...</p>
 {:then videos }
 		<section class="videos">
+			<OreaOneTag />
 			<div class="videos-wrapper">
 				<h2 class="videos-title">Videos</h2>
 				<div class="video-list">
@@ -43,7 +42,13 @@
 
 <style>
 
+	.videos {
+		position: relative;
+		overflow: hidden;
+	}
+
 	.videos-wrapper {
+		position: relative;
 		width: 90%;
 		margin: 0 auto;
 		padding-top: 3rem;
