@@ -72,6 +72,7 @@
 
 	@media (max-width: 1024px) {
 		.right-section {
+			padding-bottom: 4.5rem;
 			margin-left: 0;
 		}
 	}

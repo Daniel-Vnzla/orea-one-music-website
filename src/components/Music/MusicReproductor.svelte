@@ -1,6 +1,8 @@
 <script>
 	import Play from '../../icons/play.svg';
 	import Pause from '../../icons/pause.svg';
+
+	export let isSongLoaded = false;
 	
 	const src = "https://download1518.mediafire.com/dusryb0vn7fg/pgtsoxwtm88vr2w/Lilianna+Wilde+-+Grind+Me+Down+%28Jawster+Remix%29.mp3";
 
@@ -18,10 +20,13 @@
 
 		return `${minutes}:${seconds}`;
 	}
+
+	const loadedMetaData = () => isSongLoaded = true;
+	
 </script>
 
 <div class="song-reproductor">
-	<button class="play-button" on:click={() => paused = !paused}>
+	<button disabled={!isSongLoaded} class="play-button" on:click={() => paused = !paused}>
 		{#if paused}
 			<Play width="100%" height="100%" fill="#fff" />
 		{:else}
@@ -34,11 +39,11 @@
 			<span class="reproductor-time-end">{format(duration)}</span>
 		</div>
 		<div class="reproductor-progress-bar">
-			<div class="bar" style="width: {(currentTime / duration) * 100}%"></div>
-		<input style="--width: {70}%" type="range" bind:value={currentTime} min="0" max={duration} step="1"/>
+			<div class="bar" style="--translateX: {(currentTime / duration) * 100}%"></div>
+		<input type="range" bind:value={currentTime} min="0" max={duration} step="1"/>
 	</div>
 	</div>
-	<audio {src} controls {audio} bind:paused bind:currentTime bind:duration >
+	<audio on:loadedmetadata={loadedMetaData} {src} controls {audio} bind:paused bind:currentTime bind:duration >
 		<track kind="captions">
 	</audio>
 </div>
@@ -49,7 +54,7 @@
 	}
 
 	.song-reproductor {
-		margin-top: 1rem;
+		margin: 1.5rem 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -60,7 +65,7 @@
 	}
 
 	.play-button {
-		width: 30%;
+		width: 32%;
 	}
 
 	.reproductor-song {
@@ -70,9 +75,19 @@
 	.reproductor-timestamp {
 		display: flex;
 		justify-content: space-between;
+		font-size: .9rem;
+		font-weight: bold;
+	}
+
+	.reproductor-progress-bar {
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
 	}
 
 	input[type="range"] {
+		margin: 0;
+		padding: 0;
 		position: relative;
 		--width: 10%;
 		appearance: none;
@@ -86,6 +101,8 @@
 	}
 
 	input[type=range]::-webkit-slider-thumb {
+		margin: 0;
+		padding: 0;
 		appearance: none;
   	-webkit-appearance: none;
 		background: transparent;
@@ -93,25 +110,24 @@
 		height: 12px;
 		border-radius: 20px;
 	}
-
-	.song-reproductor {
-		width: 100%;
-	}
-
-	.reproductor-progress-bar {
-		position: relative
-	}
 	
 	.bar {
+		--translateX: -100%;
 		border-radius: 20px;
 		position: absolute;
 		top: 50%;
 		left: 0;
 		background: var(--primary-color);
-		width: 0;
+		width: 100%;
 		height: 9px;
-		transform: translateY(calc(50% - 4px));
+		transform: translate(calc(-100% + var(--translateX)), calc(50% - 4px));
 		z-index: 2;
 		pointer-events: none;
+		transition: transform var(--transition-speed);
 	}
+
+	.reproductor-progress-bar:hover .bar {
+		box-shadow: 0 0 0 2px #ffeb3b36;
+	}
+
 </style>

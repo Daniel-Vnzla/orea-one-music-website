@@ -50,12 +50,12 @@
 	.songs {
 		margin-top: 5rem;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		grid-gap: 20px;
 	}
 
 	.songs-title {
-		margin-bottom: .5rem;
+		margin-top: 1.2rem;
 	}
 
 	.decorator-line {

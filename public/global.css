@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/road-rage');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 * {
 	margin: 0;
@@ -11,7 +12,7 @@
 }
 
 :root {
-	font-size: 16px;
+	font-size: 14px;
 	--bg-color: #2d2d2d;
 	--text-color: #fff;
 	--primary-color: #ffeb3b;
@@ -29,7 +30,7 @@ html, body {
 body {
 	color: var(--text-color);
 	box-sizing: border-box;
-	font-family: "Segoe UI", BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "monospace", "Space Mono", "Segoe UI", BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -91,6 +92,10 @@ button {
 	cursor: pointer;
 	border: none;
 	outline: none;
+}
+
+button:disabled {
+	opacity: .3;
 }
 
 h2 {

@@ -66,11 +66,5 @@
 	}
 
 
-	@media (max-width: 1024px) {
-		.redes {
-			padding: 1.4rem;
-			padding-bottom: 6rem;
-		}
-	}
 
 </style>
