@@ -16,7 +16,7 @@
 		width: 100%;
 		height: 100vh;
 		background: var(--bg-color-secondary);
-		z-index: 9999;
+		z-index: 200;
 		display: flex;
 		align-items: center;
 		justify-content: center;

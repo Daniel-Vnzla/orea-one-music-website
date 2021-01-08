@@ -197,12 +197,14 @@
 		transition-delay: var(--transition-speed);
 	}
 
+	/* Tooltip */
 	.header:not(.activeNavbar) .nav-item::after {
 		position: absolute;
 		content: attr(data-tooltip);
 		top: 50%;
 		right: 0;
-		background: var(--bg-color);
+		background: var(--primary-color);
+		color: var(--secondary-color);
 		padding: 5px 12px;
 		border-radius: 3px;
 		font-weight: bold;
@@ -210,6 +212,7 @@
 		visibility: hidden;
 		transform: translate(calc(100% + 5px), -50%);
 		transition: opacity var(--transition-speed);
+		z-index: 300;
 	}
 
 	.activeNavbar .nav-item.active::before {
