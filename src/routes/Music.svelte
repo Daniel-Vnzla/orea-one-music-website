@@ -1,4 +1,6 @@
 <script>
+	import Footer from '../components/Footer/Footer.svelte';
+
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import SongCard from '../components/Music/SongCard.svelte';
 	import SongCard2 from '../components/Music/SongCard2.svelte';
@@ -24,6 +26,7 @@
 		<SongCard2 />
 		</div>
 	</div>
+	<Footer />
 </section>
 
 <style>

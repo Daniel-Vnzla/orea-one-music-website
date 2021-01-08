@@ -67,7 +67,7 @@
 	}
 
 	.activeNavbar {
-		margin-left: 16rem;
+		margin-left: 17rem;
 	}
 
 	@media (max-width: 1024px) {

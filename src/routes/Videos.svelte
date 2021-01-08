@@ -2,6 +2,7 @@
 	import axios from 'axios';
 	import { onMount } from 'svelte';
 
+	import Footer from '../components/Footer/Footer.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 
 	const YOUTUBE_API_URL = "https://www.googleapis.com/youtube/v3/playlistItems";
@@ -35,6 +36,7 @@
 					{/each}
 				</div>
 			</div>
+			<Footer />
 		</section>
 {:catch error}
 	<p>Error...</p>

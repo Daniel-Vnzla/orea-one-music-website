@@ -12,27 +12,27 @@
 		<a  
 			href="/" 
 			title="Youtube"
-			target="_blanjk" 
+			target="_blank" 
 			><Youtube width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a  
 			href="/" 
 			title="Facebook"
-			target="_blanjk" 
+			target="_blank" 
 			><Facebook width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a  
 			href="/" 
 			title="Instagram"
-			target="_blanjk" 
+			target="_blank" 
 			><Instagram width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a  
 			href="/" 
 			title="Spotify"
-			target="_blanjk" 
+			target="_blank" 
 			><Spotify width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a  
 			href="/" 
 			title="Twitter"
-			target="_blanjk" 
+			target="_blank" 
 			><Twitter width="100%" height="100%" fill="var(--secondary-color)" /></a>
 	</div>
 </section>

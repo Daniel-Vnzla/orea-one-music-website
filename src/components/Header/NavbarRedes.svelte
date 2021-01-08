@@ -52,6 +52,7 @@
 		background-image: linear-gradient(to top right, var(--primary-color) 50%, transparent 0);
 		width: 17rem;
 		height: 17rem;
+		border-right: 1px solid var(--bg-color);
 		transition: 
 		  width var(--transition-speed),
 		  height var(--transition-speed);
@@ -89,7 +90,7 @@
 
 	@media (max-width: 1060px) {
 		.redes {
-			display: none
+			display: none;
 		}
 	}
 	

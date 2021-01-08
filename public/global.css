@@ -62,7 +62,7 @@ body::-webkit-scrollbar-track {
 	
 }
 
-.reproducotor-icon:hover {
+button:not(:disabled) .reproducotor-icon:hover {
 	fill: var(--primary-color);
 	transition: fill var(--transition-speed);
 }
