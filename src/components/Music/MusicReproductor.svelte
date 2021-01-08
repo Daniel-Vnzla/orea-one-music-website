@@ -1,3 +1,7 @@
+<script context="module">
+	let current;
+</script>
+
 <script>
 	import Play from '../../icons/play.svg';
 	import Pause from '../../icons/pause.svg';
@@ -22,15 +26,20 @@
 	}
 
 	const loadedMetaData = () => isSongLoaded = true;
+
+	function stopOthers() {
+		if (current && current !== audio) current.pause();
+		current = audio;
+	}
 	
 </script>
 
 <div class="song-reproductor">
 	<button disabled={!isSongLoaded} class="play-button" on:click={() => paused = !paused}>
 		{#if paused}
-			<Play width="100%" height="100%" fill="#fff" />
+			<Play class="reproducotor-icon" width="100%" height="100%" fill="#fff" />
 		{:else}
-			<Pause width="100%" height="100%" fill="#fff" />
+			<Pause class="reproducotor-icon" width="100%" height="100%" fill="#fff" />
 		{/if}
 	</button>
 	<div class="reproductor-song">
@@ -43,8 +52,16 @@
 		<input type="range" bind:value={currentTime} min="0" max={duration} step="1"/>
 	</div>
 	</div>
-	<audio on:loadedmetadata={loadedMetaData} {src} controls {audio} bind:paused bind:currentTime bind:duration >
-		<track kind="captions">
+	<audio 
+		on:loadedmetadata={loadedMetaData}
+		on:play={stopOthers}
+		bind:paused 
+		bind:currentTime 
+		bind:duration
+		bind:this={audio}
+		{src} 
+		>
+			<track kind="captions">
 	</audio>
 </div>
 

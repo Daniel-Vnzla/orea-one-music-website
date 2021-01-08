@@ -62,6 +62,11 @@ body::-webkit-scrollbar-track {
 	
 }
 
+.reproducotor-icon:hover {
+	fill: var(--primary-color);
+	transition: fill var(--transition-speed);
+}
+
 @media (max-width: 800px) {
 	.nav-link svg {
 		width: 2.1rem;
@@ -85,6 +90,7 @@ li {
 
 img {
 	width: 100%;
+	height: 100%;
 	object-fit: cover;
 }
 
