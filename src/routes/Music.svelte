@@ -1,6 +1,7 @@
 <script>
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import SongCard from '../components/Music/SongCard.svelte';
+	import SongCard2 from '../components/Music/SongCard2.svelte';
 	import BoobleBackground from '../commun/BoobleBackground.svelte';
 
 </script>
@@ -11,17 +12,13 @@
 	<div class="music-wrapper">
 		<h2 class="music-title">Música</h2>
 		<p class="music-legend">Escucha lo ultimo de Orea One</p>
+		<h3 class="songs-title">Toda la música</h3>
+		<div class="decorator-line"></div>
 		<div class="songs">
-			<h3 class="songs-title">Toda la música</h3>
-			<div class="decorator-line"></div>
-			<SongCard />
-			<SongCard />
-			<SongCard />
-			<SongCard />
-			<SongCard />
-			<SongCard />
-			<SongCard />
-			<SongCard />
+				<!-- <SongCard /> -->
+		<SongCard2 />
+		<SongCard2 />
+		<SongCard2 />
 		</div>
 	</div>
 </section>
@@ -53,6 +50,7 @@
 	.songs {
 		margin-top: 5rem;
 		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 20px;
 	}
 
