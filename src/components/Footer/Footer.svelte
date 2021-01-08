@@ -56,7 +56,7 @@
 	}
 
 	.contacts {
-		padding: 1.3rem;
+		padding: 2.3rem 1.3rem;
 		text-align: center;
 		background-color: var(--primary-color);
 		color: var(--secondary-color);

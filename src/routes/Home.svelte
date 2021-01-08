@@ -1,9 +1,10 @@
 <script>
 	import Footer from '../components/Footer/Footer.svelte';
-
+	import Loading from '../commun/Loading.svelte';
 </script>
 
 <section class="home">
+	<Loading />
 	<div class="home-wrapper">
 		<h2 class="title">home</h2>
 	</div>
@@ -12,6 +13,7 @@
 
 <style>
 	.home {
+		position: relative;
 		padding-top: 3rem;
 		min-height: 100vh;
 	}

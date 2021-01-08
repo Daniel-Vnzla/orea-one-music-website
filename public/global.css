@@ -14,6 +14,7 @@
 :root {
 	font-size: 14px;
 	--bg-color: #2d2d2d;
+	--bg-color-secondary: #1d1d1d;
 	--text-color: #fff;
 	--primary-color: #ffeb3b;
 	--secondary-color: #886704;
@@ -24,7 +25,7 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	background: #1d1d1d;
+	background: var(--bg-color-secondary);
 }
 
 body {

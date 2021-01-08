@@ -1,9 +1,9 @@
 <script>
 	import axios from 'axios';
-	import { onMount } from 'svelte';
 
 	import Footer from '../components/Footer/Footer.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
+	import Loading from '../commun/Loading.svelte';
 
 	const YOUTUBE_API_URL = "https://www.googleapis.com/youtube/v3/playlistItems";
 	const PLAYLIST_ID = "PLIkb_BrIXCi8GUVpG59wrMs6Q9k1aYIEP";
@@ -17,7 +17,7 @@
 </script>
 
 {#await fetchYoutubeVideos()}
-	<p>loading...</p>
+	<Loading />
 {:then videos }
 		<section class="videos">
 			<OreaOneTag />
@@ -25,14 +25,14 @@
 				<h2 class="videos-title">Videos</h2>
 				<div class="video-list">
 					{#each videos as videoId}
-					<div class="video">
-						<iframe 
-							width="100%" 
-							height="100%" 
-							title="oreaone"
-							frameborder="0" 
-							src="https://www.youtube.com/embed/{videoId}?controls=1&autoplay=0"></iframe>	
-					</div>
+						<div class="video">
+							<iframe 
+								width="100%" 
+								height="100%" 
+								title="oreaone"
+								frameborder="0" 
+								src="https://www.youtube.com/embed/{videoId}?controls=1&autoplay=0"></iframe>	
+						</div>
 					{/each}
 				</div>
 			</div>
@@ -47,6 +47,8 @@
 	.videos {
 		position: relative;
 		overflow: hidden;
+		width: 100%;
+		height: 100%;
 	}
 
 	.videos-wrapper {
@@ -58,6 +60,7 @@
 
 	.videos-title {
 		font-family: "Road rage";
+		margin-bottom: 2rem;
 	}
 
 	.video-list {
@@ -68,6 +71,7 @@
 	}
 
 	.video {
+		background-color: var(--bg-color);
 		min-height: 300px;
 	}
 

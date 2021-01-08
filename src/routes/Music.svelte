@@ -17,13 +17,12 @@
 		<h3 class="songs-title">Toda la música</h3>
 		<div class="decorator-line"></div>
 		<div class="songs">
-				<!-- <SongCard /> -->
-		<SongCard2 />
-		<SongCard2 />
-		<SongCard2 />
-		<SongCard2 />
-		<SongCard2 />
-		<SongCard2 />
+			<SongCard2 />
+			<SongCard2 />
+			<SongCard2 />
+			<SongCard2 />
+			<SongCard2 />
+			<SongCard2 />
 		</div>
 	</div>
 	<Footer />

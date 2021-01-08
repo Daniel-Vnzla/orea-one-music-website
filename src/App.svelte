@@ -60,8 +60,9 @@
 	}
 
 	.right-section {
+		position: relative;
 		width: 100%;
-		height: 100%;
+		min-height: 100vh;
 		margin-left: 5rem;
 		transition: margin var(--transition-speed);
 	}
