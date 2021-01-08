@@ -100,6 +100,7 @@
 		position: relative;
 		overflow: hidden;
 		cursor: pointer;
+		padding-bottom: .5rem;
 	}
 
 	input[type="range"] {
@@ -111,10 +112,11 @@
 		-webkit-appearance: none;
 		height: 3px;
 		border: none;
-		background: #2d2d2d;
+		background: var(--bg-color-secondary);
 		width: 100%;
 		outline: none;
 		z-index: 1;
+		cursor: pointer;
 	}
 
 	input[type=range]::-webkit-slider-thumb {
@@ -137,14 +139,14 @@
 		background: var(--primary-color);
 		width: 100%;
 		height: 9px;
-		transform: translate(calc(-100% + var(--translateX)), calc(50% - 4px));
+		transform: translate(calc(-100% + var(--translateX)), calc(50% - .6rem));
 		z-index: 2;
 		pointer-events: none;
 		transition: transform var(--transition-speed);
 	}
 
 	.reproductor-progress-bar:hover .bar {
-		box-shadow: 0 0 0 2px #ffeb3b36;
+		box-shadow: 0 0 10px 2px var(--primary-shadow-color);
 	}
 
 </style>

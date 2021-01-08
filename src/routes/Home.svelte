@@ -4,7 +4,6 @@
 </script>
 
 <section class="home">
-	<Loading />
 	<div class="home-wrapper">
 		<h2 class="title">home</h2>
 	</div>

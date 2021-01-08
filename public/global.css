@@ -18,6 +18,7 @@
 	--text-color: #fff;
 	--primary-color: #ffeb3b;
 	--secondary-color: #886704;
+	--primary-shadow-color: rgba(224, 218, 24, 0.5);
 	--transition-speed: 200ms;
 }
 

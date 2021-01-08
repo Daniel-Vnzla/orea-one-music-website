@@ -54,7 +54,7 @@
 			right: 0;
 			background-color: var(--primary-color);
 			border-radius: var(--box-border-radius);
-			box-shadow: 0px 0px 10px 2px rgba(224, 218, 24, 0.4);
+			box-shadow: 0px 0px 10px 2px var(--primary-shadow-color);
 		}
 		
 		&:nth-child(1)
