@@ -31,7 +31,7 @@
 
 <style>
 	.song-card {
-		background: #333;
+		background: var(--bg-color);
 		border-radius: 4px;
 	}
 
@@ -46,7 +46,7 @@
 	.img {
 		width: 60%;
 		border-radius: 50%;
-		background: #000;
+		background: var(--bg-color-secondary);
 		overflow: hidden;
 	}
 
