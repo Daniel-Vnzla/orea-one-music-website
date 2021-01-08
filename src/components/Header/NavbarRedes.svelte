@@ -50,8 +50,8 @@
 		justify-content: flex-end;
 		margin-top: auto;
 		background-image: linear-gradient(to top right, var(--primary-color) 50%, transparent 0);
-		width: 16rem;
-		height: 16rem;
+		width: 17rem;
+		height: 17rem;
 		transition: 
 		  width var(--transition-speed),
 		  height var(--transition-speed);

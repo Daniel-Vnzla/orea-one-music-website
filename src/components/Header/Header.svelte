@@ -178,7 +178,7 @@
 	}
 
 	.activeNavbar {
-		width: 16rem;
+		width: 17rem;
 	}
 
 

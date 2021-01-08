@@ -19,6 +19,9 @@
 		<SongCard2 />
 		<SongCard2 />
 		<SongCard2 />
+		<SongCard2 />
+		<SongCard2 />
+		<SongCard2 />
 		</div>
 	</div>
 </section>
@@ -46,16 +49,8 @@
 		font-size: 1.5rem;
 	}
 
-
-	.songs {
-		margin-top: 5rem;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		grid-gap: 20px;
-	}
-
 	.songs-title {
-		margin-top: 1.2rem;
+		margin-top: 4rem;
 	}
 
 	.decorator-line {
@@ -63,6 +58,13 @@
 		height: 1px;
 		background: #ccc;
 		margin-bottom: .5rem;
+	}
+
+	.songs {
+		padding-top: 2rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-gap: 20px;
 	}
 
 </style>	
