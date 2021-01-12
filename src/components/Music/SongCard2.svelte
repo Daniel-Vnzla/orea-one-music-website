@@ -23,19 +23,19 @@
 			<p class="song-artists">{artists}</p>
 		</div>
 		<MusicReproductor {previewUrl} />
-	</div>
-	<div class="song-redes">
-		<p class="song-redes-title">Escucha la cancion completa aqui!</p>
-		<div class="song-redes-list">
-			<a href="/" title="Youtube">
-				<Youtube width="100%" height="100%" fill="var(--secondary-color)" />
-			</a>
-			<a href="/" title="Spotify">
-				<Spotify width="100%" height="100%" fill="var(--secondary-color)" />
-			</a>
-			<a href="/" title="iTunes">
-				<ITunes width="100%" height="100%" fill="var(--secondary-color)" />
-			</a>
+		<div class="song-redes">
+			<p class="song-redes-title">Escucha la cancion completa aqui!</p>
+			<div class="song-redes-list">
+				<a href="/" title="Youtube">
+					<Youtube width="100%" height="100%" fill="var(--secondary-color)" />
+				</a>
+				<a href="/" title="Spotify">
+					<Spotify width="100%" height="100%" fill="var(--secondary-color)" />
+				</a>
+				<a href="/" title="iTunes">
+					<ITunes width="100%" height="100%" fill="var(--secondary-color)" />
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -51,7 +51,9 @@
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
+		justify-content: space-between;
 		padding: 1.4rem;
+		height: 100%;
 	}
 
 	.img {
@@ -78,6 +80,8 @@
 	}
 
 	.song-redes {
+		margin: 0 -1.4rem;
+		margin-bottom: -1.4rem;
 		text-align: center;
 		background: var(--primary-color);
 	}
