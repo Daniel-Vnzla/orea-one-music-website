@@ -31,7 +31,7 @@ export const fetchSpotifySongs = async () => {
     const songsData = data.items.map(song => ({
         imgUrl: song.track.album.images[1].url,
         title: song.track.album.name,
-        artists: song.track.artists.map(artist => artist.name),
+        artists: song.track.artists.map(artist => artist.name).join(", "),
         previewUrl: song.track.preview_url
       })
     );

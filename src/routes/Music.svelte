@@ -8,29 +8,28 @@
 	import SongCard2 from '../components/Music/SongCard2.svelte';
 	import BoobleBackground from '../commun/BoobleBackground.svelte';
 
-fetchSpotifySongs()
 </script>
 
-
-<section class="music">
-	<OreaOneTag />
-	<BoobleBackground />
-	<div class="music-wrapper">
-		<h2 class="music-title">Música</h2>
-		<p class="music-legend">Escucha lo ultimo de Orea One</p>
-		<h3 class="songs-title">Toda la música</h3>
-		<div class="decorator-line"></div>
-		<div class="songs">
-			<SongCard2 />
-			<SongCard2 />
-			<SongCard2 />
-			<SongCard2 />
-			<SongCard2 />
-			<SongCard2 />
+{#await fetchSpotifySongs()}
+	<p>Loading...</p>
+{:then songs }
+	<section class="music">
+		<OreaOneTag />
+		<BoobleBackground />
+		<div class="music-wrapper">
+			<h2 class="music-title">Música</h2>
+			<p class="music-legend">Escucha lo ultimo de Orea One</p>
+			<h3 class="songs-title">Toda la música</h3>
+			<div class="decorator-line"></div>
+			<div class="songs">
+				{#each songs as song, index}
+					<SongCard2 {...song}/>
+				{/each}
+			</div>
 		</div>
-	</div>
-	<Footer />
-</section>
+		<Footer />
+	</section>
+{/await}
 
 <style>
 	.music {
