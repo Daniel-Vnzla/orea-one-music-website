@@ -46,6 +46,8 @@ export default {
 	    __process: JSON.stringify({
 	      env: {
 	       YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY,
+	       SPOTIFY_CLIENT_ID: process.env.SPOTIFY_CLIENT_ID,
+	       SPOTIFY_CLIENT_SECRET_ID: process.env.SPOTIFY_CLIENT_SECRET_ID,
 	      } 
 	   	}),
 	  }),

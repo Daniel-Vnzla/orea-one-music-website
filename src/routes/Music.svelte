@@ -1,4 +1,6 @@
 <script>
+	import { fetchSpotifySongs } from '../api/spotifyApi.js';
+
 	import Footer from '../components/Footer/Footer.svelte';
 
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
@@ -6,7 +8,9 @@
 	import SongCard2 from '../components/Music/SongCard2.svelte';
 	import BoobleBackground from '../commun/BoobleBackground.svelte';
 
+fetchSpotifySongs()
 </script>
+
 
 <section class="music">
 	<OreaOneTag />
