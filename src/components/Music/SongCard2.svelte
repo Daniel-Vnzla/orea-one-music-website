@@ -25,12 +25,18 @@
 		<MusicReproductor {previewUrl} />
 	</div>
 	<div class="song-redes">
-		<a href="/" title="Youtube">
-			<Youtube width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a href="/" title="Spotify">
-			<Spotify width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a href="/" title="iTunes">
-			<ITunes width="100%" height="100%" fill="var(--secondary-color)" /></a>
+		<p class="song-redes-title">Escucha la cancion completa aqui!</p>
+		<div class="song-redes-list">
+			<a href="/" title="Youtube">
+				<Youtube width="100%" height="100%" fill="var(--secondary-color)" />
+			</a>
+			<a href="/" title="Spotify">
+				<Spotify width="100%" height="100%" fill="var(--secondary-color)" />
+			</a>
+			<a href="/" title="iTunes">
+				<ITunes width="100%" height="100%" fill="var(--secondary-color)" />
+			</a>
+		</div>
 	</div>
 </div>
 
@@ -49,7 +55,7 @@
 	}
 
 	.img {
-		width: 60%;
+		width: 70%;
 		border-radius: 50%;
 		background: var(--bg-color-secondary);
 		overflow: hidden;
@@ -62,6 +68,7 @@
 	}
 
 	.song-title {
+		margin-top: .5rem;
 		font-size: 2.2rem;
 	}
 
@@ -71,10 +78,22 @@
 	}
 
 	.song-redes {
+		text-align: center;
+		background: var(--primary-color);
+	}
+
+	.song-redes-title {
+		font-weight: bold;
+		font-size: 1.2rem;
+		margin: .5rem 0;
+		color: var(--secondary-color);
+	}
+
+
+	.song-redes-list {
 		padding: .7rem;
 		height: 56px;
 		display: flex;
-		background: var(--primary-color);
 		border-bottom-right-radius: 4px;
 		border-bottom-left-radius: 4px;
 	}

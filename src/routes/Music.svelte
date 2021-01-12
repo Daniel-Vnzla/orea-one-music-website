@@ -1,5 +1,6 @@
 <script>
-	import { fetchSpotifySongs } from '../api/spotifyApi.js';
+	import { onMount } from 'svelte';
+	import { fetchSpotifySongs, fetchNextSongs } from '../api/spotifyApi.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
 
@@ -9,12 +10,36 @@
 	import BoobleBackground from '../commun/BoobleBackground.svelte';
 	import Loading from '../commun/Loading.svelte';
 
+	let isLoadingSongs = false;
+
+	let songsData = {
+		songs: [],
+		nextPage: null
+	};
+
+	onMount(async () => {
+		isLoadingSongs = true;
+		songsData = await fetchSpotifySongs();
+		isLoadingSongs = false;
+	});
+
+	const loadMoreSongs = async () => {
+		if (!songsData.nextPage) return;
+
+		const { songs, nextPage } = await fetchNextSongs(songsData.nextPage);
+
+		songsData = {
+			songs: [...songsData.songs, ...songs],
+			nextPage
+		}
+
+	}
 </script>
 
 <section class="music">
-	{#await fetchSpotifySongs()}
+	{#if isLoadingSongs}
 		<Loading />
-	{:then songs }
+	{:else}
 		<OreaOneTag />
 		<BoobleBackground />
 		<div class="music-wrapper">
@@ -23,13 +48,13 @@
 			<h3 class="songs-title">Toda la música</h3>
 			<div class="decorator-line"></div>
 			<div class="songs">
-				{#each songs as song, index}
+				{#each songsData.songs as song, index}
 					<SongCard2 {...song}/>
 				{/each}
 			</div>
 		</div>
 		<Footer />
-	{/await}
+	{/if}
 </section>
 
 <style>
