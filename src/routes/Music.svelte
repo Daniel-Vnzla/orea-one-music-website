@@ -7,13 +7,14 @@
 	import SongCard from '../components/Music/SongCard.svelte';
 	import SongCard2 from '../components/Music/SongCard2.svelte';
 	import BoobleBackground from '../commun/BoobleBackground.svelte';
+	import Loading from '../commun/Loading.svelte';
 
 </script>
 
-{#await fetchSpotifySongs()}
-	<p>Loading...</p>
-{:then songs }
-	<section class="music">
+<section class="music">
+	{#await fetchSpotifySongs()}
+		<Loading />
+	{:then songs }
 		<OreaOneTag />
 		<BoobleBackground />
 		<div class="music-wrapper">
@@ -28,14 +29,15 @@
 			</div>
 		</div>
 		<Footer />
-	</section>
-{/await}
+	{/await}
+</section>
 
 <style>
 	.music {
 		position: relative;
 		overflow: hidden;
 		padding-top: 3rem;
+		min-height: 100vh;
 	}
 
 	.music-wrapper {
