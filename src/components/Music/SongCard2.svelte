@@ -22,7 +22,7 @@
 			<h3 class="song-title">{title}</h3>
 			<p class="song-artists">{artists}</p>
 		</div>
-		<MusicReproductor />
+		<MusicReproductor {previewUrl} />
 	</div>
 	<div class="song-redes">
 		<a href="/" title="Youtube">

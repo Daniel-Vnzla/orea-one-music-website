@@ -6,10 +6,9 @@
 	import Play from '../../icons/play.svg';
 	import Pause from '../../icons/pause.svg';
 
-	export let isSongLoaded = false;
-	
-	const src = "https://download1518.mediafire.com/dusryb0vn7fg/pgtsoxwtm88vr2w/Lilianna+Wilde+-+Grind+Me+Down+%28Jawster+Remix%29.mp3";
+	export let previewUrl
 
+	let isSongLoaded = false;
 	let audio;
 	let paused = true;
 	let currentTime = 0;
@@ -59,7 +58,7 @@
 		bind:currentTime 
 		bind:duration
 		bind:this={audio}
-		{src} 
+		src={previewUrl} 
 		>
 			<track kind="captions">
 	</audio>
