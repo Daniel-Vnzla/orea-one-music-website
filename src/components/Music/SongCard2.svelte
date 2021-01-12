@@ -4,6 +4,11 @@
 	import ITunes from '../../icons/redes/itunes.svg';
 
 	import MusicReproductor from './MusicReproductor.svelte';
+
+	export let title = "";
+	export let artists = "";
+	export let imgUrl = "";
+	export let previewUrl = "";
 	
 	const lazyLoadImg = ({ target }) => target.style.opacity = 1; 
 </script>
@@ -11,11 +16,11 @@
 <div class="song-card">
 	<div class="song-card-wrapper">
 		<div class="img">
-			<img on:load={lazyLoadImg} src="/images/explicit.jpg" alt="explicale">
+			<img on:load={lazyLoadImg} src={imgUrl} alt={title}>
 		</div>
 		<div class="song-info">
-			<h3 class="song-title">Explicale</h3>
-			<p class="song-author">Orea One ft. Sharly la voz</p>
+			<h3 class="song-title">{title}</h3>
+			<p class="song-artists">{artists}</p>
 		</div>
 		<MusicReproductor />
 	</div>
@@ -60,7 +65,7 @@
 		font-size: 2.2rem;
 	}
 
-	.song-author {
+	.song-artists {
 		font-size: .9rem;
 		color: #ccc;
 	}
