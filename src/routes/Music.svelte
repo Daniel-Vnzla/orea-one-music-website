@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fetchSpotifySongs, fetchNextSongs } from '../api/spotifyApi.js';
+	import { scale } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
 
 	import Footer from '../components/Footer/Footer.svelte';
 
@@ -17,6 +19,17 @@
 		nextPage: null
 	};
 
+	const infiniteScrolling = (node) => {
+		const observer = new IntersectionObserver(entries => {
+			if (entries[0].isIntersecting) {
+				console.log("visible")
+				loadMoreSongs()
+			}
+		});
+
+		if (node) observer.observe(node);
+	}
+
 	onMount(async () => {
 		isLoadingSongs = true;
 		songsData = await fetchSpotifySongs();
@@ -28,12 +41,12 @@
 
 		const { songs, nextPage } = await fetchNextSongs(songsData.nextPage);
 
-		songsData = {
-			songs: [...songsData.songs, ...songs],
-			nextPage
-		}
-
+		const newSongs = [ ...songsData.songs, ...songs ];
+		songsData.songs = newSongs;
+		songsData.nextPage = nextPage;
 	}
+
+
 </script>
 
 <section class="music">
@@ -48,21 +61,25 @@
 			<h3 class="songs-title">Toda la música</h3>
 			<div class="decorator-line"></div>
 			<div class="songs">
-				{#each songsData.songs as song, index}
-					<SongCard2 {...song}/>
+				{#each songsData.songs as song (song)}
+					<div animate:flip={{duration: 500}}>
+						<SongCard2 {...song}/>
+					</div>
 				{/each}
 			</div>
 		</div>
-		<Footer />
+		<div use:infiniteScrolling>
+			<Footer />
+		</div>
 	{/if}
 </section>
 
 <style>
 	.music {
+		scroll-behavior: smooth;
 		position: relative;
 		overflow: hidden;
 		padding-top: 3rem;
-		min-height: 100vh;
 	}
 
 	.music-wrapper {
