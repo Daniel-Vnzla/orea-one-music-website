@@ -5,10 +5,12 @@
 
 	import MusicReproductor from './MusicReproductor.svelte';
 
-	export let title = "";
-	export let artists = "";
-	export let imgUrl = "";
-	export let previewUrl = "";
+	export let title;
+	export let artists;
+	export let imgUrl;
+	export let previewUrl;
+	export let id;
+	export let currentSongPlayingId;
 	
 	const lazyLoadImg = ({ target }) => target.style.opacity = 1; 
 </script>
@@ -22,7 +24,11 @@
 			<h3 class="song-title">{title}</h3>
 			<p class="song-artists">{artists}</p>
 		</div>
-		<MusicReproductor {previewUrl} />
+		<MusicReproductor 
+			bind:currentSongPlayingId
+			{id} 
+			{previewUrl} 
+			{title} />
 		<div class="song-redes">
 			<p class="song-redes-title">Escucha la cancion completa aqui!</p>
 			<div class="song-redes-list">

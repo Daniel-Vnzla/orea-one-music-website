@@ -46,7 +46,8 @@ export const fetchNextSongs = async (nextUrl) => {
   }
 }
 
-const formatSongData = (data) => data.items.map(song => ({
+const formatSongData = (data) => data.items.map((song, i) => ({
+    id: Math.floor(Math.random() * (i+1000000000)),
     imgUrl: song.track.album.images[1].url,
     title: song.track.name,
     artists: song.track.artists.map(artist => artist.name).join(", "),

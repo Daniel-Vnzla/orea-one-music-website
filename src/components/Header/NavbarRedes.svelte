@@ -17,27 +17,27 @@
 			href="/" 
 			title="Youtube"
 			target="_blank"
-			><Youtube width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			><Youtube class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a 
 			href="/" 
 			title="Facebook"
 			target="_blank"
-			><Facebook width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			><Facebook class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a 
 			href="/" 
 			title="Instagram"
 			target="_blank"
-			><Instagram width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			><Instagram class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a 
 			href="/" 
 			title="Spotify"
 			target="_blank"
-			><Spotify width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			><Spotify class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
 		<a 
 			href="/" 
 			title="Twitter"
 			target="_blank"
-			><Twitter width="100%" height="100%" fill="var(--secondary-color)" /></a>
+			><Twitter class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
 	</div>
 </section>
 

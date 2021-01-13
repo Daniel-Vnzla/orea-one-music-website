@@ -6,13 +6,19 @@
 	import Play from '../../icons/play.svg';
 	import Pause from '../../icons/pause.svg';
 
-	export let previewUrl
+	import ScreenMusicReproductor from './ScreenMusicControls.svelte';
 
-	let isSongLoaded = false;
-	let audio;
+	export let previewUrl;
+	export let title;
+	export let id;
+	export let currentSongPlayingId;
+
+	let audio = null;
 	let paused = true;
+	let isSongLoaded = false;
 	let currentTime = 0;
-	let duration;
+	let duration = null;
+
 
 	function format(seconds) {
 		if (isNaN(seconds)) return '...';
@@ -27,18 +33,38 @@
 	const loadedMetaData = () => isSongLoaded = true;
 
 	function stopOthers() {
-		if (current && current !== audio) current.pause();
+		if (current && current !== audio) {
+			current.pause()
+		}
 		current = audio;
 	}
+
+	const handlePlaySong = () => {
+		paused = !paused
+	}
+	
+	const handleScreenSongPlay = () => currentSongPlayingId = id;
 	
 </script>
 
+{#if currentSongPlayingId === id}
+	<ScreenMusicReproductor 
+		songTitle={title} 
+		bind:paused 
+		isSongLoaded={isSongLoaded}
+		handlePlaySong={handlePlaySong}  />
+{/if}
 <div class="song-reproductor">
-	<button disabled={!isSongLoaded} class="play-button" on:click={() => paused = !paused}>
+	<button 
+		disabled={!isSongLoaded} 
+		class="play-button" 
+		on:click={handlePlaySong}
+		on:click={handleScreenSongPlay}
+		>
 		{#if paused}
-			<Play class="reproducotor-icon" width="100%" height="100%" fill="#fff" />
+			<Play class="reproductor-icon svg-icon" width="100%" height="100%" fill="#fff" />
 		{:else}
-			<Pause class="reproducotor-icon" width="100%" height="100%" fill="#fff" />
+			<Pause class="reproductor-icon svg-icon" width="100%" height="100%" fill="#fff" />
 		{/if}
 	</button>
 	<div class="reproductor-song">

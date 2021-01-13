@@ -64,12 +64,12 @@ body::-webkit-scrollbar-track {
 	
 }
 
-button:not(:disabled) .reproducotor-icon:hover {
+button:not(:disabled) .reproductor-icon:hover {
 	fill: var(--primary-color);
 	transition: fill var(--transition-speed);
 }
 
-svg:hover {
+.svg-icon:hover {
 	transform: translateY(-2px);
 	transition: transform var(--transition-speed);
 }

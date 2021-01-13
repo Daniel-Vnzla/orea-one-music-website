@@ -12,6 +12,7 @@
 	import Loading from '../commun/Loading.svelte';
 
 	let isLoadingSongs = false;
+	let currentSongPlayingId = null;
 
 	let songsData = {
 		songs: [],
@@ -45,28 +46,9 @@
 		songsData.nextPage = nextPage;
 	}
 
-
 </script>
 
 <section class="music">
-	<!-- {#if isLoadingSongs}
-		<Loading />
-	{:else}
-		<OreaOneTag />
-		<BoobleBackground />
-		<div class="music-wrapper">
-			<h2 class="music-title">Música</h2>
-			<p class="music-legend">Escucha lo ultimo de Orea One</p>
-			<h3 class="songs-title">Toda la música</h3>
-			<div class="decorator-line"></div>
-			<div class="songs">
-				
-			</div>
-		</div>
-		<div use:infiniteScrolling>
-			<Footer />
-		</div>
-	{/if} -->
 	{#if isLoadingSongs}
 		<Loading />
 	{:else}
@@ -79,7 +61,7 @@
 			<div class="songs">
 				{#each songsData.songs as song (song)}
 					<div in:fade >
-						<SongCard2 {...song}/>
+						<SongCard2 {...song} bind:currentSongPlayingId />
 					</div>
 				{/each}
 			</div>
