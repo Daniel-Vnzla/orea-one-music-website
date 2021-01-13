@@ -3,6 +3,8 @@
 </script>
 
 <script>
+	import { scale } from 'svelte/transition';
+
 	import Play from '../../icons/play.svg';
 	import Pause from '../../icons/pause.svg';
 
@@ -62,9 +64,13 @@
 		on:click={handleScreenSongPlay}
 		>
 		{#if paused}
-			<Play class="reproductor-icon svg-icon" width="100%" height="100%" fill="#fff" />
+			<div class="song-icon" transition:scale >
+				<Play class="reproductor-icon " width="100%" height="100%" fill="#fff" />
+			</div>
 		{:else}
-			<Pause class="reproductor-icon svg-icon" width="100%" height="100%" fill="#fff" />
+			<div class="song-icon" transition:scale >
+				<Pause class="reproductor-icon " width="100%" height="100%" fill="#fff" />
+			</div>
 		{/if}
 	</button>
 	<div class="reproductor-song">
@@ -96,6 +102,7 @@
 	}
 
 	.song-reproductor {
+		width: 100%;
 		margin: 1.5rem 0;
 		display: flex;
 		flex-direction: column;
@@ -107,7 +114,17 @@
 	}
 
 	.play-button {
-		width: 32%;
+		position: relative;
+		width: 140px;
+		height: 140px;
+	}
+
+	.song-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 	}
 
 	.reproductor-song {
@@ -115,6 +132,7 @@
 	}
 
 	.reproductor-timestamp {
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		font-size: .9rem;
