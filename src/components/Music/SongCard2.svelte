@@ -44,6 +44,8 @@
 	.song-card {
 		background: var(--bg-color);
 		border-radius: 4px;
+		height: 100%;
+		overflow: hidden;
 	}
 
 	.song-card-wrapper {
@@ -61,6 +63,7 @@
 		border-radius: 50%;
 		background: var(--bg-color-secondary);
 		overflow: hidden;
+		min-height: 200px;
 	}
 
 	.img img {
@@ -82,6 +85,7 @@
 	.song-redes {
 		margin: 0 -1.4rem;
 		margin-bottom: -1.4rem;
+		padding: 0 .5rem;
 		text-align: center;
 		background: var(--primary-color);
 	}

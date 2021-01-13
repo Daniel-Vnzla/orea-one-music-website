@@ -1,7 +1,6 @@
 <script>
 	import Redes from '../commun/Redes.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
-	import Loading from '../commun/Loading.svelte';
 	
 	import BoobleBackground from '../commun/BoobleBackground.svelte';
 
@@ -11,9 +10,6 @@
 </script>
 
 <section class="biografy">
-	{#if isImgLoading }
-		<Loading />
-	{/if}
 	<BoobleBackground />
 	<OreaOneTag />
 	<div class="biografy-wrapper">
@@ -39,11 +35,13 @@
 				<br/>
 
 				Tras trabajar un par de años como ilustrador freelance, decidió empezar a invertir en su carrera musical, dándole un nuevo comienzo en 2020, ya profesionalmente como artista urbano, invirtiendo en su imagen y en sus producciones, tomando así la decisión de dedicarse de lleno a lo que es su carrera artística.</p>
-				<img 
-					on:load={checkImgStatus} 
-					class="img" 
-					src="/images/oreaone.png" 
-					alt="Orea One">
+				<div class="img">
+					<img 
+						on:load={checkImgStatus} 
+						class="img" 
+						src="/images/oreaone.png" 
+						alt="Orea One">
+				</div>
 			</div>
 		</article>
 	</div>
@@ -106,6 +104,10 @@
 		background: #292929;
 		height: fit-content;
 		margin-bottom: 6rem;
+	}
+
+	.bio-section-two .img {
+		min-width: 50%;
 	}
 
 

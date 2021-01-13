@@ -1,15 +1,14 @@
 <script>
 	import { onMount } from 'svelte';
-	import { fetchSpotifySongs, fetchNextSongs } from '../api/spotifyApi.js';
-	import { scale } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
+	import { fetchSpotifySongs, fetchNextSongs } from '../api/spotifyApi.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
 
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import SongCard from '../components/Music/SongCard.svelte';
 	import SongCard2 from '../components/Music/SongCard2.svelte';
-	import BoobleBackground from '../commun/BoobleBackground.svelte';
 	import Loading from '../commun/Loading.svelte';
 
 	let isLoadingSongs = false;
@@ -50,7 +49,7 @@
 </script>
 
 <section class="music">
-	{#if isLoadingSongs}
+	<!-- {#if isLoadingSongs}
 		<Loading />
 	{:else}
 		<OreaOneTag />
@@ -61,13 +60,31 @@
 			<h3 class="songs-title">Toda la música</h3>
 			<div class="decorator-line"></div>
 			<div class="songs">
+				
+			</div>
+		</div>
+		<div use:infiniteScrolling>
+			<Footer />
+		</div>
+	{/if} -->
+	{#if isLoadingSongs}
+		<Loading />
+	{:else}
+		<OreaOneTag />
+		<div class="music-wrapper">
+			<h2 class="music-title">Música</h2>
+			<p class="music-legend">Escucha lo ultimo de Orea One</p>
+			<h3 class="songs-title">Toda la música</h3>
+			<div class="decorator-line"></div>
+			<div class="songs">
 				{#each songsData.songs as song (song)}
-					<div animate:flip={{duration: 500}}>
+					<div in:fade >
 						<SongCard2 {...song}/>
 					</div>
 				{/each}
 			</div>
 		</div>
+
 		<div use:infiniteScrolling>
 			<Footer />
 		</div>
@@ -76,10 +93,10 @@
 
 <style>
 	.music {
-		scroll-behavior: smooth;
 		position: relative;
 		overflow: hidden;
 		padding-top: 3rem;
+		min-height: 100%;
 	}
 
 	.music-wrapper {
@@ -112,7 +129,7 @@
 	.songs {
 		padding-top: 2rem;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 		grid-gap: 20px;
 	}
 
