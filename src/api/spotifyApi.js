@@ -22,11 +22,13 @@ const getSpotifyAuthToken = async () => {
   }
 }
 
+const oreaone = "5FJS5Hy4DLO29PfMkfMKJL";
+const melanie = "0jf3nrY6ZaNs1cJyLHmbrz"; 
 export const fetchSpotifySongs = async () => {
   try {
     const token = await getSpotifyAuthToken();
     axios.defaults.headers.common["Authorization"] = 'Bearer ' + token;
-    const { data } = await axios.get("https://api.spotify.com/v1/playlists/0jf3nrY6ZaNs1cJyLHmbrz/tracks?limit=10");
+    const { data } = await axios.get(`https://api.spotify.com/v1/playlists/${oreaone}/tracks?limit=10`);
     
    return { songs: formatSongData(data), nextPage: data.next };
   }
