@@ -3,7 +3,7 @@ import axios from 'axios';
 const clientId = __process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = __process.env.SPOTIFY_CLIENT_SECRET_ID;
 
-const getSpotifyAuthToken = async () => {
+export const getSpotifyAuthToken = async () => {
   try{
     const result = await fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
@@ -22,13 +22,17 @@ const getSpotifyAuthToken = async () => {
   }
 }
 
-const oreaone = "5FJS5Hy4DLO29PfMkfMKJL";
-const melanie = "0jf3nrY6ZaNs1cJyLHmbrz"; 
-export const fetchSpotifySongs = async () => {
+
+export const fetchSpotifySongs = async (token, nextPage = null) => {
+  const oreaone = "5FJS5Hy4DLO29PfMkfMKJL";
+  const melanie = "0jf3nrY6ZaNs1cJyLHmbrz";
+
+  const SPOTIFY_URL = `https://api.spotify.com/v1/playlists/${oreaone}/tracks?limit=10`;
+  const NEXT_DATA_URL = nextPage;
+
   try {
-    const token = await getSpotifyAuthToken();
     axios.defaults.headers.common["Authorization"] = 'Bearer ' + token;
-    const { data } = await axios.get(`https://api.spotify.com/v1/playlists/${oreaone}/tracks?limit=10`);
+    const { data } = await axios.get(NEXT_DATA_URL || SPOTIFY_URL);
     
    return { songs: formatSongData(data), nextPage: data.next };
   }
@@ -49,7 +53,7 @@ export const fetchNextSongs = async (nextUrl) => {
 }
 
 const formatSongData = (data) => data.items.map((song, i) => ({
-    id: Math.floor(Math.random() * (i+1000000000)),
+    id: song.track.id,
     imgUrl: song.track.album.images[1].url,
     title: song.track.name,
     artists: song.track.artists.map(artist => artist.name).join(", "),

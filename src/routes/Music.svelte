@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { flip } from 'svelte/animate';
-	import { fetchSpotifySongs, fetchNextSongs } from '../api/spotifyApi.js';
+	import { fetchSpotifySongs, getSpotifyAuthToken } from '../api/spotify.js';
+	import { infiniteScrolling } from '../assets/actions.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
 
@@ -13,33 +13,24 @@
 
 	let isLoadingSongs = false;
 	let currentSongPlayingId = null;
+	let spoitifyToken = null;
 
 	let songsData = {
 		songs: [],
 		nextPage: null
 	};
 
-	const infiniteScrolling = (node) => {
-		const observer = new IntersectionObserver(entries => {
-			if (entries[0].isIntersecting) {
-				console.log("visible")
-				loadMoreSongs()
-			}
-		});
-
-		if (node) observer.observe(node);
-	}
-
 	onMount(async () => {
 		isLoadingSongs = true;
-		songsData = await fetchSpotifySongs();
+		spoitifyToken = await getSpotifyAuthToken();
+		songsData = await fetchSpotifySongs(spoitifyToken, null);
 		isLoadingSongs = false;
 	});
 
 	const loadMoreSongs = async () => {
 		if (!songsData.nextPage) return;
 
-		const { songs, nextPage } = await fetchNextSongs(songsData.nextPage);
+		const { songs, nextPage } = await fetchSpotifySongs(spoitifyToken, songsData.nextPage);
 
 		const newSongs = [ ...songsData.songs, ...songs ];
 		songsData.songs = newSongs;
@@ -61,7 +52,7 @@
 			<div class="songs">
 				{#each songsData.songs as song, index (song.id)}
 					{#if songsData.songs.length - 3 === index }
-						<div in:fade use:infiniteScrolling >
+						<div in:fade use:infiniteScrolling={{ callback: loadMoreSongs }}>
 							<SongCard2 {...song} bind:currentSongPlayingId />
 						</div>
 					{:else}
@@ -72,10 +63,7 @@
 				{/each}
 			</div>
 		</div>
-
-		<div use:infiniteScrolling>
-			<Footer />
-		</div>
+		<Footer />
 	{/if}
 </section>
 
