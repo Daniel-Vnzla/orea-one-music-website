@@ -59,10 +59,16 @@
 			<h3 class="songs-title">Toda la música</h3>
 			<div class="decorator-line"></div>
 			<div class="songs">
-				{#each songsData.songs as song (song)}
-					<div in:fade >
-						<SongCard2 {...song} bind:currentSongPlayingId />
-					</div>
+				{#each songsData.songs as song, index (song.id)}
+					{#if songsData.songs.length - 3 === index }
+						<div in:fade use:infiniteScrolling >
+							<SongCard2 {...song} bind:currentSongPlayingId />
+						</div>
+					{:else}
+						<div in:fade>
+							<SongCard2 {...song} bind:currentSongPlayingId />
+						</div>
+					{/if}
 				{/each}
 			</div>
 		</div>

@@ -93,6 +93,7 @@
 		text-align: center;
 		border-bottom-right-radius: 60px;
 		padding: 1.3rem;
+		background: var(--bg-color-secondary);
 	}
 
 	.redes-list {

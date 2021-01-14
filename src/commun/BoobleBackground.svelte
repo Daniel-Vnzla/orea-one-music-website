@@ -28,7 +28,7 @@
 
 	.large {
 		top: 120px;
-		left: 300px;
+		left: 600px;
 		width: var(--size);
 		height: var(--size);
 	}

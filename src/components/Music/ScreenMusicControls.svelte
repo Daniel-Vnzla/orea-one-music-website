@@ -36,6 +36,20 @@
 		z-index: 100;
 	}
 
+	.screen-reproductor::before {
+		position: absolute;
+		content: "";
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(255 235 59 / 30%);
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		border: 1px solid var(--primary-color);
+		animation: pulse 30s linear infinite;
+	}
+
 	button {
 		position: relative;
 		width: 80px;
@@ -81,6 +95,21 @@
 	.screen-reproductor:hover .screen--reproductor-song-title {
 		transform: translateX(0) translateY(-50%);
 		opacity: 1;
+	}
+
+	@keyframes pulse {
+		0% {
+			transform: translate(-50%, -50%) scale(1);
+			opacity: 1;
+		}
+		5% {
+			transform: translate(-50%, -50%)  scale(1.5);
+			opacity: 0;
+		}
+		100% {
+			transform: translate(-50%, -50%)  scale(1.5);
+			opacity: 0;
+		}
 	}
 
 </style>
