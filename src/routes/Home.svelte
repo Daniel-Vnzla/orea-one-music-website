@@ -20,6 +20,7 @@
 
 <style>
 	.home {
+		background: var(--bg-color-secondary);
 		position: relative;
 		min-height: 100vh;
 	}

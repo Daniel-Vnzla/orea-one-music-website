@@ -37,7 +37,6 @@
 		min-height: 100vh;
 		padding-top: 5rem;
 		padding: 2rem;
-		background-color: var(--bg-color-secondary);
 	}
 
 	.title {

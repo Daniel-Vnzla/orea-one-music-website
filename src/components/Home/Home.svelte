@@ -42,35 +42,58 @@
 </script>
 
 <section class="home">
-	<div class="redes">
-		{#each redesIcons as { Icon, socialUrl, title }}
-			<a class="icon" href={socialUrl} title={title}>
-				<Icon width="100%" height="100%" fill="#fff" />	
-			</a>
-		{/each}
+	<div class="bg-image">
+		<img src="/images/home-bg.png" alt="home-background">
 	</div>
-	<div class="home-main-section">
-		<div class="title-box">
-			<h2 class="title">orea one</h2>
-			<h4 class="legend">Trapin´s life baby</h4>
+	<div class="home-wrapper">
+		<div class="redes">
+			{#each redesIcons as { Icon, socialUrl, title }}
+				<a class="icon" href={socialUrl} title={title}>
+					<Icon width="100%" height="100%" fill="#fff" />	
+				</a>
+			{/each}
 		</div>
-		<div class="img">
-			<img src="/images/home-oreaone.png" alt="Orea One">
-		</div>
-	</div> 
+		<div class="home-main-section">
+			<div class="title-box">
+				<h2 class="title">orea one</h2>
+				<h4 class="legend">Trapin´s life baby</h4>
+			</div>
+			<div class="img">
+				<img src="/images/oreaone.png" alt="Orea One">
+			</div>
+		</div> 
+	</div>
 </section>
 
 <style>
+	.bg-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.bg-image > img {
+		width: 100%;
+		height: 100%;
+		object-fit: fill;
+	}
 
 	.home {
+		position: relative;
+		min-height: 100vh;
+	}
+
+	.home-wrapper {
 		position: relative;
 		padding-top: 3rem;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		flex-direction: column;
-		background-image: url(/images/home-bg.png);
 		min-height: 100vh;
+		width: 100%;
 	}
 
 	.icon {
@@ -84,16 +107,18 @@
 
 	.home-main-section {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 20px;
+		grid-template-columns: 1.5fr 1fr;
 	}
 
 	.title-box {
 		text-align: center;
-		transform: translateX(4rem);
+		margin-top: 8rem;
 	}
 
 	.title {
 		font-size: 8rem;
+		line-height: 8.3rem;
 		font-family: "Road rage";
 	}
 

@@ -45,7 +45,6 @@
 		padding: 5rem 0;
 		text-align: center;
 		min-height: 100vh;
-		background: var(--bg-color-secondary);
 	}
 
 	.title {

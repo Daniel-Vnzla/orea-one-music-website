@@ -32,7 +32,6 @@
 
 <style>
 	.biografy {
-		background-color: var(--bg-color-secondary);
 		text-align: center;
 		min-height: 100vh;
 	}
