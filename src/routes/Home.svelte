@@ -1,6 +1,7 @@
 <script>
 	import Home from '../components/Home/Home.svelte';
 	import Music from '../components/Home/Music.svelte';
+	import Biografy from '../components/Home/Biografy.svelte';
 
 	import Footer from '../components/Footer/Footer.svelte';
 	import Loading from '../commun/Loading.svelte';
@@ -9,6 +10,7 @@
 <section class="home">
 	<Home />
 	<Music />
+	<Biografy />
 	<Footer />
 </section>
 
