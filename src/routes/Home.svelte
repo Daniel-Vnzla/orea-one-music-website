@@ -3,6 +3,7 @@
 	import Music from '../components/Home/Music.svelte';
 	import Biografy from '../components/Home/Biografy.svelte';
 	import Streaming from '../components/Home/Streaming.svelte';
+	import Contact from '../components/Home/Contact.svelte';
 
 	import Footer from '../components/Footer/Footer.svelte';
 	import Loading from '../commun/Loading.svelte';
@@ -13,6 +14,7 @@
 	<Music />
 	<Biografy />
 	<Streaming />
+	<Contact />
 	<Footer />
 </section>
 
