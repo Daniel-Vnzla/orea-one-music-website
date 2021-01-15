@@ -65,11 +65,11 @@
 	}
 
 	.img {
-		width: 70%;
+		width: 60%;
 		border-radius: 50%;
 		background: var(--bg-color-secondary);
 		overflow: hidden;
-		min-height: 200px;
+		min-height: 150px;
 	}
 
 	.img img {
@@ -80,11 +80,11 @@
 
 	.song-title {
 		margin-top: .5rem;
-		font-size: 2.2rem;
+		font-size: 2rem;
 	}
 
 	.song-artists {
-		font-size: .9rem;
+		font-size: .8rem;
 		color: #ccc;
 	}
 
@@ -98,7 +98,7 @@
 
 	.song-redes-title {
 		font-weight: bold;
-		font-size: 1.2rem;
+		font-size: 1rem;
 		margin: .5rem 0;
 		color: var(--secondary-color);
 	}
