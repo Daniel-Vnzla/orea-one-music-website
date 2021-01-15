@@ -115,8 +115,8 @@
 
 	.play-button {
 		position: relative;
-		width: 140px;
-		height: 140px;
+		width: 8rem;
+		height: 8rem;
 	}
 
 	.song-icon {

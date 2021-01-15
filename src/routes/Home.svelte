@@ -1,24 +1,21 @@
 <script>
+	import Home from '../components/Home/Home.svelte';
+	import Music from '../components/Home/Music.svelte';
+
 	import Footer from '../components/Footer/Footer.svelte';
 	import Loading from '../commun/Loading.svelte';
 </script>
 
 <section class="home">
-	<div class="home-wrapper">
-		<h2 class="title">home</h2>
-	</div>
+	<Home />
+	<Music />
 	<Footer />
 </section>
 
 <style>
 	.home {
 		position: relative;
-		padding-top: 3rem;
 		min-height: 100vh;
-	}
-
-	.title {
-		font-family: "Road rage";
 	}
 
 	.home-wrapper {
