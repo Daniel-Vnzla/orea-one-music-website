@@ -28,6 +28,9 @@
 	<div class="streaming-section-one">
 		<div class="img">
 			<img src="/images/explicit.jpg" alt="Explicit">
+			<a href="/" title="escuchar ahora en spotify" class="escuchar-ahora-btn">
+				Escuchar ahora!
+			</a>
 		</div>
 		<div class="redes-list">
 			{#each redesIcons as { Icon, socialUrl, title }, index}
@@ -70,6 +73,13 @@
 		padding-bottom: 5rem;
 	}
 
+	.escuchar-ahora-btn {
+		color: #2989ce;
+		font-size: 1.2rem;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+
 	.redes-list {
 		display: flex;
 		justify-content: space-around;
@@ -92,5 +102,14 @@
 		color: var(--secondary-color);
 		font-size: 2rem;
 		margin-left: .8rem;
+	}
+
+	@media (max-width: 800px) {
+		.streaming-section-one {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		} 
 	}
 </style>
