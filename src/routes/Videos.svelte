@@ -21,6 +21,17 @@
 		<OreaOneTag />
 		<div class="videos-wrapper">
 			<h2 class="videos-title">Videos</h2>
+			<div class="subscribe-section">
+				Suscribe al canal de Orea One para no perderte de sus siguientes lanzamientos!
+			<!-- is necessary load here -->
+			<script src="https://apis.google.com/js/platform.js"></script>
+			<div 
+				class="g-ytsubscribe" 
+				data-channelid="UCVz0m0NGtDwYdc_7PeVPgDQ" 
+				data-layout="default" 
+				data-count="default"></div>
+			</div>
+			<div class="decorator-line"></div>
 			<div class="video-list">
 				{#each $youtubeVideos as videoId}
 					<div class="video">
@@ -58,6 +69,18 @@
 		margin-bottom: 2rem;
 	}
 
+	.subscribe-section {
+		font-size: 1.2rem;
+		margin-bottom: .5rem;
+	}
+
+	.decorator-line {
+		width: 100%;
+		height: 1px;
+		background: #ccc;
+		margin-bottom: 2rem;
+	}
+
 	.video-list {
 		max-width: 1400px;
 		display: grid;
@@ -67,7 +90,7 @@
 
 	.video {
 		background-color: var(--bg-color);
-		min-height: 300px;
+		min-height: 320px;
 	}
 
 	@media (max-width: 1050px) {

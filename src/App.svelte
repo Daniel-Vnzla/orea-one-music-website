@@ -9,8 +9,6 @@
 	import Videos from './routes/Videos.svelte';
 	import Error404 from './routes/Error404.svelte';
 
-	import BoobleBackground from './commun/BoobleBackground.svelte';
-
 	let activeNavbar = true;
 	let page = null;
 	let currentPath = "Home";
@@ -51,7 +49,6 @@
 
 	<Header bind:activeNavbar bind:currentPath />
 	<div class="right-section" class:activeNavbar >
-		<BoobleBackground />
 		<svelte:component this={page} />
 	</div>
 </main>

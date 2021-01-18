@@ -1,52 +1,56 @@
 <script>
 	import ContactCard from '../components/Contact/ContactCard.svelte';
-
+	import Footer from '../components/Footer/Footer.svelte'
 </script>
 
 <section class="contact">
-	<div class="titles">
-		<h2 class="title">Contacto (Trabajo)</h2>
-		<h4 class="legend">Interesado en negocios con Orea One?</h4>
+	<div class="contact-wrapper">
+		<div class="titles">
+			<h2 class="title">Contacto (Trabajo)</h2>
+			<h4 class="legend">Interesado en negocios con Orea One?</h4>
+		</div>
+		<div class="contact-list">
+		<ContactCard 
+			title="MANAGER PERSONAL"
+			name="Guy Dayan"
+			email="guy@thegoola.com"
+			telephone="+972 522 509 749"
+			/>
+			<ContactCard 
+			title="MANAGER PERSONAL"
+			name="Guy Dayan"
+			email="guy@thegoola.com"
+			telephone="+972 522 509 749"
+			/>
+			<ContactCard 
+			title="MANAGER PERSONAL"
+			name="Guy Dayan"
+			email="guy@thegoola.com"
+			telephone="+972 522 509 749"
+			/>
+			<ContactCard 
+			title="MANAGER PERSONAL"
+			name="Guy Dayan"
+			email="guy@thegoola.com"
+			telephone="+972 522 509 749"
+			/>
+		</div>
 	</div>
-
-	<div class="contact-list">
-	<ContactCard 
-		title="MANAGER PERSONAL"
-		name="Guy Dayan"
-		email="guy@thegoola.com"
-		telephone="+972 522 509 749"
-		/>
-		<ContactCard 
-		title="MANAGER PERSONAL"
-		name="Guy Dayan"
-		email="guy@thegoola.com"
-		telephone="+972 522 509 749"
-		/>
-		<ContactCard 
-		title="MANAGER PERSONAL"
-		name="Guy Dayan"
-		email="guy@thegoola.com"
-		telephone="+972 522 509 749"
-		/>
-		<ContactCard 
-		title="MANAGER PERSONAL"
-		name="Guy Dayan"
-		email="guy@thegoola.com"
-		telephone="+972 522 509 749"
-		/>
-	</div>
+	<Footer />
 </section>
 
 <style>
 	.contact {
 		position: relative;
+		min-height: 100vh;
+	}
+
+	.contact-wrapper {
 		display: flex;
 		align-items: center;
-		justify-content: space-around;
 		flex-direction: column;
 		padding: 5rem 0;
 		text-align: center;
-		min-height: 100vh;
 	}
 
 	.title {
@@ -64,5 +68,6 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 2rem;
+		margin-top: 3rem;
 	}
 </style>
