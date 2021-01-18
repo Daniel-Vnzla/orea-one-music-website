@@ -78,7 +78,8 @@
 		justify-content: center;
 		align-items: center;
 		grid-gap: 2rem;
-		grid-template-columns: repeat(3, 340px);
+		max-width: 1100px;
+		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 	}
 
 	a:hover::before {

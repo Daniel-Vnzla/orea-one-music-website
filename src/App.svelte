@@ -47,7 +47,7 @@
 </script>
 
 <svelte:head>
-	<title>Orea One - {currentPath} </title>
+	<title>Orea One - {currentPath}</title>
 </svelte:head>
 
 <main class="main">
