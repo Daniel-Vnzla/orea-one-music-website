@@ -39,14 +39,18 @@
 	});
 
 	router('*', () => {
+		currentPath = "Error 404"
 		page = Error404;
 	});
 
 	router.start()
 </script>
 
-<main class="main">
+<svelte:head>
+	<title>Orea One - {currentPath} </title>
+</svelte:head>
 
+<main class="main">
 	<Header bind:activeNavbar bind:currentPath />
 	<div class="right-section" class:activeNavbar >
 		<svelte:component this={page} />
