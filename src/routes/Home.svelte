@@ -25,10 +25,4 @@
 		min-height: 100vh;
 	}
 
-	.home-wrapper {
-		width: 90%;
-		margin: 0 auto;
-	}
-
-
 </style>

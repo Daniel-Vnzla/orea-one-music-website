@@ -1,38 +1,42 @@
 <script>
+	import { onMount } from 'svelte';
 	import { fetchYoutubeVideos } from '../api/youtube.js';
+	import { youtubeVideos } from '../stores/store.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import Loading from '../commun/Loading.svelte';
 
+
+	onMount(async () => {
+		$youtubeVideos = await fetchYoutubeVideos() || $youtubeVideos;
+	})
+
 </script>
 
-{#await fetchYoutubeVideos()}
+{#if !$youtubeVideos.length}
 	<Loading />
-{:then videos }
-		<section class="videos">
-			<OreaOneTag />
-			<div class="videos-wrapper">
-				<h2 class="videos-title">Videos</h2>
-				<div class="video-list">
-					{#each videos as videoId}
-						<div class="video">
-							<iframe 
-								width="100%" 
-								height="100%" 
-								title="oreaone"
-								frameborder="0" 
-								src="https://www.youtube.com/embed/{videoId}?controls=1&autoplay=0"></iframe>	
-						</div>
-					{/each}
-				</div>
+{:else}
+	<section class="videos">
+		<OreaOneTag />
+		<div class="videos-wrapper">
+			<h2 class="videos-title">Videos</h2>
+			<div class="video-list">
+				{#each $youtubeVideos as videoId}
+					<div class="video">
+						<iframe 
+							width="100%" 
+							height="100%" 
+							title="oreaone"
+							frameborder="0" 
+							src="https://www.youtube.com/embed/{videoId}?controls=1&autoplay=0"></iframe>	
+					</div>
+				{/each}
 			</div>
-			<Footer />
-		</section>
-{:catch error}
-	<p>Error...</p>
-{/await}
-
+		</div>
+		<Footer />
+	</section>
+{/if}
 <style>
 
 	.videos {
