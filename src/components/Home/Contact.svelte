@@ -40,7 +40,6 @@
 	.contact {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		flex-direction: column;
 		padding: 5rem 0;
 		text-align: center;
@@ -60,7 +59,8 @@
 		width: 90%;
 		margin: 0 auto;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 		grid-gap: 2rem;
+		margin-top: 4rem;
 	}
 </style>
