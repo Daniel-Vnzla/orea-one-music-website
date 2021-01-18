@@ -2,15 +2,12 @@
 	import Redes from '../commun/Redes.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	
-	import BoobleBackground from '../commun/BoobleBackground.svelte';
-
 	let isImgLoading = true;
 
 	const checkImgStatus = (e) => isImgLoading = false;
 </script>
 
 <section class="biografy">
-	<BoobleBackground />
 	<OreaOneTag />
 	<div class="biografy-wrapper">
 		<h2 class="title">Biografía</h2>
