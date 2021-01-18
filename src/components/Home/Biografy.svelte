@@ -105,4 +105,18 @@
 	.ver-mas-btn:hover::before {
 		transform: scaleX(0.4);
 	}
+
+	@media (max-width: 800px)  {
+		.biografy-section-one {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding-bottom: 3rem;
+		}
+
+		.biografy-section-one .img {
+			display: none;
+		}
+	}
 </style>
