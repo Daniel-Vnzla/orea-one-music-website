@@ -1,22 +1,16 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fetchYoutubeVideos } from '../api/youtube.js';
-	import { youtubeVideos } from '../stores/store.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import Loading from '../commun/Loading.svelte';
 
-
-	onMount(async () => {
-		$youtubeVideos = await fetchYoutubeVideos() || $youtubeVideos;
-	})
-
 </script>
 
-{#if !$youtubeVideos.length}
+{#await fetchYoutubeVideos()}
 	<Loading />
-{:else}
+{:then youtubeVideos }
 	<section class="videos">
 		<OreaOneTag />
 		<div class="videos-wrapper">
@@ -33,7 +27,7 @@
 			</div>
 			<div class="decorator-line"></div>
 			<div class="video-list">
-				{#each $youtubeVideos as videoId}
+				{#each youtubeVideos as videoId}
 					<div class="video">
 						<iframe 
 							width="100%" 
@@ -47,7 +41,10 @@
 		</div>
 		<Footer />
 	</section>
-{/if}
+{:catch  error }
+	<p>Error: {error}</p>
+{/await}
+
 <style>
 
 	.videos {

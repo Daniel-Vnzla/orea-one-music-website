@@ -100,7 +100,7 @@
 		top: 1.5rem;
 		left: 50%;
 		display: flex;
-		gap: .2rem;
+		gap: .5rem;
 		transform: translateX(-50%);
 	}
 
@@ -112,11 +112,38 @@
 		font-size: 9rem;
 		line-height: 9.3rem;
 		font-family: "Road rage";
+		text-shadow: 0px 20px rgba(0, 0, 0, .4);
 	}
 
 	.legend {
 		font-size: 3rem;
 		color: var(--primary-color);
+		text-shadow: 3px 10px rgb(0,0,0, .3);		
+	}
+
+	@media (max-width: 800px) {
+		.title {
+			font-size: 7rem;
+		}
+
+		.legend {
+			font-size: 2rem;
+		}
+
+	}
+
+	@media (max-width: 500px) {
+		.title {
+			font-size: 4rem;
+		}
+
+		.legend {
+			font-size: 1rem;
+		}
+
+		.icon {
+			width: 30px;
+		}
 	}
 
 

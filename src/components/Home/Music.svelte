@@ -73,13 +73,14 @@
 	}
 
 	.music-list {
-		width: 100%;
+		width: 90%;
+		margin: 0 auto;
 		display: grid;
 		justify-content: center;
 		align-items: center;
 		grid-gap: 2rem;
 		max-width: 1100px;
-		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
 	}
 
 	a:hover::before {
