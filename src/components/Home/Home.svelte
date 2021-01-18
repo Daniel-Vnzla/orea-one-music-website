@@ -53,15 +53,10 @@
 				</a>
 			{/each}
 		</div>
-		<div class="home-main-section">
-			<div class="title-box">
-				<h2 class="title">orea one</h2>
-				<h4 class="legend">Trapin´s life baby</h4>
-			</div>
-			<div class="img">
-				<img src="/images/oreaone.png" alt="Orea One">
-			</div>
-		</div> 
+		<div class="title-box">
+			<h2 class="title">orea one</h2>
+			<h4 class="legend">Trapin´s life baby</h4>
+		</div>
 	</div>
 </section>
 
@@ -90,40 +85,37 @@
 		padding-top: 3rem;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		flex-direction: column;
+		justify-content: center;
 		min-height: 100vh;
 		width: 100%;
 	}
 
 	.icon {
-		margin: 0 .2rem;
 		width: 40px;
 	}
 
 	.redes {
+		position: absolute;
+		top: 1.5rem;
+		left: 50%;
 		display: flex;
-	}
-
-	.home-main-section {
-		display: grid;
-		grid-gap: 20px;
-		grid-template-columns: 1.5fr 1fr;
+		gap: .2rem;
+		transform: translateX(-50%);
 	}
 
 	.title-box {
 		text-align: center;
-		margin-top: 8rem;
 	}
 
 	.title {
-		font-size: 8rem;
-		line-height: 8.3rem;
+		font-size: 9rem;
+		line-height: 9.3rem;
 		font-family: "Road rage";
 	}
 
 	.legend {
-		font-size: 2rem;
+		font-size: 3rem;
 		color: var(--primary-color);
 	}
 
