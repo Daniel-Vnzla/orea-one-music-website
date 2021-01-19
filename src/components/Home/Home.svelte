@@ -1,100 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { homeAnime, animeLazyLoadingImg } from '../../assets/anime.js';
-
-	import Instagram from '../../icons/redes/instagram-with-circle.svg';
-	import Twitter from '../../icons/redes/twitter-with-circle.svg';
-	import Youtube from '../../icons/redes/youtube-with-circle.svg';
-	import Facebook from '../../icons/redes/facebook-with-circle.svg';
-	import Spotify from '../../icons/redes/spotify.svg';
-	import ITunes from '../../icons/redes/itunes.svg';
-
-	const redesIcons = [
-		{
-			title: "Instagram",
-			Icon: Instagram,
-			socialUrl: "/",
-		}, 
-		{
-			title: "Twitter",
-			Icon: Twitter,
-			socialUrl: "/",
-		}, 
-		{
-			title: "Youtube",
-			Icon: Youtube,
-			socialUrl: "/",
-		}, 
-		{
-			title: "Facebook",
-			Icon: Facebook,
-			socialUrl: "/",
-		}, 
-		{
-			title: "Spotify",
-			Icon: Spotify,
-			socialUrl: "/",
-		}, 
-		{
-			title: "ITunes",
-			Icon: ITunes,
-			socialUrl: "/",
-		}
-	];
-	let nodeHome = null;
-	let animationState = true;
-
-	const animeFadeTop = (node, animationState) => {
-		return {
-			update: (newAnimationState) => {
-				console.log(animationState)
-				animationState = newAnimationState;
-				if (node && animationState) {
-					anime({
-						targets: node,
-			    	translateY: [-100, 0],
-			    	opacity: [0, 1],
-			    	easing: "easeInExpo",
-			    	duration: 1000,
-			    })
-				}
-			  else if(node && !animationState){
-			  	anime({
-						targets: node,
-			    	translateY: [0, -100],
-			    	opacity: [1, 0],
-			    	easing: "easeInExpo",
-			    	duration: 1000,
-			    })
-			  }
-			}
-		}
-	}
-	const animeFadeBottom = (node) => {
-		return {
-			update: (newAnimationState) => {
-				animationState = newAnimationState;
-				if (node && animationState) {
-					anime({
-						targets: node,
-			    	translateY: [100, 0],
-			    	opacity: [0, 1],
-			    	easing: "easeInExpo",
-			    	duration: 1000,
-			    })
-				}
-			  else if(node && !animationState){
-			  	anime({
-						targets: node,
-			    	translateY: [0, 100],
-			    	opacity: [1, 0],
-			    	easing: "easeInExpo",
-			    	duration: 1000,
-			    })
-			  }
-			}
-		}
-	}
+	import { redesIcons } from '../../assets/icons.js';
 
 	onMount(() => {
 		homeAnime();
@@ -102,7 +9,7 @@
 
 </script>
 
-<section class="home" bind:this={nodeHome}>
+<section class="home">
 	<div class="bg-image" >
 		<img on:load={animeLazyLoadingImg} src="/images/home-bg.png" alt="home-background">
 	</div>
