@@ -34,12 +34,38 @@ export const homeAnime =() => {
 
 export const animeLazyLoadingImg = ({ target }) => {
 	target.style.opacity = 1;
-
 	anime({
 		targets: target,
 	  opacity: [0, 1],
 	  scale: [2, 1],
 	  easing: "easeOutQuad",
 	  duration: 33500,
+	});
+}
+
+export const biografyAnime = () => {
+	anime.timeline({
+		duration: 700,
+	  easing: "easeInBack",
 	})
+	.add({
+		targets: "#bio-title",
+		translateY: [-20, 0],
+	  opacity: [0, 1],
+	})
+	.add({
+		targets: "#bio-name",
+		translateX: [-20, 0],
+	  opacity: [0, 1],
+	})
+	.add({
+		targets: "#bio-titles",
+		translateY: [20, 0],
+	  opacity: [0, 1],
+	})
+	.add({
+		targets: "#orea-one-img",
+		translateX: [20, 0],
+	  opacity: [0, 1],
+	});
 }
