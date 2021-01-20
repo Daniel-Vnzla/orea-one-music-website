@@ -19,12 +19,13 @@ const intersectionObserver = (enter, leave) => {
 	  root: null,
 	  threshold: [0.5],
 	})
-	return { observer };
+	return observer;
 }
 
 export const animationOnObserve = (node, callbacks) => {
+	let observer;
 	if (callbacks) {
-		const { observer } = intersectionObserver(
+		observer = intersectionObserver(
 			() => callbacks.enter(node),
 			() => callbacks.leave(node));
 		observer.observe(node)

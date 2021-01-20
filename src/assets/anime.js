@@ -57,12 +57,12 @@ export const biografyAnime = () => {
 		targets: "#bio-name",
 		translateX: [-20, 0],
 	  opacity: [0, 1],
-	})
+	}, "-=400")
 	.add({
 		targets: "#bio-titles",
 		translateY: [20, 0],
 	  opacity: [0, 1],
-	})
+	}, "-=400")
 	.add({
 		targets: "#orea-one-img",
 		translateX: [20, 0],
