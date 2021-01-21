@@ -1,11 +1,21 @@
 <script>
+	import { animationOnObserve, useAnimationParameters, fadeRight, fadeLeft } from '../../assets/actions.js';	
+
 	import ContactCard from '../Contact/ContactCard.svelte';
+
+	const fadeRightParams = useAnimationParameters(fadeRight, fadeLeft);
 </script>
 
 <section class="contact">
 	<div class="titles">
-		<h2 class="title">Contacto (Trabajo)</h2>
-		<h4 class="legend">Interesado en negocios con Orea One?</h4>
+		<h2 
+			class="title"
+			use:animationOnObserve={fadeRightParams}
+			>Contacto (Trabajo)</h2>
+		<h4 
+			class="legend"
+			use:animationOnObserve={fadeRightParams}
+			>Interesado en trabajar con Orea One?</h4>
 	</div>
 
 	<div class="contact-list">

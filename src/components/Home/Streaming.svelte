@@ -1,4 +1,5 @@
 <script>
+	import { animationOnObserve, useAnimationParameters, fadeRight, fadeLeft } from '../../assets/actions.js';
 	import Youtube from '../../icons/redes/youtube-with-circle.svg';
 	import Spotify from '../../icons/redes/spotify.svg';
 	import ITunes from '../../icons/redes/itunes.svg';
@@ -20,13 +21,23 @@
 			socialUrl: "/",
 		}
 	];
+
+	const fadeRightParams = useAnimationParameters(fadeRight, fadeLeft);
 </script>
 
 <section class="streaming">
-	<h2 class="title">Streaming</h2>
-	<h4 class="legend">Escucha la música de orea one en tu plataforma preferida.</h4>
+	<h2 
+		class="title"
+		use:animationOnObserve={fadeRightParams}
+		>Streaming</h2>
+	<h4 
+		class="legend"
+		use:animationOnObserve={fadeRightParams}
+		>Escucha la música de orea one en tu plataforma preferida.</h4>
 	<div class="streaming-section-one">
-		<div class="img">
+		<div 
+			class="img"
+			use:animationOnObserve={fadeRightParams}>
 			<img src="/images/explicit.jpg" alt="Explicit">
 			<a href="/" title="escuchar ahora en spotify" class="escuchar-ahora-btn">
 				Escuchar ahora!
@@ -34,7 +45,11 @@
 		</div>
 		<div class="redes-list">
 			{#each redesIcons as { Icon, socialUrl, title }, index}
-			<a class="icon-link" href={socialUrl} title={title}>
+			<a 
+				class="icon-link" 
+				href={socialUrl} 
+				title={title}
+				use:animationOnObserve={fadeRightParams}>
 				<div class="icon">
 					<Icon width="100%" height="100%" fill="var(--secondary-color)" />
 				</div>
