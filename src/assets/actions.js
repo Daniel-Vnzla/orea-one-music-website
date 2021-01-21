@@ -11,13 +11,13 @@ export const infiniteScrolling = (node, actions) => {
 	if (node) observer.observe(node);
 }
 
-const intersectionObserver = (enter, leave) => {
+const createObserver = (enter, leave) => {
 	const observer = new IntersectionObserver(([ entry ]) => {
 		if (entry.isIntersecting) enter();
 		else leave();
 	},{
 	  root: null,
-	  threshold: [0.3],
+	  threshold: [0.2],
 	})
 	return observer;
 }
@@ -25,7 +25,7 @@ const intersectionObserver = (enter, leave) => {
 export const animationOnObserve = (node, callbacks) => {
 	let observer;
 	if (callbacks) {
-		observer = intersectionObserver(
+		observer = createObserver(
 			() => callbacks.enter(node),
 			() => callbacks.leave(node));
 		observer.observe(node)

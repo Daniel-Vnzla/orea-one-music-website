@@ -1,7 +1,7 @@
 import anime from 'animejs';
 
 const parameters = {
-	duration: 1500,
+	duration: 600,
 	easing: "easeInBack",
 }
 const { duration, easing } = parameters;
@@ -52,17 +52,17 @@ export const biografyAnime = () => {
 		targets: "#bio-title",
 		translateY: [-20, 0],
 	  opacity: [0, 1],
-	}, "-=400")
+	})
 	.add({
 		targets: "#bio-name",
 		translateX: [-20, 0],
 	  opacity: [0, 1],
-	}, "-=500")
+	})
 	.add({
 		targets: "#bio-titles",
 		translateY: [20, 0],
 	  opacity: [0, 1],
-	}, "-=400")
+	})
 	.add({
 		targets: "#orea-one-img",
 		translateX: [20, 0],
@@ -72,30 +72,52 @@ export const biografyAnime = () => {
 
 export const musicAnime = () => {
 	anime.timeline({
-		duration: 800,
-		easing: "easeInBack",
+		duration,
+		easing,
 	})
 	.add({
 		targets: "#music-title",
 		translateY: [20, 0],
 		opacity: [0, 1],
-	}, "-=400")
+	})
 	.add({
 		targets: "#music-legend",
 		translateY: [-20, 0],
 		opacity: [0, 1],
-	}, "-=400")
+	}, "-=200")
 	.add({
 		targets: "#songs-title",
 		translateX: [-20, 0],
 		opacity: [0, 1],
-	}, "-=400")
+	}, "-=200")
 	.add({
 		targets: "#decorator-line",
 		scale: [0,1],
-	}, "-=500")
+	}, "-=200")
 	.add({
 		targets: "#songs-list",
 	  opacity: [0, 1],
 	});
+}
+
+export const videoRouteAnime = () => {
+	anime.timeline({
+		duration,
+		easing
+	})
+	.add({
+		targets: "#video-title",
+		translateY: [20, 0],
+	  opacity: [0, 1],
+	})
+	.add({
+		targets: "#subscribe-section",
+		translateY: [-20, 0],
+	  opacity: [0, 1],
+	})
+	.add({
+		targets: "#video-list",
+		translateX: [-20, 0],
+	  opacity: [0, 1],
+	})
 }

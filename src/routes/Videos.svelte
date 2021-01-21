@@ -1,21 +1,57 @@
 <script>
-	import { onMount } from 'svelte';
+	import anime from 'animejs';
+	import { onMount, tick } from 'svelte';
+	import { youtubeVideos } from '../stores/store.js';
 	import { fetchYoutubeVideos } from '../api/youtube.js';
+	import { videoRouteAnime } from '../assets/anime.js';
+	import { animationOnObserve } from '../assets/actions.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import Loading from '../commun/Loading.svelte';
 
+	let isLoading = false;
+
+	onMount(async () => {
+		window.scroll({ top: 0 });
+		isLoading = true;
+		if(!$youtubeVideos.length) {
+			$youtubeVideos = await fetchYoutubeVideos() || []
+		}
+		isLoading = false;
+		await tick();
+		videoRouteAnime()
+	});
+
+	const enter = (node) => {
+		anime({
+			targets: node,
+			translateX: [-10, 0],
+			opacity: [0, 1],
+			duration: 500,
+			easing: "easeOutQuad",
+		})
+	}
+
+	const leave = (node) => {
+		anime({
+			targets: node,
+			translateX: [10, 0],
+			opacity: [1, 0],
+			duration: 500,
+			easing: "easeOutQuad",
+		})
+	} 
 </script>
 
-{#await fetchYoutubeVideos()}
+{#if isLoading }
 	<Loading />
-{:then youtubeVideos }
+{:else}
 	<section class="videos">
 		<OreaOneTag />
 		<div class="videos-wrapper">
-			<h2 class="videos-title">Videos</h2>
-			<div class="subscribe-section">
+			<h2 class="videos-title" id="video-title">Videos</h2>
+			<div class="subscribe-section" id="subscribe-section">
 				Suscribe al canal de Orea One para no perderte de sus siguientes lanzamientos!
 			<!-- is necessary load here -->
 			<script src="https://apis.google.com/js/platform.js"></script>
@@ -26,9 +62,9 @@
 				data-count="default"></div>
 			</div>
 			<div class="decorator-line"></div>
-			<div class="video-list">
-				{#each youtubeVideos as videoId}
-					<div class="video">
+			<div class="video-list" id="video-list">
+				{#each $youtubeVideos as videoId}
+					<div class="video" use:animationOnObserve={{ enter, leave }}>
 						<iframe 
 							width="100%" 
 							height="100%" 
@@ -41,9 +77,7 @@
 		</div>
 		<Footer />
 	</section>
-{:catch  error }
-	<p>Error: {error}</p>
-{/await}
+{/if}
 
 <style>
 

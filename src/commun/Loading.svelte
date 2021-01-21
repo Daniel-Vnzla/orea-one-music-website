@@ -2,7 +2,7 @@
 	import { fade } from 'svelte/transition';	
 </script>
 
-<div class="loading-container" out:fade>
+<div class="loading-container" out:fade={{ duration: 400 }}>
 	<div class="container">
 		<div class="box"></div>
 		<div class="box"></div>

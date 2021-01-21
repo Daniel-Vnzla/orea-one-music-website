@@ -1,6 +1,6 @@
 <script>
 	import anime from 'animejs';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { animationOnObserve } from '../assets/actions.js';
 	import { biografyAnime } from '../assets/anime.js';
 	import Redes from '../commun/Redes.svelte';
@@ -28,6 +28,7 @@
 
 	onMount(async () => {
 		await fetchOreaOneImg();
+		await tick();
 		biografyAnime()
 	});
 
