@@ -1,8 +1,9 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { fetchSpotifySongs, getSpotifyAuthToken } from '../api/spotify.js';
 	import { infiniteScrolling } from '../assets/actions.js';
+	import { musicAnime } from '../assets/anime.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
 
@@ -25,6 +26,8 @@
 		spoitifyToken = await getSpotifyAuthToken();
 		songsData = await fetchSpotifySongs(spoitifyToken, null);
 		isLoadingSongs = false;
+		await tick();
+		musicAnime(); 
 	});
 
 	const loadMoreSongs = async () => {
@@ -45,11 +48,11 @@
 	{:else}
 		<OreaOneTag />
 		<div class="music-wrapper">
-			<h2 class="music-title">Música</h2>
-			<p class="music-legend">Escucha lo ultimo de Orea One</p>
-			<h3 class="songs-title">Toda la música</h3>
-			<div class="decorator-line"></div>
-			<div class="songs">
+			<h2 class="music-title" id="music-title">Música</h2>
+			<p class="music-legend" id="music-legend">Escucha lo ultimo de Orea One</p>
+			<h3 class="songs-title" id="songs-title">Toda la música</h3>
+			<div class="decorator-line" id="decorator-line"></div>
+			<div class="songs" id="songs-list">
 				{#each songsData.songs as song, index (song.id)}
 					{#if songsData.songs.length - 3 === index }
 						<div in:fade use:infiniteScrolling={{ callback: loadMoreSongs }}>

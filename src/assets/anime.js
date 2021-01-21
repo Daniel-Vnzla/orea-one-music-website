@@ -45,19 +45,19 @@ export const animeLazyLoadingImg = ({ target }) => {
 
 export const biografyAnime = () => {
 	anime.timeline({
-		duration: 700,
-	  easing: "easeInBack",
+		duration,
+	  easing
 	})
 	.add({
 		targets: "#bio-title",
 		translateY: [-20, 0],
 	  opacity: [0, 1],
-	})
+	}, "-=400")
 	.add({
 		targets: "#bio-name",
 		translateX: [-20, 0],
 	  opacity: [0, 1],
-	}, "-=400")
+	}, "-=500")
 	.add({
 		targets: "#bio-titles",
 		translateY: [20, 0],
@@ -66,6 +66,36 @@ export const biografyAnime = () => {
 	.add({
 		targets: "#orea-one-img",
 		translateX: [20, 0],
+	  opacity: [0, 1],
+	}, "+=500");
+}
+
+export const musicAnime = () => {
+	anime.timeline({
+		duration: 800,
+		easing: "easeInBack",
+	})
+	.add({
+		targets: "#music-title",
+		translateY: [20, 0],
+		opacity: [0, 1],
+	}, "-=400")
+	.add({
+		targets: "#music-legend",
+		translateY: [-20, 0],
+		opacity: [0, 1],
+	}, "-=400")
+	.add({
+		targets: "#songs-title",
+		translateX: [-20, 0],
+		opacity: [0, 1],
+	}, "-=400")
+	.add({
+		targets: "#decorator-line",
+		scale: [0,1],
+	}, "-=500")
+	.add({
+		targets: "#songs-list",
 	  opacity: [0, 1],
 	});
 }
