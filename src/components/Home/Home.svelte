@@ -1,10 +1,42 @@
 <script>
+	import anime from 'animejs';
 	import { onMount } from 'svelte';
-	import { homeAnime, animeLazyLoadingImg } from '../../assets/anime.js';
 	import { redesIcons } from '../../assets/icons.js';
 
+	const animeLazyLoadingImg = ({ target }) => {
+		target.style.opacity = 1;
+		anime({
+			targets: target,
+		  opacity: [0, 1],
+		  scale: [2, 1],
+		  easing: "easeOutQuad",
+		  duration: 33500,
+		});
+	}
+
 	onMount(() => {
-		homeAnime();
+		anime.timeline({
+			duration: 600,
+		})
+		.add({
+			targets: "#anime-fade-top-text",
+		  scale: [2, 1],
+		  opacity: [0, 1],
+		  easing: "easeInBack"
+		})
+		.add({
+			targets: "#anime-redes-home .icon",
+		  translateY: [-50, 0],
+		  opacity: [0, 1],
+		  delay: anime.stagger(100, { easing: 'easeOutQuad' }),
+		});
+
+		anime({
+			targets: "#anime-fade-bottom-text",
+			translateY: [50, 0],
+		  opacity: [0, 1],
+		  easing: "easeInBack"
+		});
 	})
 
 </script>

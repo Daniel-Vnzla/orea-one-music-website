@@ -2,7 +2,6 @@
 	import anime from 'animejs';
 	import { onMount, tick } from 'svelte';
 	import { animationOnObserve } from '../assets/actions.js';
-	import { biografyAnime } from '../assets/anime.js';
 	import Redes from '../commun/Redes.svelte';
 
 	import Loading from '../commun/Loading.svelte';
@@ -29,7 +28,30 @@
 	onMount(async () => {
 		await fetchOreaOneImg();
 		await tick();
-		biografyAnime()
+		anime.timeline({
+			duration: 600,
+		  easing: "easeInBack",
+		})
+		.add({
+			targets: ".bio-title",
+			translateY: [-20, 0],
+		  opacity: [0, 1],
+		})
+		.add({
+			targets: ".bio-name",
+			translateX: [-20, 0],
+		  opacity: [0, 1],
+		}, "-=200")
+		.add({
+			targets: ".bio-titles",
+			translateY: [20, 0],
+		  opacity: [0, 1],
+		}, "-=200")
+		.add({
+			targets: "#orea-one-img",
+			translateX: [20, 0],
+		  opacity: [0, 1],
+		}, "+=500");
 	});
 
 	const enter = (node) => {
@@ -61,18 +83,18 @@
 	{:else}
 		<OreaOneTag />
 		<div class="biografy-wrapper">
-			<h2 class="title" id="bio-title">Biografía</h2>
+			<h2 class="bio-title">Biografía</h2>
 			<article class="description">
 				<div class="bio-section-one">
-					<h3 class="bio-name" id="bio-name">Antonio Javier Eltit Chellew</h3>
-					<p class="bio-titles" id="bio-titles">Músico, Cantante, Compositor</p>
+					<h3 class="bio-name">Antonio Javier Eltit Chellew</h3>
+					<p class="bio-titles">Músico, Cantante, Compositor</p>
 					<p use:animationOnObserve={{ enter, leave }} >Orea One nació el 4 de mayo de 1996 en Chile, como Antonio Javier Eltit Chellew. Es ilustrador, cantante y compositor de trap y reggaetón.
 				</p>
 				</div>
 				<div 
 					class="bio-section-two" 
 				>
-					<div class="bio-section-two-text" id="bio-section-two-text">
+					<div class="bio-section-two-text">
 						<p use:animationOnObserve={{ enter, leave }} >Desde niño su obsesión ha sido dibujar y cantar, sin embargo, en 2009 fue cuando comenzó a escribir rap y a pintar graffiti, cuando solo tenía 13 años.
 						<p/>
 						<p use:animationOnObserve={{ enter, leave}} >
@@ -116,7 +138,7 @@
 		margin: 0 auto;
 	}
 
-	.title {
+	.bio-title {
 		color: var(--text-color);
 		text-align: center;
 		font-family: "Road rage";

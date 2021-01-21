@@ -3,7 +3,6 @@
 	import { onMount, tick } from 'svelte';
 	import { youtubeVideos } from '../stores/store.js';
 	import { fetchYoutubeVideos } from '../api/youtube.js';
-	import { videoRouteAnime } from '../assets/anime.js';
 	import { animationOnObserve } from '../assets/actions.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
@@ -20,7 +19,25 @@
 		}
 		isLoading = false;
 		await tick();
-		videoRouteAnime()
+		anime.timeline({
+			duration: 600,
+			easing: "easeInBack",
+		})
+		.add({
+			targets: ".video-title",
+			translateY: [20, 0],
+		  opacity: [0, 1],
+		})
+		.add({
+			targets: ".subscribe-section",
+			translateY: [-20, 0],
+		  opacity: [0, 1],
+		})
+		.add({
+			targets: ".video-list",
+			translateX: [-20, 0],
+		  opacity: [0, 1],
+		})
 	});
 
 	const enter = (node) => {
@@ -50,8 +67,8 @@
 	<section class="videos">
 		<OreaOneTag />
 		<div class="videos-wrapper">
-			<h2 class="videos-title" id="video-title">Videos</h2>
-			<div class="subscribe-section" id="subscribe-section">
+			<h2 class="videos-title">Videos</h2>
+			<div class="subscribe-section">
 				Suscribe al canal de Orea One para no perderte de sus siguientes lanzamientos!
 			<!-- is necessary load here -->
 			<script src="https://apis.google.com/js/platform.js"></script>
@@ -62,7 +79,7 @@
 				data-count="default"></div>
 			</div>
 			<div class="decorator-line"></div>
-			<div class="video-list" id="video-list">
+			<div class="video-list">
 				{#each $youtubeVideos as videoId}
 					<div class="video" use:animationOnObserve={{ enter, leave }}>
 						<iframe 
