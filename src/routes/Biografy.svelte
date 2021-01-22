@@ -1,7 +1,6 @@
 <script>
 	import anime from 'animejs';
 	import { onMount, tick } from 'svelte';
-	import { animationOnObserve } from '../assets/actions.js';
 	import Redes from '../commun/Redes.svelte';
 
 	import Loading from '../commun/Loading.svelte';
@@ -54,26 +53,6 @@
 		}, "+=500");
 	});
 
-	const enter = (node) => {
-		anime({
-			targets: node,
-			translateX: [-10, 0],
-			opacity: [0, 1],
-			duration: 500,
-			easing: "easeOutQuad",
-		})
-	}
-
-	const leave = (node) => {
-		anime({
-			targets: node,
-			translateX: [10, 0],
-			opacity: [1, 0],
-			duration: 500,
-			easing: "easeOutQuad",
-		})
-	}
-
 
 </script>
 
@@ -88,22 +67,22 @@
 				<div class="bio-section-one">
 					<h3 class="bio-name">Antonio Javier Eltit Chellew</h3>
 					<p class="bio-titles">Músico, Cantante, Compositor</p>
-					<p use:animationOnObserve={{ enter, leave }} >Orea One nació el 4 de mayo de 1996 en Chile, como Antonio Javier Eltit Chellew. Es ilustrador, cantante y compositor de trap y reggaetón.
+					<p  >Orea One nació el 4 de mayo de 1996 en Chile, como Antonio Javier Eltit Chellew. Es ilustrador, cantante y compositor de trap y reggaetón.
 				</p>
 				</div>
 				<div 
 					class="bio-section-two" 
 				>
 					<div class="bio-section-two-text">
-						<p use:animationOnObserve={{ enter, leave }} >Desde niño su obsesión ha sido dibujar y cantar, sin embargo, en 2009 fue cuando comenzó a escribir rap y a pintar graffiti, cuando solo tenía 13 años.
+						<p  >Desde niño su obsesión ha sido dibujar y cantar, sin embargo, en 2009 fue cuando comenzó a escribir rap y a pintar graffiti, cuando solo tenía 13 años.
 						<p/>
-						<p use:animationOnObserve={{ enter, leave}} >
+						<p  >
 							En 2010 grabó su primera canción de rap, luego estuvo participando de 2010 a 2013, en tres álbumes de rap con su grupo de amigos, luego participó en tres álbumes más de 2014 a 2017, todos grabados en casa.
 						</p>
-						<p use:animationOnObserve={{ enter, leave}} >
+						<p  >
 							Remontándose al año 2014, comenzó a estudiar, pasando por diversas carreras, como la animación digital y el diseño gráfico, las cuales no terminó, sin embargo el año 2019 se tituló como ilustrador.
 						</p>
-						<p use:animationOnObserve={{ enter, leave }} >
+						<p  >
 							Tras trabajar un par de años como ilustrador freelance, decidió empezar a invertir en su carrera musical, dándole un nuevo comienzo en 2020, ya profesionalmente como artista urbano, invirtiendo en su imagen y en sus producciones, tomando así la decisión de dedicarse de lleno a lo que es su carrera artística.
 						</p>
 					</div>

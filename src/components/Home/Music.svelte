@@ -1,15 +1,14 @@
 <script>
-	import { animationOnObserve, useAnimationParameters, fadeRight, fadeLeft } from '../../assets/actions.js';
+	import { animationOnObserve } from '../../assets/actions.js';
+	import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
 
 	import SongCard2 from '../Music/SongCard2.svelte';
 	
-	const fadeRightParams = useAnimationParameters(fadeRight, fadeLeft);
-
 </script>
 
 <section class="music">
-	<h2 class="title" use:animationOnObserve={fadeRightParams}>Ultimas canciones</h2>
-	<h4 class="legend" use:animationOnObserve={fadeRightParams}>Ecucha lo ultimo de orea one</h4>
+	<h2 class="title" use:animationOnObserve={fadeToRight({ threshold: 0.5})}>Ultimas canciones</h2>
+	<h4 class="legend" use:animationOnObserve={fadeToLeft({ threshold: 0.5})}>Ecucha lo ultimo de orea one</h4>
 
 	<a href="/music" title="music">
 		Todas las canciones

@@ -1,6 +1,5 @@
 <script>
 	import anime from 'animejs';
-	import { animationOnObserve } from '../../assets/actions.js';
 
 	import Youtube from '../../icons/redes/spotify.svg';
 	import Spotify from '../../icons/redes/youtube-with-circle.svg';
@@ -17,28 +16,10 @@
 	
 	const lazyLoadImg = ({ target }) => target.style.opacity = 1;
 
-	const enter = (node) => {
-		anime({
-			targets: node,
-			translateX: [-10, 0],
-			opacity: [0, 1],
-			duration: 500,
-			easing: "easeOutQuad",
-		})
-	}
-
-	const leave = (node) => {
-		anime({
-			targets: node,
-			translateX: [10, 0],
-			opacity: [1, 0],
-			duration: 500,
-			easing: "easeOutQuad",
-		})
-	} 
+	
 </script>
 
-<div class="song-card" use:animationOnObserve={{ enter, leave }}>
+<div class="song-card" >
 	<div class="song-card-wrapper">
 		<div class="img">
 			<img on:load={lazyLoadImg} src={imgUrl} alt={title}>

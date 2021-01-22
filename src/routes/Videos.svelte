@@ -3,7 +3,6 @@
 	import { onMount, tick } from 'svelte';
 	import { youtubeVideos } from '../stores/store.js';
 	import { fetchYoutubeVideos } from '../api/youtube.js';
-	import { animationOnObserve } from '../assets/actions.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
@@ -40,25 +39,6 @@
 		})
 	});
 
-	const enter = (node) => {
-		anime({
-			targets: node,
-			translateX: [-10, 0],
-			opacity: [0, 1],
-			duration: 500,
-			easing: "easeOutQuad",
-		})
-	}
-
-	const leave = (node) => {
-		anime({
-			targets: node,
-			translateX: [10, 0],
-			opacity: [1, 0],
-			duration: 500,
-			easing: "easeOutQuad",
-		})
-	} 
 </script>
 
 {#if isLoading }
@@ -81,7 +61,7 @@
 			<div class="decorator-line"></div>
 			<div class="video-list">
 				{#each $youtubeVideos as videoId}
-					<div class="video" use:animationOnObserve={{ enter, leave }}>
+					<div class="video">
 						<iframe 
 							width="100%" 
 							height="100%" 

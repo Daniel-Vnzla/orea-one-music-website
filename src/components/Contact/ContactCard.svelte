@@ -1,16 +1,14 @@
 <script>
-	import { animationOnObserve, useAnimationParameters, fadeRight, fadeLeft } from '../../assets/actions.js';	
 
 	export let title;
 	export let name;
 	export let email;
 	export let telephone;
 
-	const fadeRightParams = useAnimationParameters(fadeRight, fadeLeft);
 	
 </script>
 
-<div class="contact-card" use:animationOnObserve={fadeRightParams}>
+<div class="contact-card" >
 	<h4 class="title">{title}</h4>
 	<p class="name">{name}</p>
 	<p class="email">{email}</p>
