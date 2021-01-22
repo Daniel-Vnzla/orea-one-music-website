@@ -56,6 +56,7 @@
 	.main {
 		position: relative;
 		display: flex;
+		overflow: hidden;
 	}
 
 	.right-section {

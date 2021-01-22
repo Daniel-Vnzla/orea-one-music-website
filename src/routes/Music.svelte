@@ -82,7 +82,9 @@
 			<div class="songs-list">
 				{#each songsData.songs as song, index (song.id)}
 					{#if songsData.songs.length - 3 === index }
-						<div in:fade use:infiniteScrolling={{ callback: loadMoreSongs }}>
+						<div 
+							in:fade 
+							use:infiniteScrolling={{ onEnter: loadMoreSongs, onLeave: () => {} }}>
 							<SongCard2 {...song} bind:currentSongPlayingId />
 						</div>
 					{:else}

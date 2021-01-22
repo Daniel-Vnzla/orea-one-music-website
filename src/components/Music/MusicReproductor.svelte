@@ -8,15 +8,12 @@
 	import Play from '../../icons/play.svg';
 	import Pause from '../../icons/pause.svg';
 
-	import ScreenMusicReproductor from './ScreenMusicControls.svelte';
-
 	export let previewUrl;
-	export let title;
-	export let id;
 	export let currentSongPlayingId;
+	export let id; 
+	export let paused = true;
 
 	let audio = null;
-	let paused = true;
 	let isSongLoaded = false;
 	let currentTime = 0;
 	let duration = null;
@@ -44,24 +41,17 @@
 	const handlePlaySong = () => {
 		paused = !paused
 	}
-	
-	const handleScreenSongPlay = () => currentSongPlayingId = id;
+
+	const setCurrentSongId = () => currentSongPlayingId = id;
 	
 </script>
 
-{#if currentSongPlayingId === id}
-	<ScreenMusicReproductor 
-		songTitle={title} 
-		bind:paused 
-		isSongLoaded={isSongLoaded}
-		handlePlaySong={handlePlaySong}  />
-{/if}
 <div class="song-reproductor">
 	<button 
 		disabled={!isSongLoaded} 
 		class="play-button" 
 		on:click={handlePlaySong}
-		on:click={handleScreenSongPlay}
+		on:click={setCurrentSongId}
 		>
 		{#if paused}
 			<div class="song-icon" transition:scale >

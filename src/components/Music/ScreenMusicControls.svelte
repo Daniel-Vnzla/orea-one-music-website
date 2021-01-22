@@ -5,14 +5,13 @@
 
 	export let handlePlaySong;
 	export let paused;
-	export let isSongLoaded;
 	export let songTitle;
 
 </script>
 
 <div class="screen-reproductor" transition:scale >
 	<div class="screen--reproductor-song-title">{songTitle}</div>
-	<button disabled={!isSongLoaded} class="play-button" on:click={handlePlaySong}>
+	<button class="play-button" on:click={handlePlaySong}>
 		{#if paused}
 			<div class="screen-icon" transition:scale >
 				<Play  width="100%" height="100%" fill="var(--secondary-color)" />	
@@ -27,8 +26,8 @@
 
 <style>
 	.screen-reproductor {
-		display: flex;
 		position: fixed;
+		display: flex;
 		align-items: center;
 		bottom: 5rem;
 		right: 10px;

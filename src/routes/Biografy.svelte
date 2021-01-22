@@ -13,7 +13,7 @@
 	let imgUrl = null;
 
 	const observerParams = {
-		threshold: 0.6,
+		threshold: 0.3,
 	}
 
 	const fetchOreaOneImg = async () => {

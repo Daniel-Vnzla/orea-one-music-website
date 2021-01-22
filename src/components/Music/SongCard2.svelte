@@ -7,6 +7,7 @@
 	import ITunes from '../../icons/redes/itunes.svg';
 
 	import MusicReproductor from './MusicReproductor.svelte';
+	import ScreenMusicReproductor from './ScreenMusicControls.svelte';
 
 	export let title;
 	export let artists;
@@ -14,17 +15,28 @@
 	export let previewUrl;
 	export let id;
 	export let currentSongPlayingId;
-	
-	const lazyLoadImg = ({ target }) => target.style.opacity = 1;
 
+	let paused = true;
 	
 	const observerParams = {
 		threshold: 0.1,
 	}
 	
+	const lazyLoadImg = ({ target }) => target.style.opacity = 1;
+	
+	const handlePlaySong = () => {
+		paused = !paused
+	}
+
 </script>
 
-<div class="song-card" use:animationOnObserve={fadeToRight(observerParams)}>
+{#if currentSongPlayingId === id}
+	<ScreenMusicReproductor 
+		songTitle={title}
+		bind:paused 
+		handlePlaySong={handlePlaySong}  />
+{/if}
+<div class="song-card" use:animationOnObserve={fadeToRight(observerParams)} >
 	<div class="song-card-wrapper">
 		<div class="img">
 			<img on:load={lazyLoadImg} src={imgUrl} alt={title}>
@@ -34,10 +46,11 @@
 			<p class="song-artists">{artists}</p>
 		</div>
 		<MusicReproductor 
+			bind:paused
 			bind:currentSongPlayingId
 			{id} 
 			{previewUrl} 
-			{title} />
+			/>
 		<div class="song-redes">
 			<p class="song-redes-title">Escucha la cancion completa aqui!</p>
 			<div class="song-redes-list">
