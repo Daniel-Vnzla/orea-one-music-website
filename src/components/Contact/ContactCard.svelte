@@ -1,14 +1,18 @@
 <script>
+	import { animationOnObserve } from '../../assets/actions.js';
+	import { fadeToRight } from '../../assets/anime.js';
 
 	export let title;
 	export let name;
 	export let email;
 	export let telephone;
 
-	
+	const observerParams = {
+		threshold: 0.1,
+	}
 </script>
 
-<div class="contact-card" >
+<div class="contact-card" use:animationOnObserve={fadeToRight(observerParams)}>
 	<h4 class="title">{title}</h4>
 	<p class="name">{name}</p>
 	<p class="email">{email}</p>

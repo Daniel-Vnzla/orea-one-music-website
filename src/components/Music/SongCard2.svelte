@@ -1,5 +1,6 @@
 <script>
-	import anime from 'animejs';
+	import { animationOnObserve } from '../../assets/actions.js';
+	import { fadeToRight } from '../../assets/anime.js';
 
 	import Youtube from '../../icons/redes/spotify.svg';
 	import Spotify from '../../icons/redes/youtube-with-circle.svg';
@@ -17,9 +18,13 @@
 	const lazyLoadImg = ({ target }) => target.style.opacity = 1;
 
 	
+	const observerParams = {
+		threshold: 0.1,
+	}
+	
 </script>
 
-<div class="song-card" >
+<div class="song-card" use:animationOnObserve={fadeToRight(observerParams)}>
 	<div class="song-card-wrapper">
 		<div class="img">
 			<img on:load={lazyLoadImg} src={imgUrl} alt={title}>

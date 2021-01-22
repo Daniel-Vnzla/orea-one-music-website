@@ -1,4 +1,7 @@
 <script>
+	import { animationOnObserve } from '../../assets/actions.js';
+	import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
+
 	import Youtube from '../../icons/redes/youtube-with-circle.svg';
 	import Spotify from '../../icons/redes/spotify.svg';
 	import ITunes from '../../icons/redes/itunes.svg';
@@ -21,18 +24,24 @@
 		}
 	];
 
+	const observerParams = {
+		threshold: 0.5,
+	}
 </script>
 
 <section class="streaming">
 	<h2 
 		class="title"
+		use:animationOnObserve={fadeToRight(observerParams)}
 		>Streaming</h2>
 	<h4 
 		class="legend"
+		use:animationOnObserve={fadeToLeft(observerParams)}
 		>Escucha la música de orea one en tu plataforma preferida.</h4>
 	<div class="streaming-section-one">
 		<div 
 			class="img"
+			use:animationOnObserve={fadeToRight(observerParams)}
 			>
 			<img src="/images/explicit.jpg" alt="Explicit">
 			<a href="/" title="escuchar ahora en spotify" class="escuchar-ahora-btn">
@@ -42,6 +51,7 @@
 		<div class="redes-list">
 			{#each redesIcons as { Icon, socialUrl, title }, index}
 			<a 
+				use:animationOnObserve={ index % 2 ? fadeToRight(observerParams) : fadeToLeft(observerParams)}
 				class="icon-link" 
 				href={socialUrl} 
 				title={title}

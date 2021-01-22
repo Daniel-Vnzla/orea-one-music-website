@@ -1,16 +1,23 @@
 <script>
+	import { animationOnObserve } from '../../assets/actions.js';
+	import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
 
 	import ContactCard from '../Contact/ContactCard.svelte';
 
+	const observerParams = {
+		threshold: 0.5,
+	}
 </script>
 
 <section class="contact">
 	<div class="titles">
 		<h2 
 			class="title"
+			use:animationOnObserve={fadeToRight(observerParams)}
 			>Contacto (Trabajo)</h2>
 		<h4 
 			class="legend"
+			use:animationOnObserve={fadeToLeft(observerParams)}
 			>Interesado en trabajar con Orea One?</h4>
 	</div>
 

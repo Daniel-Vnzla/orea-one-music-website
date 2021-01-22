@@ -1,23 +1,31 @@
 <script>
+		import { animationOnObserve } from '../../assets/actions.js';
+		import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
 
+		const observerParams = {
+			threshold: 0.5,
+		}
 </script>
 
 <section class="biografy">
 	<h2 
-		class="title" 
+		class="title"
+		use:animationOnObserve={fadeToLeft(observerParams)}
 		>Orea One</h2>
 	<h4 
 		class="legend"
-		
+		use:animationOnObserve={fadeToRight(observerParams)}
 		>conoce las historai que llevo a convertirme en oreone</h4>
 
 	<div class="biografy-section-one">
 		<div class="bio-text-box">
 			<h4 
 				class="text-title"
+				use:animationOnObserve={fadeToLeft(observerParams)}
 				>Biografía</h4>
 			<p 
 				class="bio-text"
+				use:animationOnObserve={fadeToRight(observerParams)}
 				 >
 				Desde niño su obsesión ha sido dibujar y cantar, sin embargo, en 2009 fue cuando comenzó a escribir rap y a pintar graffiti, cuando solo tenía 13 años.
 				<br/>
@@ -35,10 +43,11 @@
 				class="ver-mas-btn" 
 				href="/biografy" 
 				title="Biografy"
-				
+				use:animationOnObserve={fadeToLeft(observerParams)}				
 				>Ver mas</a>
 		</div>
 		<div 
+			use:animationOnObserve={fadeToRight(observerParams)}				
 			class="img"
 			>
 			<img src="/images/oreaone.png" alt="Orea One">

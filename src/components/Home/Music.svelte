@@ -3,12 +3,16 @@
 	import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
 
 	import SongCard2 from '../Music/SongCard2.svelte';
+
+	const observerParams = {
+		threshold: 0.5,
+	}
 	
 </script>
 
 <section class="music">
-	<h2 class="title" use:animationOnObserve={fadeToRight({ threshold: 0.5})}>Ultimas canciones</h2>
-	<h4 class="legend" use:animationOnObserve={fadeToLeft({ threshold: 0.5})}>Ecucha lo ultimo de orea one</h4>
+	<h2 class="title" use:animationOnObserve={fadeToRight(observerParams)}>Ultimas canciones</h2>
+	<h4 class="legend" use:animationOnObserve={fadeToLeft(observerParams)}>Ecucha lo ultimo de orea one</h4>
 
 	<a href="/music" title="music">
 		Todas las canciones
