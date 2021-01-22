@@ -135,6 +135,7 @@
 	}
 
 	.songs-list {
+		position: sticky;
 		padding-top: 2rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
