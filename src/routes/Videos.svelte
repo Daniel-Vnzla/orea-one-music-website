@@ -3,12 +3,18 @@
 	import { onMount, tick } from 'svelte';
 	import { youtubeVideos } from '../stores/store.js';
 	import { fetchYoutubeVideos } from '../api/youtube.js';
+	import { animationOnObserve } from '../assets/actions.js';
+	import { fadeToRight, fadeToLeft } from '../assets/anime.js';
 
 	import Footer from '../components/Footer/Footer.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import Loading from '../commun/Loading.svelte';
 
 	let isLoading = false;
+
+	const observerParams = {
+		threshold: 0.2,
+	}
 
 	onMount(async () => {
 		window.scroll({ top: 0 });
@@ -60,9 +66,13 @@
 			</div>
 			<div class="decorator-line"></div>
 			<div class="video-list">
-				{#each $youtubeVideos as videoId}
-					<div class="video">
-						<iframe 
+				{#each $youtubeVideos as videoId, index}
+					<div 
+						class="video" 
+						use:animationOnObserve={index % 2 ? fadeToLeft(observerParams): fadeToRight(observerParams)}
+						>
+						<iframe
+							load="lazy"
 							width="100%" 
 							height="100%" 
 							title="oreaone"
@@ -77,7 +87,6 @@
 {/if}
 
 <style>
-
 	.videos {
 		position: relative;
 		overflow: hidden;
