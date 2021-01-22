@@ -1,24 +1,36 @@
 <script>
-	import Facebook from '../../icons/redes/facebook-with-circle.svg';
-	import Instagram from '../../icons/redes/instagram-with-circle.svg';
-	import Twitter from '../../icons/redes/twitter-with-circle.svg';
-	import Spotify from '../../icons/redes/spotify.svg';
-	import Youtube from '../../icons/redes/youtube-with-circle.svg';
-	import ITunes from '../../icons/redes/itunes.svg';
+	import { onMount } from 'svelte';
+	import { animationOnObserve } from '../../assets/actions.js';
+	import { fadeToLUpIcons, fadeToLeft, fadeToRight } from '../../assets/anime.js';
+
+	import { allRedesIcons } from '../../assets/icons.js';	
+
+	const observerParams = {
+		threshold: 0.5,
+	}
 
 </script>
 
 <footer class="footer">
 	<div class="contacts">
-		<h3 class="contacts-title">Discografía (contactos)</h3>
+		<h3 
+			class="contacts-title"
+			use:animationOnObserve={fadeToRight(observerParams)}
+			>Discografía (contactos)</h3>
 		<div class="contacts-info">
-			<div class="info-data">
+			<div 
+				class="info-data"
+				use:animationOnObserve={fadeToRight(observerParams)}
+				>
 			<h5 class="info-title">MANAGER PERSONAL</h5>
 				<p>Guy Dayan</p>
 				<p>guy@thegoola.com</p>
 				<p>+972 522 509 749</p>
 			</div>
-			<div class="info-data">
+			<div 
+				class="info-data"
+				use:animationOnObserve={fadeToLeft(observerParams)}
+				>
 			<h5 class="info-title">CONTACTO PERSONAL</h5>
 				<p>Orea One</p>
 				<p>oreaone@gmail.com</p>
@@ -28,20 +40,13 @@
 		<div class="copyritght">© 2020-2021 OREA ONE</div>
 	</div>
 	<div class="redes">
-		<h3 class="title">Redes sociales y música</h3>
-		<div class="redes-list">
-			<a href="/" title="Facebook" target="_blank">
-				<Facebook width="100%" height="100%" fill="var(--text-color)" /></a>
-			<a href="/" title="Instagram" target="_blank">
-				<Instagram width="100%" height="100%" fill="var(--text-color)" /></a>
-			<a href="/" title="Twitter" target="_blank">
-				<Twitter width="100%" height="100%" fill="var(--text-color)" /></a>
-			<a href="/" title="Spotify" target="_blank">
-				<Spotify width="100%" height="100%" fill="var(--text-color)" /></a>
-			<a href="/" title="Youtube" target="_blank">
-				<Youtube width="100%" height="100%" fill="var(--text-color)" /></a>
-			<a href="/" title="iTunes" target="_blank">
-				<ITunes width="100%" height="100%" fill="var(--text-color)" /></a>
+		<h3 class="title" use:animationOnObserve={fadeToLeft(observerParams)}>Redes sociales y música</h3>
+		<div class="redes-list" use:animationOnObserve={fadeToLUpIcons(observerParams)}>
+			{#each allRedesIcons as { Icon, socialUrl, title }}
+				<a class="icon anime-icon" href={socialUrl} title={title} target="_blank">
+					<Icon width="100%" height="100%" fill="#fff" />	
+				</a>
+			{/each}
 		</div>
 	</div>
 </footer>
@@ -101,7 +106,7 @@
 		display: flex;
 	}
 
-	.redes-list a {
+	.icon {
 		margin: .5rem;
 	}
 

@@ -5,7 +5,7 @@ import Facebook from '../icons/redes/facebook-with-circle.svg';
 import Spotify from '../icons/redes/spotify.svg';
 import ITunes from '../icons/redes/itunes.svg';
 
-export const redesIcons = [
+export const allRedesIcons = [
 	{
 		title: "Instagram",
 		Icon: Instagram,

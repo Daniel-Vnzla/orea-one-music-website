@@ -1,7 +1,7 @@
 <script>
 	import anime from 'animejs';
 	import { onMount } from 'svelte';
-	import { redesIcons } from '../../assets/icons.js';
+	import { allRedesIcons } from '../../assets/icons.js';
 
 	const animeLazyLoadingImg = ({ target }) => {
 		target.style.opacity = 1;
@@ -47,8 +47,8 @@
 	</div>
 	<div class="home-wrapper">
 		<div class="redes" id="anime-redes-home">
-			{#each redesIcons as { Icon, socialUrl, title }}
-				<a class="icon" href={socialUrl} title={title}>
+			{#each allRedesIcons as { Icon, socialUrl, title }}
+				<a class="icon" href={socialUrl} title={title} target="_blank">
 					<Icon width="100%" height="100%" fill="#fff" />	
 				</a>
 			{/each}

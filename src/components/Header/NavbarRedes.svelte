@@ -1,11 +1,18 @@
 <script>
-	import Youtube from '../../icons/redes/youtube-with-circle.svg';
-	import Facebook from '../../icons/redes/facebook-with-circle.svg';
-	import Instagram from '../../icons/redes/instagram-with-circle.svg';
-	import Spotify from '../../icons/redes/spotify.svg';
-	import Twitter from '../../icons/redes/twitter-with-circle.svg';
+	import anime from 'animejs';
+	import { onMount } from 'svelte';
+	import { allRedesIcons } from '../../assets/icons.js';
 
 	export let activeNavbar = true;
+
+	onMount(() => {
+		anime({
+			targets: ".redes-icons-list .navbar-icon",
+		  translateY: [-50, 0],
+		  opacity: [0, 1],
+		  delay: anime.stagger(100, { easing: 'easeOutQuad' }),
+		})
+	})
 </script>
 
 <section class="redes" class:redesShrink={!activeNavbar} >
@@ -13,31 +20,11 @@
 		<h4 class="title">Redes Sociales</h4>
 	{/if}
 	<div class="redes-icons-list" class:iconShrink={!activeNavbar}>
-		<a 
-			href="/" 
-			title="Youtube"
-			target="_blank"
-			><Youtube class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a 
-			href="/" 
-			title="Facebook"
-			target="_blank"
-			><Facebook class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a 
-			href="/" 
-			title="Instagram"
-			target="_blank"
-			><Instagram class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a 
-			href="/" 
-			title="Spotify"
-			target="_blank"
-			><Spotify class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
-		<a 
-			href="/" 
-			title="Twitter"
-			target="_blank"
-			><Twitter class="svg-icon" width="100%" height="100%" fill="var(--secondary-color)" /></a>
+		{#each allRedesIcons as { Icon, socialUrl, title }}
+			<a class="navbar-icon" href={socialUrl} title={title} target="_blank">
+				<Icon width="100%" height="100%" fill="var(--secondary-color)" />	
+			</a>
+		{/each}
 	</div>
 </section>
 
@@ -52,6 +39,7 @@
 		background-image: linear-gradient(to top right, var(--primary-color) 50%, transparent 0);
 		width: 17rem;
 		height: 17rem;
+		padding-bottom: 1rem;
 		border-right: 1px solid var(--bg-color);
 		transition: 
 		  width var(--transition-speed),
