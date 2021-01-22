@@ -4,6 +4,10 @@
 
 	import SongCard2 from '../Music/SongCard2.svelte';
 
+	export let songs;
+
+	let currentSongPlayingId = null;
+
 	const observerParams = {
 		threshold: 0.5,
 	}
@@ -18,24 +22,9 @@
 		Todas las canciones
 	</a>
 	<div class="music-list">
-		<SongCard2 
-			imgUrl="/images/explicit.jpg"
-			artists="orea one"
-			id="1"
-			title="Cancion 1"
-		/>
-		<SongCard2 
-			imgUrl="/images/explicit.jpg"
-			artists="orea one"
-			id="2"
-			title="Cancion 1"
-		/>
-		<SongCard2 
-			imgUrl="/images/explicit.jpg"
-			artists="orea one"
-			id="1"
-			title="Cancion 1"
-		/>
+		{#each songs as song, index}
+			<SongCard2 {...song} bind:currentSongPlayingId />
+		{/each}
 	</div>
 </section>
 

@@ -29,6 +29,7 @@
 		text-align: center;
 		font-size: 1.3rem;
 		border-radius: 5px;
+		z-index: 1;
 	}
 
 	.title {

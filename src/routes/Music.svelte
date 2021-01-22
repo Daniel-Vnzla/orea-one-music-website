@@ -14,7 +14,6 @@
 
 	let isLoadingSongs = false;
 	let currentSongPlayingId = null;
-	let spoitifyToken = null;
 
 	let songsData = {
 		songs: [],
@@ -23,7 +22,7 @@
 
 	onMount(async () => {
 		isLoadingSongs = true;
-		spoitifyToken = await getSpotifyAuthToken();
+		const spoitifyToken = await getSpotifyAuthToken();
 		songsData = await fetchSpotifySongs(spoitifyToken, null);
 		isLoadingSongs = false;
 		await tick();
