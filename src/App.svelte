@@ -1,4 +1,5 @@
 <script>
+	import SvelteSeo from "svelte-seo";
 	import router from 'page';
 
 	import Header from './components/Header/Header.svelte';
@@ -13,23 +14,42 @@
 	let page = null;
 	let currentPath = "Home";
 
+	const openGraph = {
+    title: 'Orea one',
+    description: 'Orea one, Trappin´Life Baby, Cantante, Músico, Compositor',
+    url: 'https://www.oreaone.com/Inicio',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.example.com/images/og-image.jpg',
+        width: 850,
+        height: 650,
+        alt: 'Orea One Website'
+      }
+     ]
+  }
+
 	router('/', () => {
-		currentPath = "Home"
+		router.redirect("/Inicio")
+	});
+
+	router('/Inicio', () => {
+		currentPath = "Inicio"
 		page = Home;
 	});
 
-	router('/Biografy', () =>{
-		currentPath = "Biografy"
+	router('/Biografía', () =>{
+		currentPath = "Biografía"
 	 page = Biografy;
 	}) ;
 
-	router('/Music', () => {
-		currentPath = "Music"
+	router('/Música', () => {
+		currentPath = "Música"
 		page = Music;
 	});
 
-	router('/Contact', () => {
-		currentPath = "Contact"
+	router('/Contacto', () => {
+		currentPath = "Contacto"
 		page = Contact;
 	});
 
@@ -39,11 +59,21 @@
 	});
 
 	router('*', () => {
+		currentPath = "Error404"
 		page = Error404;
 	});
 
 	router.start()
 </script>
+<!-- 
+<SvelteSeo
+  title="Orea one - Musica - Trappin´ Life Baby "
+  description="Orea one, Trappin´Life Baby, Cantante, Músico, Compositor"
+  keywords="OREA ONE, MÚSICA, CANTANTE, TRAPPIN´ LIFE BABY, ANTONIO JAVIER ELTIT CHELLEW, COMPOSITOR, LA AMIGA"
+
+   openGraph={openGraph}
+/> -->
+
 
 <main class="main">
 	<Header bind:activeNavbar bind:currentPath />
