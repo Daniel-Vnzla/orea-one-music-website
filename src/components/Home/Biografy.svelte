@@ -1,10 +1,12 @@
 <script>
-		import { animationOnObserve } from '../../assets/actions.js';
-		import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
+	import { animationOnObserve } from '../../assets/actions.js';
+	import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
 
-		const observerParams = {
-			threshold: 0.5,
-		}
+	import RightArrow from '../../icons/arrow-right.svg';
+
+	const observerParams = {
+		threshold: 0.5,
+	}
 </script>
 
 <section class="biografy">
@@ -44,7 +46,12 @@
 				href="/biografy" 
 				title="Biografy"
 				use:animationOnObserve={fadeToLeft(observerParams)}				
-				>Ver mas</a>
+				>
+				<span>Ver mas </span>
+				<div class="ver-mas-icon">
+					<RightArrow width="100%" height="100%" fill="var(--primary-color)" />
+				</div>
+			</a>
 		</div>
 		<div 
 			use:animationOnObserve={fadeToRight(observerParams)}				
@@ -109,10 +116,14 @@
 
 	.ver-mas-btn {
 		position: relative;
-		display: inline-block;
+		display: flex;
+		align-items: center;
+		width: fit-content;
+		justify-content: center;
 		color: var(--text-color);
 		font-size: 1.4rem;
 		padding: .6rem 2rem;
+		margin: 0 auto;
 		margin-top:-4rem;
 	}
 
@@ -125,6 +136,17 @@
 		min-height: 2px;
 		background-color: var(--primary-color);
 		transition: transform var(--transition-speed);
+	}
+
+	.ver-mas-icon {
+		margin-left: .5rem;
+		width: 2rem;
+		height: 2rem;
+		transition: transform var(--transition-speed);
+	}
+
+	.ver-mas-btn:hover .ver-mas-icon {
+		transform: translateX(5px);
 	}
 
 	.ver-mas-btn:hover::before {
