@@ -2,6 +2,7 @@
 	import { animationOnObserve } from '../../assets/actions.js';
 	import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
 
+	import RightArrow from '../../icons/arrow-right.svg';
 	import SongCard2 from '../Music/SongCard2.svelte';
 
 	export let songs;
@@ -18,8 +19,11 @@
 	<h2 class="title" use:animationOnObserve={fadeToRight(observerParams)}>Ultimas canciones</h2>
 	<h4 class="legend" use:animationOnObserve={fadeToLeft(observerParams)}>Ecucha lo ultimo de orea one</h4>
 
-	<a href="/music" title="music">
+	<a class="ver-mas-btn" href="/music" title="music">
 		Todas las canciones
+		<div class="ver-mas-icon">
+			<RightArrow width="100%" height="100%" fill="var(--primary-color)" />
+		</div>
 	</a>
 	<div class="music-list">
 		{#each songs as song, index}
@@ -46,18 +50,22 @@
 		color: #ccc;
 	}
 
-	a {
-		display: inline-block;
+	.ver-mas-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		font-weight: bold;
 		padding: .6rem 2rem;
 		position: relative;
 		font-size: 1.3rem;
+		margin: 0 auto;
 		margin-top: 3.5rem;
 		margin-bottom: 1.5rem;
+		width: fit-content;
 		color: var(--text-color);
 	}
 
-	a::before {
+	.ver-mas-btn::before {
 		position: absolute;
 		content: "";
 		bottom: 0;
@@ -66,6 +74,13 @@
 		min-height: 2px;
 		border-radius: 4px;
 		background-color: var(--primary-color);
+		transition: transform var(--transition-speed);
+	}
+
+	.ver-mas-icon {
+		margin-left: .5rem;
+		width: 2rem;
+		height: 2rem;
 		transition: transform var(--transition-speed);
 	}
 
@@ -80,9 +95,14 @@
 		grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
 	}
 
-	a:hover::before {
+	.ver-mas-btn:hover::before {
 		transform: scaleX(0.3);
 	}
+	
+	.ver-mas-btn:hover .ver-mas-icon {
+		transform: translateX(5px);
+	}
+
 
 
 </style>

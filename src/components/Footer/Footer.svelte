@@ -33,7 +33,7 @@
 		<h3 class="redes-title" use:animationOnObserve={fadeToLeft(observerParams)}>Redes sociales y música</h3>
 		<div class="redes-list" use:animationOnObserve={fadeToLUpIcons(observerParams)}>
 			{#each allRedesIcons as { Icon, socialUrl, title }}
-				<a class="icon anime-icon" href={socialUrl} title={title} target="_blank">
+				<a class="icon anime-icon icon-translate" href={socialUrl} title={title} target="_blank">
 					<Icon width="100%" height="100%" fill="#fff" />	
 				</a>
 			{/each}
