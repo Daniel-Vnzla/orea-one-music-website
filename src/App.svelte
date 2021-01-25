@@ -21,7 +21,7 @@
     type: 'website',
     images: [
       {
-        url: 'https://www.example.com/images/og-image.jpg',
+        url: 'https://image.shutterstock.com/image-photo/three-pork-carnitas-street-tacos-600w-441287707.jpg',
         width: 850,
         height: 650,
         alt: 'Orea One Website'
@@ -65,14 +65,14 @@
 
 	router.start()
 </script>
-<!-- 
+
 <SvelteSeo
   title="Orea one - Musica - Trappin´ Life Baby "
   description="Orea one, Trappin´Life Baby, Cantante, Músico, Compositor"
   keywords="OREA ONE, MÚSICA, CANTANTE, TRAPPIN´ LIFE BABY, ANTONIO JAVIER ELTIT CHELLEW, COMPOSITOR, LA AMIGA"
 
    openGraph={openGraph}
-/> -->
+/>
 
 
 <main class="main">
