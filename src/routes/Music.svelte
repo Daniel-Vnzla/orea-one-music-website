@@ -10,6 +10,7 @@
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import SongCardVertical from '../components/Music/SongCardVertical.svelte';
 	import Loading from '../commun/Loading.svelte';
+	import Error from '../commun/Error.svelte';
 
 	let isLoadingSongs = false;
 	let currentSongPlayingId = null;
@@ -19,40 +20,53 @@
 		nextPage: null
 	};
 
+	let handleError = {
+		name: "",
+		message: ""
+	}
+
 	onMount(async () => {
 		isLoadingSongs = true;
-		const spoitifyToken = await getSpotifyAuthToken();
-		songsData = await fetchSpotifySongs(spoitifyToken, null);
-		isLoadingSongs = false;
-		await tick();
-
-		anime.timeline({
-			duration: 600,
-			easing: "easeInBack",
-		})
-		.add({
-			targets: ".music-title",
-			translateY: [20, 0],
-			opacity: [0, 1],
-		})
-		.add({
-			targets: ".music-legend",
-			translateY: [-20, 0],
-			opacity: [0, 1],
-		}, "-=200")
-		.add({
-			targets: ".songs-title",
-			translateX: [-20, 0],
-			opacity: [0, 1],
-		}, "-=200")
-		.add({
-			targets: ".decorator-line",
-			scale: [0,1],
-		}, "-=200")
-		.add({
-			targets: ".songs-list",
-		  opacity: [0, 1],
-		});
+		try{
+			const spoitifyToken = await getSpotifyAuthToken();
+			songsData = await fetchSpotifySongs(spoitifyToken, null);
+			isLoadingSongs = false;
+			await tick();
+			anime.timeline({
+				duration: 600,
+				easing: "easeInBack",
+			})
+			.add({
+				targets: ".music-title",
+				translateY: [20, 0],
+				opacity: [0, 1],
+			})
+			.add({
+				targets: ".music-legend",
+				translateY: [-20, 0],
+				opacity: [0, 1],
+			}, "-=200")
+			.add({
+				targets: ".songs-title",
+				translateX: [-20, 0],
+				opacity: [0, 1],
+			}, "-=200")
+			.add({
+				targets: ".decorator-line",
+				scale: [0,1],
+			}, "-=200")
+			.add({
+				targets: ".songs-list",
+			  opacity: [0, 1],
+			});
+		 }
+		catch(err){
+			console.error(err);
+			handleError = {
+				message: handleError.message,
+				name: handleError.name,
+			}
+		}
 	});
 
 	const loadMoreSongs = async () => {
@@ -70,6 +84,11 @@
 <section class="music">
 	{#if isLoadingSongs}
 		<Loading />
+	{:else if handleError.name || handleError.message}
+		<Error 
+			errorMessage={handleError.message}
+			errorName={handleError.name}
+			/>
 	{:else}
 		<OreaOneTag />
 		<div class="music-wrapper">

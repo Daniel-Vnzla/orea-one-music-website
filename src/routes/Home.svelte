@@ -7,6 +7,7 @@
 
 	import Footer from '../components/Footer/Footer.svelte';
 	import Loading from '../commun/Loading.svelte';
+	import Error from '../commun/Error.svelte';
 
 	import { fetchSpotifySongs, getSpotifyAuthToken } from '../api/spotify.js';
 
@@ -15,6 +16,11 @@
 		songs: [],
 		nextPage: null,
 	};
+
+	let handleError = {
+		name: "",
+		message: ""
+	}
 
 	onMount(async () => {
 		try {
@@ -26,6 +32,10 @@
 		}
 		catch(err){
 			console.log(err);
+			handleError = {
+				message: handleError.message,
+				name: handleError.name,
+			}
 		}
 	})
 </script>
@@ -33,6 +43,11 @@
 <section class="home">
 	{#if isLoadingSongs}
 		<Loading />
+	{:else if handleError.name || handleError.message}
+		<Error 
+			errorMessage={handleError.message}
+			errorName={handleError.name}
+			/>
 	{:else}
 		<div class="home-wrapper">
 			<Home />

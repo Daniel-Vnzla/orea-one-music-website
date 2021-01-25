@@ -9,9 +9,13 @@
 	import Footer from '../components/Footer/Footer.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
 	import Loading from '../commun/Loading.svelte';
+	import Error from '../commun/Error.svelte';
 
 	let isLoading = false;
-
+	let handleError = {
+		name: "",
+		message: ""
+	}
 	const observerParams = {
 		threshold: 0.2,
 	}
@@ -20,7 +24,17 @@
 		window.scroll({ top: 0 });
 		isLoading = true;
 		if(!$youtubeVideos.length) {
-			$youtubeVideos = await fetchYoutubeVideos() || []
+			try{
+				$youtubeVideos = await fetchYoutubeVideos() || []
+			}
+			catch(err){
+				console.error(err.message);
+				console.log(err.code)
+				handleError = {
+					name: err.name,
+					message: err.message,
+				}
+			}
 		}
 		isLoading = false;
 		await tick();
@@ -49,6 +63,11 @@
 
 {#if isLoading }
 	<Loading />
+{:else if handleError.name || handleError.message}
+	<Error 
+		errorMessage={handleError.message}
+		errorName={handleError.name}
+		/>
 {:else}
 	<section class="videos">
 		<OreaOneTag />
