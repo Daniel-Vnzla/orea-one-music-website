@@ -3,7 +3,15 @@
 	import { onMount } from 'svelte';
 	import { allRedesIcons } from '../../assets/icons.js';
 
+	const observerParams = {
+		threshold: 0.7,
+	}
+
+	let scrollY = 0;
+	let once = false;
+
 	const animeLazyLoadingImg = ({ target }) => {
+		console.log(scrolling)
 		target.style.opacity = 1;
 		anime({
 			targets: target,
@@ -17,6 +25,7 @@
 	onMount(() => {
 		anime.timeline({
 			duration: 600,
+			delay: 1000,
 		})
 		.add({
 			targets: "#anime-fade-top-text",
@@ -29,17 +38,28 @@
 		  translateY: [-50, 0],
 		  opacity: [0, 1],
 		  delay: anime.stagger(100, { easing: 'easeOutQuad' }),
-		});
+		}).
+		add({
+			targets: ".scroll-down",
+			translateY: [-20, 0],
+		  opacity: [0, 1],
+		}, "-=500");
 
 		anime({
 			targets: "#anime-fade-bottom-text",
 			translateY: [50, 0],
 		  opacity: [0, 1],
-		  easing: "easeInBack"
+		  easing: "easeInBack",
+		  delay: 1000,
 		});
-	})
+	});
+
+	$: if (scrollY > 10 && !once) {
+		once = true;
+	}
 
 </script>
+<svelte:window bind:scrollY={scrollY} ></svelte:window>	
 
 <section class="home">
 	<div class="bg-image" >
@@ -58,10 +78,14 @@
 			<h4 class="legend" id="anime-fade-bottom-text">Trapinn´ Life Baby</h4>
 		</div>
 	</div>
+	<div class="scroll-down" hidden={once} >
+		<div class="scroll-ball"></div>
+	</div>
 </section>
 
 <style>
 	.home {
+		position: relative;
 		overflow: hidden;
 	}
 
@@ -128,6 +152,48 @@
 		text-shadow: 3px 10px rgb(0,0,0, .3);		
 	}
 
+	.scroll-down {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		width: 30px;
+		height: 60px;
+		padding: 4px;
+		border-radius: 20px;
+		border: 2px solid rgba(255,255,255, .6);;
+		transform: translateX(-50%);
+	}
+
+	.scroll-down::before {
+		position: absolute;
+		content: "Scroll down!";
+		top: -80%;
+		left: 50%;
+		font-size: .9rem;
+		color: rgba(255,255,255, .6);
+		font-weight: bold;
+		white-space: nowrap;
+		transform: translate(-50%, 100%);
+	} 
+
+	.scroll-ball {
+		width: 100%;
+		height: 20px;
+		border-radius: 10px;
+		background-color: rgba(255,255,255, .6);
+		animation: scrolling-ball  infinite 4s;
+		animation-delay: 1s;
+	}
+
+	@keyframes scrolling-ball {
+		from{
+			transform: translateY(0);
+		}
+		to {
+			transform: translateY(25px);
+		}
+	}
+
 	@media (max-width: 800px) {
 		.title {
 			font-size: 7rem;
@@ -135,6 +201,10 @@
 
 		.legend {
 			font-size: 2rem;
+		}
+
+		.scroll-down {
+			bottom: 4rem;
 		}
 
 	}
