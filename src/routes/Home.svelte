@@ -31,7 +31,7 @@
 			await tick();
 		}
 		catch(err){
-			console.log(err);
+			console.error(err.message);
 			handleError = {
 				message: handleError.message,
 				name: handleError.name,

@@ -61,7 +61,7 @@
 			});
 		 }
 		catch(err){
-			console.error(err);
+			console.error(err.message);
 			handleError = {
 				message: handleError.message,
 				name: handleError.name,
