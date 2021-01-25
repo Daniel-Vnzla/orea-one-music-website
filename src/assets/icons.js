@@ -9,31 +9,45 @@ export const allRedesIcons = [
 	{
 		title: "Instagram",
 		Icon: Instagram,
-		socialUrl: "/",
-	}, 
-	{
-		title: "Twitter",
-		Icon: Twitter,
-		socialUrl: "/",
+		socialUrl: "https://www.instagram.com/oreaonebaby",
 	}, 
 	{
 		title: "Youtube",
 		Icon: Youtube,
-		socialUrl: "/",
+		socialUrl: "https://www.youtube.com/channel/UCVz0m0NGtDwYdc_7PeVPgDQ",
 	}, 
 	{
 		title: "Facebook",
 		Icon: Facebook,
-		socialUrl: "/",
+		socialUrl: "https://www.facebook.com/oreaonebaby",
 	}, 
 	{
 		title: "Spotify",
 		Icon: Spotify,
-		socialUrl: "/",
+		socialUrl: "https://open.spotify.com/artist/7MNunNrUcXN7HoPZO0q9Y0",
 	}, 
 	{
 		title: "ITunes",
 		Icon: ITunes,
-		socialUrl: "/",
+		socialUrl: "https://music.apple.com/us/artist/orea-one/1506543929",
+	}
+];
+
+
+export const musicIcons = [
+	{
+		title: "Spotify",
+		Icon: Spotify,
+		socialUrl: "https://open.spotify.com/artist/7MNunNrUcXN7HoPZO0q9Y0",
+	}, 
+	{
+		title: "Youtube",
+		Icon: Youtube,
+		socialUrl: "https://www.youtube.com/channel/UCVz0m0NGtDwYdc_7PeVPgDQ",
+	},
+	{
+		title: "ITunes",
+		Icon: ITunes,
+		socialUrl: "/https://music.apple.com/us/artist/orea-one/1506543929",
 	}
 ];

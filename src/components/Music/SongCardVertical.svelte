@@ -1,10 +1,7 @@
 <script>
 	import { animationOnObserve } from '../../assets/actions.js';
 	import { fadeToRight } from '../../assets/anime.js';
-
-	import Youtube from '../../icons/redes/spotify.svg';
-	import Spotify from '../../icons/redes/youtube-with-circle.svg';
-	import ITunes from '../../icons/redes/itunes.svg';
+	import { musicIcons } from '../../assets/icons.js';
 
 	import MusicReproductor from './MusicReproductor.svelte';
 	import ScreenMusicReproductor from './ScreenMusicControls.svelte';
@@ -54,15 +51,11 @@
 		<div class="song-redes">
 			<p class="song-redes-title">Escucha la cancion completa aqui!</p>
 			<div class="song-redes-list">
-				<a href="/" title="Youtube">
-					<Youtube width="100%" height="100%" fill="var(--secondary-color)" />
-				</a>
-				<a href="/" title="Spotify">
-					<Spotify width="100%" height="100%" fill="var(--secondary-color)" />
-				</a>
-				<a href="/" title="iTunes">
-					<ITunes width="100%" height="100%" fill="var(--secondary-color)" />
-				</a>
+				{#each musicIcons as { Icon, socialUrl, title }}
+					<a class="icon icon-translate" href={socialUrl} title={title} target="_blank">
+						<Icon width="100%" height="100%" fill="var(--secondary-color)" />	
+					</a>
+				{/each}
 			</div>
 		</div>
 	</div>

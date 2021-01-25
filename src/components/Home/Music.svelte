@@ -3,7 +3,7 @@
 	import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
 
 	import RightArrow from '../../icons/arrow-right.svg';
-	import SongCard2 from '../Music/SongCard2.svelte';
+	import SongCardVertical from '../Music/SongCardVertical.svelte';
 
 	export let songs;
 
@@ -27,7 +27,7 @@
 	</a>
 	<div class="music-list">
 		{#each songs as song, index}
-			<SongCard2 {...song} bind:currentSongPlayingId />
+			<SongCardVertical {...song} bind:currentSongPlayingId />
 		{/each}
 	</div>
 </section>

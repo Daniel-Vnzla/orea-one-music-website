@@ -8,8 +8,7 @@
 	import Footer from '../components/Footer/Footer.svelte';
 
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
-	import SongCard from '../components/Music/SongCard.svelte';
-	import SongCard2 from '../components/Music/SongCard2.svelte';
+	import SongCardVertical from '../components/Music/SongCardVertical.svelte';
 	import Loading from '../commun/Loading.svelte';
 
 	let isLoadingSongs = false;
@@ -84,11 +83,11 @@
 						<div 
 							in:fade 
 							use:infiniteScrolling={{ onEnter: loadMoreSongs, onLeave: () => {} }}>
-							<SongCard2 {...song} bind:currentSongPlayingId />
+							<SongCardVertical {...song} bind:currentSongPlayingId />
 						</div>
 					{:else}
 						<div in:fade>
-							<SongCard2 {...song} bind:currentSongPlayingId />
+							<SongCardVertical {...song} bind:currentSongPlayingId />
 						</div>
 					{/if}
 				{/each}
