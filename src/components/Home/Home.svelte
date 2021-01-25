@@ -55,7 +55,7 @@
 		</div>
 		<div class="title-box">
 			<h2 class="title" id="anime-fade-top-text" >orea one</h2>
-			<h4 class="legend" id="anime-fade-bottom-text">Trapin´s life baby</h4>
+			<h4 class="legend" id="anime-fade-bottom-text">Trapinn´ Life Baby</h4>
 		</div>
 	</div>
 </section>
@@ -122,6 +122,7 @@
 	}
 
 	.legend {
+		margin-top: .5rem;
 		font-size: 3rem;
 		color: var(--primary-color);
 		text-shadow: 3px 10px rgb(0,0,0, .3);		

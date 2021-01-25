@@ -64,6 +64,15 @@ body::-webkit-scrollbar-track {
 	
 }
 
+.icon-translate svg {
+	transform: translateX(0);
+	transition: transform var(--transition-speed);
+}
+
+.icon-translate:hover svg {
+	transform: translateY(-5px);
+}
+
 button:not(:disabled) .reproductor-icon:hover {
 	fill: var(--primary-color);
 	transition: fill var(--transition-speed);
