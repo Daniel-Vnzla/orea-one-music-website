@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { animationOnObserve } from '../../assets/actions.js';
 	import { fadeToRight } from '../../assets/anime.js';
 
@@ -10,7 +11,12 @@
 	const observerParams = {
 		threshold: 0.1,
 	}
+
+	onMount(() => {
+		window.scroll({ top: 0 });
+	})
 </script>
+
 
 <div class="contact-card" use:animationOnObserve={fadeToRight(observerParams)}>
 	<h4 class="title">{title}</h4>

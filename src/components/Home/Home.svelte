@@ -11,7 +11,6 @@
 	let once = false;
 
 	const animeLazyLoadingImg = ({ target }) => {
-		console.log(scrolling)
 		target.style.opacity = 1;
 		anime({
 			targets: target,
