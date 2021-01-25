@@ -1,10 +1,18 @@
 <script>
+	import { onMount } from 'svelte';
 	import Resize from '../../icons/arrow-left-circle.svg';
 
 	export let activeNavbar = false;
 
+	onMount(() => {
+		const savedNavbarSizeState = localStorage.getItem("activeNavbar");
+		if (savedNavbarSizeState.length) {
+			activeNavbar = savedNavbarSizeState === 'big' ? true : false;
+		}
+	})
 	const handleNavbarResize = () => {
 		activeNavbar = !activeNavbar;
+		localStorage.setItem('activeNavbar', activeNavbar ? 'big' : 'small');
 	}
 </script>
 
