@@ -6,7 +6,7 @@
 
 	onMount(() => {
 		const savedNavbarSizeState = localStorage.getItem("activeNavbar");
-		if (savedNavbarSizeState.length) {
+		if (savedNavbarSizeState && savedNavbarSizeState.length) {
 			activeNavbar = savedNavbarSizeState === 'big' ? true : false;
 		}
 	})
