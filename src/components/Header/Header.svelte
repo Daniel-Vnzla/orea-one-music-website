@@ -12,7 +12,7 @@
 	const iconsSize = "100%";
 	const iconsColor = "var(--text-color)";
 
-	export let activeNavbar = true;
+	export let activeNavbar = false;
 	export let currentPath = "Home";
 
 </script>

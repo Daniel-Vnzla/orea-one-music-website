@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { allRedesIcons } from '../../assets/icons.js';
 
-	export let activeNavbar = true;
+	export let activeNavbar = false;
 
 	onMount(() => {
 		anime({
@@ -21,7 +21,7 @@
 	{/if}
 	<div class="redes-icons-list" class:iconShrink={!activeNavbar}>
 		{#each allRedesIcons as { Icon, socialUrl, title }}
-			<a class="navbar-icon" href={socialUrl} title={title} target="_blank">
+			<a class="navbar-icon icon-transition" href={socialUrl} title={title} target="_blank">
 				<Icon width="100%" height="100%" fill="var(--secondary-color)" />	
 			</a>
 		{/each}

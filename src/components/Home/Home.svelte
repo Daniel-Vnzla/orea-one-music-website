@@ -48,7 +48,7 @@
 	<div class="home-wrapper">
 		<div class="redes" id="anime-redes-home">
 			{#each allRedesIcons as { Icon, socialUrl, title }}
-				<a class="icon" href={socialUrl} title={title} target="_blank">
+				<a class="icon icon-translate" href={socialUrl} title={title} target="_blank">
 					<Icon width="100%" height="100%" fill="#fff" />	
 				</a>
 			{/each}

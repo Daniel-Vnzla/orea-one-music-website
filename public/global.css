@@ -49,6 +49,9 @@ body::-webkit-scrollbar-track {
 	background: #1d1d1d;
 }
 
+svg {
+	pointer-events: none;
+}
 
 .nav-link svg {
 	width: 2.4rem;

@@ -11,6 +11,7 @@
 <button 
 	class:activeNavbar
 	class="resize-navbar-btn"
+	title="Cambiar tamaño de la barra"
 	on:click={handleNavbarResize}
 	>
 	<div class="resize-navbar-icon">

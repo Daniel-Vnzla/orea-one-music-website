@@ -9,7 +9,7 @@
 	import Videos from './routes/Videos.svelte';
 	import Error404 from './routes/Error404.svelte';
 
-	let activeNavbar = true;
+	let activeNavbar = false;
 	let page = null;
 	let currentPath = "Home";
 
