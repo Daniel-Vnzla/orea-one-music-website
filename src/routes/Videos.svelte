@@ -74,8 +74,6 @@
 			<h2 class="videos-title">Videos</h2>
 			<div class="subscribe-section">
 				Suscribete al canal de Orea One para no perderte de sus siguientes lanzamientos!
-			<!-- is necessary load here -->
-			<script src="https://apis.google.com/js/platform.js"></script>
 			<div 
 				class="g-ytsubscribe" 
 				data-channelid="UCVz0m0NGtDwYdc_7PeVPgDQ" 
