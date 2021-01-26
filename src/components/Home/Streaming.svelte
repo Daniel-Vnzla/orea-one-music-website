@@ -34,6 +34,7 @@
 				class="icon-link" 
 				href={socialUrl} 
 				title={title}
+				target="_blank"
 				>
 				<div class="icon">
 					<Icon width="100%" height="100%" fill="var(--secondary-color)" />

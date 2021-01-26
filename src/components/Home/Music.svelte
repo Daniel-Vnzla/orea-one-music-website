@@ -19,7 +19,7 @@
 	<h2 class="title" use:animationOnObserve={fadeToRight(observerParams)}>Ultimas canciones</h2>
 	<h4 class="legend" use:animationOnObserve={fadeToLeft(observerParams)}>Ecucha lo ultimo de Orea One</h4>
 
-	<a class="ver-mas-btn" href="/music" title="Ver todas las canciones de orea one">
+	<a class="ver-mas-btn" href="/Música" title="Ver todas las canciones de orea one">
 		Todas las canciones
 		<div class="ver-mas-icon">
 			<RightArrow width="100%" height="100%" fill="var(--primary-color)" />
