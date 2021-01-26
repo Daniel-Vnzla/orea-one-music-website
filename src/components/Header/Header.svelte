@@ -203,7 +203,7 @@
 		content: attr(data-tooltip);
 		top: 50%;
 		right: 0;
-		background: var(--primary-color);
+		background-color: var(--primary-color);
 		color: var(--secondary-color);
 		padding: 5px 12px;
 		border-radius: 3px;
@@ -212,6 +212,7 @@
 		visibility: hidden;
 		transform: translate(calc(100% + 5px), -50%);
 		transition: opacity var(--transition-speed);
+		box-shadow: 0 0 9px 1px rgba(0,0,0, .2);
 		z-index: 300;
 	}
 

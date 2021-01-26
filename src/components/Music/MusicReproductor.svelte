@@ -150,7 +150,7 @@
 		--width: 10%;
 		appearance: none;
 		-webkit-appearance: none;
-		height: 3px;
+		height: 5px;
 		border: none;
 		background: var(--bg-color-secondary);
 		width: 100%;
@@ -159,11 +159,12 @@
 		cursor: pointer;
 	}
 
-	input[type=range]::-webkit-slider-thumb {
+	input[type=range]::-webkit-slider-thumb, input[type=range]::-moz-range-thumb {
 		margin: 0;
 		padding: 0;
 		appearance: none;
   	-webkit-appearance: none;
+  	border: none;
 		background: transparent;
 		width: 1px;
 		height: 12px;
