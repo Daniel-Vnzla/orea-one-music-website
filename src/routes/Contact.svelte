@@ -18,7 +18,7 @@
 			<h3 
 				class="contacts-title"
 				use:animationOnObserve={fadeToRight(observerParams)}
-				>Interesado en trabajar con Orea One?</h3>
+				>¿Interesado en trabajar con Orea One?</h3>
 			<div class="contacts-info">
 				<div 
 					class="info-data"

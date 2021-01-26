@@ -49,7 +49,7 @@
 			{previewUrl} 
 			/>
 		<div class="song-redes">
-			<p class="song-redes-title">Escucha la cancion completa aqui!</p>
+			<p class="song-redes-title">Escucha la canción completa aquí!</p>
 			<div class="song-redes-list">
 				{#each musicIcons as { Icon, socialUrl, title }}
 					<a class="icon icon-translate" href={socialUrl} title={title} target="_blank">

@@ -16,8 +16,8 @@
 </script>
 
 <section class="music">
-	<h2 class="title" use:animationOnObserve={fadeToRight(observerParams)}>Ultimas canciones</h2>
-	<h4 class="legend" use:animationOnObserve={fadeToLeft(observerParams)}>Ecucha lo ultimo de Orea One</h4>
+	<h2 class="title" use:animationOnObserve={fadeToRight(observerParams)}>Últimas canciones</h2>
+	<h4 class="legend" use:animationOnObserve={fadeToLeft(observerParams)}>Escucha lo último de Orea One</h4>
 
 	<a class="ver-mas-btn" href="/Música" title="Ver todas las canciones de orea one">
 		Todas las canciones

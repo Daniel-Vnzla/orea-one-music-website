@@ -11,6 +11,13 @@
 
 	import { fetchSpotifySongs, getSpotifyAuthToken } from '../api/spotify.js';
 
+
+	const topSongsId = [
+		"5QkDaKVRv6sY8HSgsZMa8v", 
+		"71u31Nma7efCIPXATtmmrV", 
+		"1gzHFnd9feprz58Zwi7FNM"
+	]
+
 	let isLoadingSongs = false;
 	let songsData = {
 		songs: [],
@@ -27,6 +34,7 @@
 			isLoadingSongs = true;
 			const spoitifyToken = await getSpotifyAuthToken();
 			songsData = await fetchSpotifySongs(spoitifyToken, null);
+			songsData.songs = songsData?.songs.filter((song) => topSongsId.includes(song.id));
 			isLoadingSongs = false;
 			await tick();
 		}
@@ -51,7 +59,7 @@
 	{:else}
 		<div class="home-wrapper">
 			<Home />
-			<Music songs={songsData?.songs.slice(0,3)} />
+			<Music songs={songsData?.songs} />
 			<Biografy />
 			<Streaming />
 		</div>
