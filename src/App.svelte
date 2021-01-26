@@ -70,7 +70,14 @@
       alt: 'Orea One Website'
     }
    ]
-}}
+	}}
+	 twitter={{
+    site: "@Daniel_Vnzlaa",
+    title: "Twitter Card Title",
+    description: "Description of Twitter Card",
+    image: "https://image.shutterstock.com/image-photo/three-pork-carnitas-street-tacos-600w-441287707.jpg",
+    imageAlt: "Alt text for the card!",
+  }}
 />
 
 
