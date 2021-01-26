@@ -14,21 +14,6 @@
 	let page = null;
 	let currentPath = "Home";
 
-	const openGraph = {
-    title: 'Orea one',
-    description: 'Orea one, Trappin´Life Baby, Cantante, Músico, Compositor',
-    url: 'https://www.oreaone.com/Inicio',
-    type: 'website',
-    images: [
-      {
-        url: 'https://image.shutterstock.com/image-photo/three-pork-carnitas-street-tacos-600w-441287707.jpg',
-        width: 850,
-        height: 650,
-        alt: 'Orea One Website'
-      }
-     ]
-  }
-
 	router('/', () => {
 		router.redirect("/Inicio")
 	});
@@ -67,11 +52,25 @@
 </script>
 
 <SvelteSeo
-  title="Orea one - Musica - Trappin´ Life Baby "
-  description="Orea one, Trappin´Life Baby, Cantante, Músico, Compositor"
-  keywords="OREA ONE, MÚSICA, CANTANTE, TRAPPIN´ LIFE BABY, ANTONIO JAVIER ELTIT CHELLEW, COMPOSITOR, LA AMIGA"
+  title="Orea One - Website - Trappin´ Life Baby "
+  description="Orea One, Trappin´Life Baby, Cantante, Músico, Compositor"
+  author="Orea One"
+  keywords="OREA ONE WEBSITE, MÚSICA, CANTANTE, TRAPPIN´ LIFE BABY, ANTONIO JAVIER ELTIT CHELLEW, COMPOSITOR, LA AMIGA"
 
-   openGraph={openGraph}
+ openGraph={{	
+  title: 'Orea One - Website',
+  description: 'Orea one, Trappin´Life Baby, Cantante, Músico, Compositor',
+  url: 'https://oreaone.netlify.app/Inicio',
+  type: 'website',
+  images: [
+    {
+      url: 'https://image.shutterstock.com/image-photo/three-pork-carnitas-street-tacos-600w-441287707.jpg',
+      width: 850,
+      height: 650,
+      alt: 'Orea One Website'
+    }
+   ]
+}}
 />
 
 
