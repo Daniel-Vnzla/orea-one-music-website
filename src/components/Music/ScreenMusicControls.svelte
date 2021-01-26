@@ -16,15 +16,15 @@
 	<div class="screen--reproductor-song-title">{songTitle}</div>
 	<button class="play-button" on:click={handlePlaySong}>
 		{#if ended}
-			<div class="song-icon" transition:scale >
+			<div title="Replay" class="song-icon" transition:scale >
 				<Replay class="reproductor-icon " width="100%" height="100%" fill="var(--secondary-color)" />
 			</div>
 		{:else if paused}
-			<div class="screen-icon" transition:scale >
+			<div title="Play" class="screen-icon" transition:scale >
 				<Play  width="100%" height="100%" fill="var(--secondary-color)" />	
 			</div>
 		{:else}
-			<div class="screen-icon" transition:scale >
+			<div title="Pause" class="screen-icon" transition:scale >
 				<Pause  width="100%" height="100%" fill="var(--secondary-color)" />	
 			</div>
 		{/if}

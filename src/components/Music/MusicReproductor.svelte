@@ -56,15 +56,15 @@
 		on:click={setCurrentSongId}
 		>
 		{#if ended }
-			<div class="song-icon" transition:scale >
+			<div title="Replay" class="song-icon" transition:scale >
 				<Replay class="reproductor-icon " width="100%" height="100%" fill="#fff" />
 			</div>
 		{:else if paused}
-			<div class="song-icon" transition:scale >
+			<div title="Play" class="song-icon" transition:scale >
 				<Play class="reproductor-icon " width="100%" height="100%" fill="#fff" />
 			</div>
 		{:else}
-			<div class="song-icon" transition:scale >
+			<div title="Pause" class="song-icon" transition:scale >
 				<Pause class="reproductor-icon " width="100%" height="100%" fill="#fff" />
 			</div>
 		{/if}
