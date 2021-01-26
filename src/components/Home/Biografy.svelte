@@ -43,7 +43,7 @@
 			</p>
 			<a 
 				class="ver-mas-btn" 
-				href="/biografy" 
+				href="/Biografía"
 				title="Ver la biografía de orea one"
 				use:animationOnObserve={fadeToLeft(observerParams)}				
 				>
