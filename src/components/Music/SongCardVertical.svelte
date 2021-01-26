@@ -14,6 +14,7 @@
 	export let currentSongPlayingId;
 
 	let paused = true;
+	let ended = false;
 	
 	const observerParams = {
 		threshold: 0.1,
@@ -30,7 +31,8 @@
 {#if currentSongPlayingId === id}
 	<ScreenMusicReproductor 
 		songTitle={title}
-		bind:paused 
+		bind:paused
+		ended={ended}
 		handlePlaySong={handlePlaySong}  />
 {/if}
 <div class="song-card" use:animationOnObserve={fadeToRight(observerParams)} >
@@ -44,6 +46,7 @@
 		</div>
 		<MusicReproductor 
 			bind:paused
+			bind:ended
 			bind:currentSongPlayingId
 			{id} 
 			{previewUrl} 

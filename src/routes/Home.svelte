@@ -19,10 +19,8 @@
 	]
 
 	let isLoadingSongs = false;
-	let songsData = {
-		songs: [],
-		nextPage: null,
-	};
+
+	let topSongs = [];
 
 	let handleError = {
 		name: "",
@@ -33,8 +31,8 @@
 		try {
 			isLoadingSongs = true;
 			const spoitifyToken = await getSpotifyAuthToken();
-			songsData = await fetchSpotifySongs(spoitifyToken, null);
-			songsData.songs = songsData?.songs.filter((song) => topSongsId.includes(song.id));
+			const { songs } = await fetchSpotifySongs(spoitifyToken, null);
+			topSongs = songs.filter((song) => topSongsId.includes(song.id));
 			isLoadingSongs = false;
 			await tick();
 		}
@@ -59,7 +57,7 @@
 	{:else}
 		<div class="home-wrapper">
 			<Home />
-			<Music songs={songsData?.songs} />
+			<Music songs={topSongs} />
 			<Biografy />
 			<Streaming />
 		</div>

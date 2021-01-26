@@ -7,11 +7,13 @@
 
 	import Play from '../../icons/play.svg';
 	import Pause from '../../icons/pause.svg';
+	import Replay from '../../icons/replay.svg';
 
 	export let previewUrl;
 	export let currentSongPlayingId;
 	export let id; 
 	export let paused = true;
+	export let ended = false;
 
 	let audio = null;
 	let isSongLoaded = false;
@@ -53,7 +55,11 @@
 		on:click={handlePlaySong}
 		on:click={setCurrentSongId}
 		>
-		{#if paused}
+		{#if ended }
+			<div class="song-icon" transition:scale >
+				<Replay class="reproductor-icon " width="100%" height="100%" fill="#fff" />
+			</div>
+		{:else if paused}
 			<div class="song-icon" transition:scale >
 				<Play class="reproductor-icon " width="100%" height="100%" fill="#fff" />
 			</div>
@@ -80,6 +86,7 @@
 		bind:currentTime 
 		bind:duration
 		bind:this={audio}
+		bind:ended
 		src={previewUrl} 
 		>
 			<track kind="captions">

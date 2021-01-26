@@ -1,18 +1,25 @@
 <script>
 	import { scale } from 'svelte/transition';
+
 	import Play from '../../icons/play.svg';
 	import Pause from '../../icons/pause.svg';
+	import Replay from '../../icons/replay.svg';
 
 	export let handlePlaySong;
 	export let paused;
 	export let songTitle;
+	export let ended;
 
 </script>
 
 <div class="screen-reproductor" transition:scale >
 	<div class="screen--reproductor-song-title">{songTitle}</div>
 	<button class="play-button" on:click={handlePlaySong}>
-		{#if paused}
+		{#if ended}
+			<div class="song-icon" transition:scale >
+				<Replay class="reproductor-icon " width="100%" height="100%" fill="var(--secondary-color)" />
+			</div>
+		{:else if paused}
 			<div class="screen-icon" transition:scale >
 				<Play  width="100%" height="100%" fill="var(--secondary-color)" />	
 			</div>
