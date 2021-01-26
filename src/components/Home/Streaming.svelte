@@ -23,7 +23,8 @@
 			use:animationOnObserve={fadeToRight(observerParams)}
 			>
 			<img src="/images/explicit.jpg" alt="Explicit">
-			<a href="https://distrokid.com/hyperfollow/oreaone/explcale" title="Escuchala ahora en tu servicio de streaming favorito" class="escuchar-ahora-btn">
+			<a href="https://distrokid.com/hyperfollow/oreaone/explcale" title="Escuchala ahora en tu servicio de streaming favorito" class="escuchar-ahora-btn"
+			target="_blank">
 				Escuchar ahora!
 			</a>
 		</div>
