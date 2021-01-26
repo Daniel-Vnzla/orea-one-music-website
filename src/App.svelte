@@ -54,7 +54,6 @@
 <SvelteSeo
   title="Orea One - Website - Trappin´ Life Baby "
   description="Orea One, Trappin´Life Baby, Cantante, Músico, Compositor"
-  author="Orea One"
   keywords="OREA ONE WEBSITE, MÚSICA, CANTANTE, TRAPPIN´ LIFE BABY, ANTONIO JAVIER ELTIT CHELLEW, COMPOSITOR, LA AMIGA"
 
  openGraph={{	

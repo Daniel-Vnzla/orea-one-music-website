@@ -74,7 +74,7 @@
 		</div>
 		<div class="title-box">
 			<h2 class="title" id="anime-fade-top-text" >orea one</h2>
-			<h4 class="legend" id="anime-fade-bottom-text">Trapinn´ Life Baby</h4>
+			<h4 class="legend" id="anime-fade-bottom-text">Trappin´ Life Baby</h4>
 		</div>
 	</div>
 	<div class="scroll-down" hidden={once} >

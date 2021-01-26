@@ -1,28 +1,7 @@
 <script>
 	import { animationOnObserve } from '../../assets/actions.js';
 	import { fadeToRight, fadeToLeft } from '../../assets/anime.js';
-
-	import Youtube from '../../icons/redes/youtube-with-circle.svg';
-	import Spotify from '../../icons/redes/spotify.svg';
-	import ITunes from '../../icons/redes/itunes.svg';
-
-	const redesIcons = [
-		{
-			title: "Youtube",
-			Icon: Youtube,
-			socialUrl: "/",
-		}, 
-		{
-			title: "Spotify",
-			Icon: Spotify,
-			socialUrl: "/",
-		}, 
-		{
-			title: "ITunes",
-			Icon: ITunes,
-			socialUrl: "/",
-		}
-	];
+	import { musicIcons } from '../../assets/icons.js';
 
 	const observerParams = {
 		threshold: 0.5,
@@ -37,19 +16,19 @@
 	<h4 
 		class="legend"
 		use:animationOnObserve={fadeToLeft(observerParams)}
-		>Escucha la música de orea one en tu plataforma preferida.</h4>
+		>Escucha la música de Orea One en tu plataforma preferida.</h4>
 	<div class="streaming-section-one">
 		<div 
 			class="img"
 			use:animationOnObserve={fadeToRight(observerParams)}
 			>
 			<img src="/images/explicit.jpg" alt="Explicit">
-			<a href="/" title="escuchar ahora en spotify" class="escuchar-ahora-btn">
+			<a href="https://distrokid.com/hyperfollow/oreaone/explcale" title="Escuchala ahora en tu servicio de streaming favorito" class="escuchar-ahora-btn">
 				Escuchar ahora!
 			</a>
 		</div>
 		<div class="redes-list">
-			{#each redesIcons as { Icon, socialUrl, title }, index}
+			{#each musicIcons as { Icon, socialUrl, title }, index}
 			<a 
 				use:animationOnObserve={ index % 2 ? fadeToRight(observerParams) : fadeToLeft(observerParams)}
 				class="icon-link" 

@@ -31,8 +31,11 @@ export const fetchSpotifySongs = async (token, nextPage = null) => {
   const NEXT_DATA_URL = nextPage;
 
   try {
-    axios.defaults.headers.common["Authorization"] = 'Bearer ' + token;
-    const { data } = await axios.get(NEXT_DATA_URL || SPOTIFY_URL);
+    const { data } = await axios.get(NEXT_DATA_URL || SPOTIFY_URL,{
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    });
     
    return { songs: formatSongData(data), nextPage: data.next };
   }

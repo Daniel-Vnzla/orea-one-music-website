@@ -17,7 +17,7 @@
 	<h4 
 		class="legend"
 		use:animationOnObserve={fadeToRight(observerParams)}
-		>conoce las historai que llevo a convertirme en oreone</h4>
+		>Conoce a Orea One</h4>
 
 	<div class="biografy-section-one">
 		<div class="bio-text-box">

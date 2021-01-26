@@ -9,7 +9,7 @@ export const allRedesIcons = [
 	{
 		title: "Instagram",
 		Icon: Instagram,
-		socialUrl: "https://www.instagram.com/oreaonebaby",
+		socialUrl: "https://www.instagram.com/oreaone",
 	}, 
 	{
 		title: "Youtube",
