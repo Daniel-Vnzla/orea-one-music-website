@@ -159,16 +159,21 @@
 		cursor: pointer;
 	}
 
-	input[type=range]::-webkit-slider-thumb, input[type=range]::-moz-range-thumb {
+	input[type=range]::-webkit-slider-thumb {
 		margin: 0;
 		padding: 0;
 		appearance: none;
   	-webkit-appearance: none;
   	border: none;
-		background: transparent;
+		background: none;
 		width: 1px;
 		height: 12px;
 		border-radius: 20px;
+	}
+
+	input[type=range]::-moz-range-thumb {
+		border: none;
+		background: none;
 	}
 	
 	.bar {
