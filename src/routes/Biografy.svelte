@@ -4,7 +4,7 @@
 	import { animationOnObserve } from '../assets/actions.js';
 	import { fadeToRight, fadeToLeft } from '../assets/anime.js';
 	
-	import Redes from '../commun/Redes.svelte';
+	import Redes from '../components/Biografy/Redes.svelte';
 
 	import Loading from '../commun/Loading.svelte';
 	import OreaOneTag from '../commun/OreaOneTag.svelte';
