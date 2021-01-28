@@ -1,5 +1,5 @@
 <script>
-	import { allIcons } from '../../assets/icons.js';	
+	import { allRedesIcons } from '../../assets/icons.js';	
 </script>
 
 <section class="redes">
