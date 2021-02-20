@@ -48,6 +48,6 @@ export const musicIcons = [
 	{
 		title: "ITunes",
 		Icon: ITunes,
-		socialUrl: "/https://music.apple.com/us/artist/orea-one/1506543929",
+		socialUrl: "https://music.apple.com/us/artist/orea-one/1506543929",
 	}
 ];
